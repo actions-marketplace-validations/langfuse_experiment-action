@@ -1,0 +1,280 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  NODE_VERSION: "24"
+  PYTHON_VERSION: "3.14"
+
+jobs:
+  lint-typecheck-test:
+    name: Lint, typecheck, unit tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          persist-credentials: false
+      - uses: pnpm/action-setup@fc06bc1257f339d1d5d8b3a19a8cae5388b55320 # v5.0.0
+        with:
+          run_install: false
+      - uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm run format:check
+      - run: pnpm run lint
+      - run: pnpm run typecheck
+      - run: pnpm run test
+
+  check-dist:
+    name: Verify dist/ is up to date
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          persist-credentials: false
+      - uses: pnpm/action-setup@fc06bc1257f339d1d5d8b3a19a8cae5388b55320 # v5.0.0
+        with:
+          run_install: false
+      - uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - name: Rebuild bundle
+        run: pnpm run build
+      - name: Fail if dist/ differs from committed bundle
+        run: |
+          if ! git diff --exit-code -- dist; then
+            echo "::error::dist/ is out of date — run 'pnpm build' and commit the result."
+            exit 1
+          fi
+
+  check-schema:
+    name: Verify schemas/ is up to date
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          persist-credentials: false
+      - uses: pnpm/action-setup@fc06bc1257f339d1d5d8b3a19a8cae5388b55320 # v5.0.0
+        with:
+          run_install: false
+      - uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - name: Regenerate JSON Schema
+        run: pnpm run check:schema
+
+  e2e-langfuse:
+    name: E2E — real Langfuse server
+    runs-on: ubuntu-latest
+    needs: [lint-typecheck-test, check-dist, check-schema]
+    permissions:
+      contents: read
+      # Let the action post experiment result comments when the workflow runs
+      # on a pull_request event.
+      pull-requests: write
+      # Lets the action resolve the current job URL via the REST API so
+      # "View run" links to the specific job rather than the workflow run.
+      actions: read
+    env:
+      LANGFUSE_BASE_URL: http://localhost:3000
+      LANGFUSE_PUBLIC_KEY: pk-lf-1234567890
+      LANGFUSE_SECRET_KEY: sk-lf-1234567890
+      E2E_DATASET_NAME: experiment-action-e2e-${{ github.run_id }}
+      # "true" on pull_request, "false" elsewhere (push to main, schedule).
+      COMMENT_ON_PR: ${{ github.event_name == 'pull_request' && 'true' || 'false' }}
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          persist-credentials: false
+      - uses: pnpm/action-setup@fc06bc1257f339d1d5d8b3a19a8cae5388b55320 # v5.0.0
+        with:
+          run_install: false
+      - uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: pnpm
+      - uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405 # v6.2.0
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+      - run: pnpm install --frozen-lockfile
+      - name: Start Langfuse server
+        run: pnpm run dev:up
+      - name: Wait for Langfuse to be healthy
+        run: pnpm run dev:wait
+      - name: Install Python SDK for dataset setup
+        run: python -m pip install --disable-pip-version-check --quiet langfuse
+      - name: Create E2E dataset
+        env:
+          DATASET_NAME: ${{ env.E2E_DATASET_NAME }}
+        run: |
+          python <<'PY'
+          from langfuse import Langfuse
+          import os
+
+          client = Langfuse(
+              public_key=os.environ["LANGFUSE_PUBLIC_KEY"],
+              secret_key=os.environ["LANGFUSE_SECRET_KEY"],
+              host=os.environ["LANGFUSE_BASE_URL"],
+          )
+          dataset_name = os.environ["DATASET_NAME"]
+          client.create_dataset(
+              name=dataset_name,
+              description="experiment-action e2e dataset",
+          )
+          for item in [
+              {"input": "hello", "expected_output": "HELLO"},
+              {"input": "world", "expected_output": "WORLD"},
+              {"input": "langfuse", "expected_output": "LANGFUSE"},
+          ]:
+              client.create_dataset_item(
+                  dataset_name=dataset_name,
+                  input=item["input"],
+                  expected_output=item["expected_output"],
+              )
+          client.flush()
+          PY
+
+      # --- Scenario 1: single Python script ------------------------------
+      - name: Run action — single Python experiment
+        id: py
+        uses: ./
+        with:
+          experiment_path: tests/fixtures/e2e/experiment.py
+          langfuse_public_key: ${{ env.LANGFUSE_PUBLIC_KEY }}
+          langfuse_secret_key: ${{ env.LANGFUSE_SECRET_KEY }}
+          langfuse_base_url: ${{ env.LANGFUSE_BASE_URL }}
+          dataset_name: ${{ env.E2E_DATASET_NAME }}
+          github_token: ${{ github.token }}
+          should_comment_on_pr: ${{ env.COMMENT_ON_PR }}
+      - name: Assert single-python passed
+        env:
+          FAILED: ${{ steps.py.outputs.failed }}
+          RESULT_JSON: ${{ steps.py.outputs.result_json }}
+        run: |
+          test "$FAILED" = "false"
+          node --import tsx scripts/assert-result-shape.ts
+          echo "$RESULT_JSON" | jq -e '.schema_version == "v1"'
+          echo "$RESULT_JSON" | jq -e '.results | length == 1'
+          echo "$RESULT_JSON" | jq -e '.results[0].runtime == "python"'
+          echo "$RESULT_JSON" | jq -e '.results[0].status == "passed"'
+          echo "$RESULT_JSON" | jq -e '.results[0].experiment_result.run_evaluations[0].name == "avg_accuracy"'
+          echo "$RESULT_JSON" | jq -e '.results[0].experiment_result.run_evaluations[0].value == 1'
+          echo "$RESULT_JSON" | jq -e '
+            .results[0].experiment_result.item_results
+            | map(.expected_output)
+            | sort
+            | . == ["HELLO", "LANGFUSE", "WORLD"]
+          '
+
+      # --- Scenario 2: single TypeScript script --------------------------
+      - name: Run action — single TypeScript experiment
+        id: ts
+        uses: ./
+        with:
+          experiment_path: tests/fixtures/e2e/experiment.ts
+          langfuse_public_key: ${{ env.LANGFUSE_PUBLIC_KEY }}
+          langfuse_secret_key: ${{ env.LANGFUSE_SECRET_KEY }}
+          langfuse_base_url: ${{ env.LANGFUSE_BASE_URL }}
+          dataset_name: ${{ env.E2E_DATASET_NAME }}
+          github_token: ${{ github.token }}
+          should_comment_on_pr: ${{ env.COMMENT_ON_PR }}
+      - name: Assert single-typescript passed
+        env:
+          FAILED: ${{ steps.ts.outputs.failed }}
+          RESULT_JSON: ${{ steps.ts.outputs.result_json }}
+        run: |
+          test "$FAILED" = "false"
+          node --import tsx scripts/assert-result-shape.ts
+          echo "$RESULT_JSON" | jq -e '.results | length == 1'
+          echo "$RESULT_JSON" | jq -e '.results[0].runtime == "node"'
+          echo "$RESULT_JSON" | jq -e '.results[0].status == "passed"'
+          echo "$RESULT_JSON" | jq -e '.results[0].experiment_result.run_evaluations[0].name == "avg_accuracy"'
+          echo "$RESULT_JSON" | jq -e '.results[0].experiment_result.run_evaluations[0].value == 1'
+          echo "$RESULT_JSON" | jq -e '
+            .results[0].experiment_result.item_results
+            | map(.expected_output)
+            | sort
+            | . == ["HELLO", "LANGFUSE", "WORLD"]
+          '
+
+      # --- Scenario 3: mixed-runtime directory ---------------------------
+      - name: Run action — mixed Python+TS directory
+        id: mixed
+        uses: ./
+        with:
+          experiment_path: tests/fixtures/e2e/mixed
+          langfuse_public_key: ${{ env.LANGFUSE_PUBLIC_KEY }}
+          langfuse_secret_key: ${{ env.LANGFUSE_SECRET_KEY }}
+          langfuse_base_url: ${{ env.LANGFUSE_BASE_URL }}
+          dataset_name: ${{ env.E2E_DATASET_NAME }}
+          github_token: ${{ github.token }}
+          should_comment_on_pr: ${{ env.COMMENT_ON_PR }}
+      - name: Assert mixed directory ran both scripts
+        env:
+          FAILED: ${{ steps.mixed.outputs.failed }}
+          RESULT_JSON: ${{ steps.mixed.outputs.result_json }}
+        run: |
+          test "$FAILED" = "false"
+          node --import tsx scripts/assert-result-shape.ts
+          echo "$RESULT_JSON" | jq -e '.results | length == 2'
+          echo "$RESULT_JSON" | jq -e '.results | map(.runtime) | sort | . == ["node", "python"]'
+
+      # --- Scenario 4: regression path (non-fatal) -----------------------
+      - name: Run action — regression fixture (should_fail_on_regression=false)
+        id: regression
+        uses: ./
+        with:
+          experiment_path: tests/fixtures/e2e/regression/experiment.py
+          langfuse_public_key: ${{ env.LANGFUSE_PUBLIC_KEY }}
+          langfuse_secret_key: ${{ env.LANGFUSE_SECRET_KEY }}
+          langfuse_base_url: ${{ env.LANGFUSE_BASE_URL }}
+          dataset_name: ${{ env.E2E_DATASET_NAME }}
+          github_token: ${{ github.token }}
+          should_comment_on_pr: ${{ env.COMMENT_ON_PR }}
+          should_fail_on_regression: "false"
+      - name: Assert regression was captured (without failing the job)
+        env:
+          FAILED: ${{ steps.regression.outputs.failed }}
+          RESULT_JSON: ${{ steps.regression.outputs.result_json }}
+        run: |
+          test "$FAILED" = "true"
+          node --import tsx scripts/assert-result-shape.ts
+          echo "$RESULT_JSON" | jq -e '.results[0].status == "regression"'
+          echo "$RESULT_JSON" | jq -e '.results[0].error.name == "RegressionError"'
+          echo "$RESULT_JSON" | jq -e '.results[0].error.is_regression == true'
+
+      - name: Tear down Langfuse
+        if: always()
+        run: pnpm run dev:down
+
+  # Single required-status-check target for branch protection. Gets the
+  # green check if every upstream job passed (or was intentionally skipped).
+  all-tests-passed:
+    name: All tests passed
+    runs-on: ubuntu-latest
+    needs: [lint-typecheck-test, check-dist, check-schema, e2e-langfuse]
+    if: always()
+    steps:
+      - name: Succeed when no upstream failed
+        if: ${{ !contains(needs.*.result, 'failure') && !contains(needs.*.result, 'cancelled') }}
+        run: exit 0
+      - name: Fail when any upstream failed
+        if: ${{ contains(needs.*.result, 'failure') || contains(needs.*.result, 'cancelled') }}
+        run: exit 1
