@@ -1,7 +1,7 @@
 require('./sourcemap-register.js');/******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
-/***/ 7708:
+/***/ 2504:
 /***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
 
 "use strict";
@@ -55,9 +55,9 @@ exports.getProxyUrl = getProxyUrl;
 exports.isHttps = isHttps;
 const http = __importStar(__nccwpck_require__(8611));
 const https = __importStar(__nccwpck_require__(5692));
-const pm = __importStar(__nccwpck_require__(8188));
-const tunnel = __importStar(__nccwpck_require__(329));
-const undici_1 = __nccwpck_require__(9522);
+const pm = __importStar(__nccwpck_require__(568));
+const tunnel = __importStar(__nccwpck_require__(7013));
+const undici_1 = __nccwpck_require__(7305);
 var HttpCodes;
 (function (HttpCodes) {
     HttpCodes[HttpCodes["OK"] = 200] = "OK";
@@ -745,7 +745,7 @@ const lowercaseKeys = (obj) => Object.keys(obj).reduce((c, k) => ((c[k.toLowerCa
 
 /***/ }),
 
-/***/ 8188:
+/***/ 568:
 /***/ ((__unused_webpack_module, exports) => {
 
 "use strict";
@@ -846,7 +846,7 @@ class DecodedURL extends URL {
 
 /***/ }),
 
-/***/ 9900:
+/***/ 2384:
 /***/ (function(module) {
 
 /**
@@ -2376,15 +2376,15 @@ class DecodedURL extends URL {
 
 /***/ }),
 
-/***/ 329:
+/***/ 7013:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
-module.exports = __nccwpck_require__(4179);
+module.exports = __nccwpck_require__(8479);
 
 
 /***/ }),
 
-/***/ 4179:
+/***/ 8479:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 "use strict";
@@ -2656,34 +2656,34 @@ exports.debug = debug; // for test
 
 /***/ }),
 
-/***/ 9522:
+/***/ 7305:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 "use strict";
 
 
-const Client = __nccwpck_require__(3275)
-const Dispatcher = __nccwpck_require__(3805)
-const Pool = __nccwpck_require__(3906)
-const BalancedPool = __nccwpck_require__(4107)
-const Agent = __nccwpck_require__(8951)
-const ProxyAgent = __nccwpck_require__(3490)
-const EnvHttpProxyAgent = __nccwpck_require__(9551)
-const RetryAgent = __nccwpck_require__(9412)
-const errors = __nccwpck_require__(2229)
-const util = __nccwpck_require__(1702)
+const Client = __nccwpck_require__(4952)
+const Dispatcher = __nccwpck_require__(50)
+const Pool = __nccwpck_require__(2853)
+const BalancedPool = __nccwpck_require__(8410)
+const Agent = __nccwpck_require__(1062)
+const ProxyAgent = __nccwpck_require__(1327)
+const EnvHttpProxyAgent = __nccwpck_require__(2468)
+const RetryAgent = __nccwpck_require__(2933)
+const errors = __nccwpck_require__(6554)
+const util = __nccwpck_require__(5893)
 const { InvalidArgumentError } = errors
-const api = __nccwpck_require__(4333)
-const buildConnector = __nccwpck_require__(2230)
-const MockClient = __nccwpck_require__(7435)
-const MockAgent = __nccwpck_require__(6583)
-const MockPool = __nccwpck_require__(3074)
-const mockErrors = __nccwpck_require__(3863)
-const RetryHandler = __nccwpck_require__(4962)
-const { getGlobalDispatcher, setGlobalDispatcher } = __nccwpck_require__(2603)
-const DecoratorHandler = __nccwpck_require__(457)
-const RedirectHandler = __nccwpck_require__(3188)
-const createRedirectInterceptor = __nccwpck_require__(6318)
+const api = __nccwpck_require__(6626)
+const buildConnector = __nccwpck_require__(2099)
+const MockClient = __nccwpck_require__(7622)
+const MockAgent = __nccwpck_require__(4832)
+const MockPool = __nccwpck_require__(5307)
+const mockErrors = __nccwpck_require__(1138)
+const RetryHandler = __nccwpck_require__(2505)
+const { getGlobalDispatcher, setGlobalDispatcher } = __nccwpck_require__(2686)
+const DecoratorHandler = __nccwpck_require__(6074)
+const RedirectHandler = __nccwpck_require__(5329)
+const createRedirectInterceptor = __nccwpck_require__(7659)
 
 Object.assign(Dispatcher.prototype, api)
 
@@ -2701,10 +2701,10 @@ module.exports.DecoratorHandler = DecoratorHandler
 module.exports.RedirectHandler = RedirectHandler
 module.exports.createRedirectInterceptor = createRedirectInterceptor
 module.exports.interceptors = {
-  redirect: __nccwpck_require__(3528),
-  retry: __nccwpck_require__(6824),
-  dump: __nccwpck_require__(3134),
-  dns: __nccwpck_require__(601)
+  redirect: __nccwpck_require__(6181),
+  retry: __nccwpck_require__(5107),
+  dump: __nccwpck_require__(5915),
+  dns: __nccwpck_require__(7098)
 }
 
 module.exports.buildConnector = buildConnector
@@ -2766,7 +2766,7 @@ function makeDispatcher (fn) {
 module.exports.setGlobalDispatcher = setGlobalDispatcher
 module.exports.getGlobalDispatcher = getGlobalDispatcher
 
-const fetchImpl = (__nccwpck_require__(9640).fetch)
+const fetchImpl = (__nccwpck_require__(7579).fetch)
 module.exports.fetch = async function fetch (init, options = undefined) {
   try {
     return await fetchImpl(init, options)
@@ -2778,39 +2778,39 @@ module.exports.fetch = async function fetch (init, options = undefined) {
     throw err
   }
 }
-module.exports.Headers = __nccwpck_require__(3210).Headers
-module.exports.Response = __nccwpck_require__(3009).Response
-module.exports.Request = __nccwpck_require__(3045).Request
-module.exports.FormData = __nccwpck_require__(2044).FormData
+module.exports.Headers = __nccwpck_require__(1405).Headers
+module.exports.Response = __nccwpck_require__(8548).Response
+module.exports.Request = __nccwpck_require__(8986).Request
+module.exports.FormData = __nccwpck_require__(9761).FormData
 module.exports.File = globalThis.File ?? (__nccwpck_require__(4573).File)
-module.exports.FileReader = __nccwpck_require__(3453).FileReader
+module.exports.FileReader = __nccwpck_require__(2160).FileReader
 
-const { setGlobalOrigin, getGlobalOrigin } = __nccwpck_require__(561)
+const { setGlobalOrigin, getGlobalOrigin } = __nccwpck_require__(2620)
 
 module.exports.setGlobalOrigin = setGlobalOrigin
 module.exports.getGlobalOrigin = getGlobalOrigin
 
-const { CacheStorage } = __nccwpck_require__(7535)
-const { kConstruct } = __nccwpck_require__(2619)
+const { CacheStorage } = __nccwpck_require__(866)
+const { kConstruct } = __nccwpck_require__(4136)
 
 // Cache & CacheStorage are tightly coupled with fetch. Even if it may run
 // in an older version of Node, it doesn't have any use without fetch.
 module.exports.caches = new CacheStorage(kConstruct)
 
-const { deleteCookie, getCookies, getSetCookies, setCookie } = __nccwpck_require__(7707)
+const { deleteCookie, getCookies, getSetCookies, setCookie } = __nccwpck_require__(7968)
 
 module.exports.deleteCookie = deleteCookie
 module.exports.getCookies = getCookies
 module.exports.getSetCookies = getSetCookies
 module.exports.setCookie = setCookie
 
-const { parseMIMEType, serializeAMimeType } = __nccwpck_require__(258)
+const { parseMIMEType, serializeAMimeType } = __nccwpck_require__(1495)
 
 module.exports.parseMIMEType = parseMIMEType
 module.exports.serializeAMimeType = serializeAMimeType
 
-const { CloseEvent, ErrorEvent, MessageEvent } = __nccwpck_require__(9858)
-module.exports.WebSocket = __nccwpck_require__(3380).WebSocket
+const { CloseEvent, ErrorEvent, MessageEvent } = __nccwpck_require__(3679)
+module.exports.WebSocket = __nccwpck_require__(8435).WebSocket
 module.exports.CloseEvent = CloseEvent
 module.exports.ErrorEvent = ErrorEvent
 module.exports.MessageEvent = MessageEvent
@@ -2826,18 +2826,18 @@ module.exports.MockPool = MockPool
 module.exports.MockAgent = MockAgent
 module.exports.mockErrors = mockErrors
 
-const { EventSource } = __nccwpck_require__(8612)
+const { EventSource } = __nccwpck_require__(1243)
 
 module.exports.EventSource = EventSource
 
 
 /***/ }),
 
-/***/ 8268:
+/***/ 7817:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
-const { addAbortListener } = __nccwpck_require__(1702)
-const { RequestAbortedError } = __nccwpck_require__(2229)
+const { addAbortListener } = __nccwpck_require__(5893)
+const { RequestAbortedError } = __nccwpck_require__(6554)
 
 const kListener = Symbol('kListener')
 const kSignal = Symbol('kSignal')
@@ -2897,7 +2897,7 @@ module.exports = {
 
 /***/ }),
 
-/***/ 3106:
+/***/ 37:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 "use strict";
@@ -2905,9 +2905,9 @@ module.exports = {
 
 const assert = __nccwpck_require__(4589)
 const { AsyncResource } = __nccwpck_require__(6698)
-const { InvalidArgumentError, SocketError } = __nccwpck_require__(2229)
-const util = __nccwpck_require__(1702)
-const { addSignal, removeSignal } = __nccwpck_require__(8268)
+const { InvalidArgumentError, SocketError } = __nccwpck_require__(6554)
+const util = __nccwpck_require__(5893)
+const { addSignal, removeSignal } = __nccwpck_require__(7817)
 
 class ConnectHandler extends AsyncResource {
   constructor (opts, callback) {
@@ -3013,7 +3013,7 @@ module.exports = connect
 
 /***/ }),
 
-/***/ 6952:
+/***/ 6029:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 "use strict";
@@ -3028,10 +3028,10 @@ const {
   InvalidArgumentError,
   InvalidReturnValueError,
   RequestAbortedError
-} = __nccwpck_require__(2229)
-const util = __nccwpck_require__(1702)
+} = __nccwpck_require__(6554)
+const util = __nccwpck_require__(5893)
 const { AsyncResource } = __nccwpck_require__(6698)
-const { addSignal, removeSignal } = __nccwpck_require__(8268)
+const { addSignal, removeSignal } = __nccwpck_require__(7817)
 const assert = __nccwpck_require__(4589)
 
 const kResume = Symbol('resume')
@@ -3272,17 +3272,17 @@ module.exports = pipeline
 
 /***/ }),
 
-/***/ 3117:
+/***/ 430:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 "use strict";
 
 
 const assert = __nccwpck_require__(4589)
-const { Readable } = __nccwpck_require__(405)
-const { InvalidArgumentError, RequestAbortedError } = __nccwpck_require__(2229)
-const util = __nccwpck_require__(1702)
-const { getResolveErrorBodyCallback } = __nccwpck_require__(5373)
+const { Readable } = __nccwpck_require__(8696)
+const { InvalidArgumentError, RequestAbortedError } = __nccwpck_require__(6554)
+const util = __nccwpck_require__(5893)
+const { getResolveErrorBodyCallback } = __nccwpck_require__(3516)
 const { AsyncResource } = __nccwpck_require__(6698)
 
 class RequestHandler extends AsyncResource {
@@ -3494,7 +3494,7 @@ module.exports.RequestHandler = RequestHandler
 
 /***/ }),
 
-/***/ 4318:
+/***/ 1315:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 "use strict";
@@ -3502,11 +3502,11 @@ module.exports.RequestHandler = RequestHandler
 
 const assert = __nccwpck_require__(4589)
 const { finished, PassThrough } = __nccwpck_require__(7075)
-const { InvalidArgumentError, InvalidReturnValueError } = __nccwpck_require__(2229)
-const util = __nccwpck_require__(1702)
-const { getResolveErrorBodyCallback } = __nccwpck_require__(5373)
+const { InvalidArgumentError, InvalidReturnValueError } = __nccwpck_require__(6554)
+const util = __nccwpck_require__(5893)
+const { getResolveErrorBodyCallback } = __nccwpck_require__(3516)
 const { AsyncResource } = __nccwpck_require__(6698)
-const { addSignal, removeSignal } = __nccwpck_require__(8268)
+const { addSignal, removeSignal } = __nccwpck_require__(7817)
 
 class StreamHandler extends AsyncResource {
   constructor (opts, factory, callback) {
@@ -3722,16 +3722,16 @@ module.exports = stream
 
 /***/ }),
 
-/***/ 3836:
+/***/ 439:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 "use strict";
 
 
-const { InvalidArgumentError, SocketError } = __nccwpck_require__(2229)
+const { InvalidArgumentError, SocketError } = __nccwpck_require__(6554)
 const { AsyncResource } = __nccwpck_require__(6698)
-const util = __nccwpck_require__(1702)
-const { addSignal, removeSignal } = __nccwpck_require__(8268)
+const util = __nccwpck_require__(5893)
+const { addSignal, removeSignal } = __nccwpck_require__(7817)
 const assert = __nccwpck_require__(4589)
 
 class UpgradeHandler extends AsyncResource {
@@ -3838,22 +3838,22 @@ module.exports = upgrade
 
 /***/ }),
 
-/***/ 4333:
+/***/ 6626:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 "use strict";
 
 
-module.exports.request = __nccwpck_require__(3117)
-module.exports.stream = __nccwpck_require__(4318)
-module.exports.pipeline = __nccwpck_require__(6952)
-module.exports.upgrade = __nccwpck_require__(3836)
-module.exports.connect = __nccwpck_require__(3106)
+module.exports.request = __nccwpck_require__(430)
+module.exports.stream = __nccwpck_require__(1315)
+module.exports.pipeline = __nccwpck_require__(6029)
+module.exports.upgrade = __nccwpck_require__(439)
+module.exports.connect = __nccwpck_require__(37)
 
 
 /***/ }),
 
-/***/ 405:
+/***/ 8696:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 "use strict";
@@ -3863,9 +3863,9 @@ module.exports.connect = __nccwpck_require__(3106)
 
 const assert = __nccwpck_require__(4589)
 const { Readable } = __nccwpck_require__(7075)
-const { RequestAbortedError, NotSupportedError, InvalidArgumentError, AbortError } = __nccwpck_require__(2229)
-const util = __nccwpck_require__(1702)
-const { ReadableStreamFrom } = __nccwpck_require__(1702)
+const { RequestAbortedError, NotSupportedError, InvalidArgumentError, AbortError } = __nccwpck_require__(6554)
+const util = __nccwpck_require__(5893)
+const { ReadableStreamFrom } = __nccwpck_require__(5893)
 
 const kConsume = Symbol('kConsume')
 const kReading = Symbol('kReading')
@@ -4246,15 +4246,15 @@ module.exports = { Readable: BodyReadable, chunksDecode }
 
 /***/ }),
 
-/***/ 5373:
+/***/ 3516:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 const assert = __nccwpck_require__(4589)
 const {
   ResponseStatusCodeError
-} = __nccwpck_require__(2229)
+} = __nccwpck_require__(6554)
 
-const { chunksDecode } = __nccwpck_require__(405)
+const { chunksDecode } = __nccwpck_require__(8696)
 const CHUNK_LIMIT = 128 * 1024
 
 async function getResolveErrorBodyCallback ({ callback, body, contentType, statusCode, statusMessage, headers }) {
@@ -4346,7 +4346,7 @@ module.exports = {
 
 /***/ }),
 
-/***/ 2230:
+/***/ 2099:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 "use strict";
@@ -4354,9 +4354,9 @@ module.exports = {
 
 const net = __nccwpck_require__(7030)
 const assert = __nccwpck_require__(4589)
-const util = __nccwpck_require__(1702)
-const { InvalidArgumentError, ConnectTimeoutError } = __nccwpck_require__(2229)
-const timers = __nccwpck_require__(9645)
+const util = __nccwpck_require__(5893)
+const { InvalidArgumentError, ConnectTimeoutError } = __nccwpck_require__(6554)
+const timers = __nccwpck_require__(466)
 
 function noop () {}
 
@@ -4594,7 +4594,7 @@ module.exports = buildConnector
 
 /***/ }),
 
-/***/ 1225:
+/***/ 4300:
 /***/ ((module) => {
 
 "use strict";
@@ -4720,7 +4720,7 @@ module.exports = {
 
 /***/ }),
 
-/***/ 9304:
+/***/ 913:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 "use strict";
@@ -4930,7 +4930,7 @@ module.exports = {
 
 /***/ }),
 
-/***/ 2229:
+/***/ 6554:
 /***/ ((module) => {
 
 "use strict";
@@ -5363,7 +5363,7 @@ module.exports = {
 
 /***/ }),
 
-/***/ 9481:
+/***/ 4976:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 "use strict";
@@ -5372,7 +5372,7 @@ module.exports = {
 const {
   InvalidArgumentError,
   NotSupportedError
-} = __nccwpck_require__(2229)
+} = __nccwpck_require__(6554)
 const assert = __nccwpck_require__(4589)
 const {
   isValidHTTPToken,
@@ -5387,9 +5387,9 @@ const {
   validateHandler,
   getServerName,
   normalizedMethodRecords
-} = __nccwpck_require__(1702)
-const { channels } = __nccwpck_require__(9304)
-const { headerNameLowerCasedRecord } = __nccwpck_require__(1225)
+} = __nccwpck_require__(5893)
+const { channels } = __nccwpck_require__(913)
+const { headerNameLowerCasedRecord } = __nccwpck_require__(4300)
 
 // Verifies that a given path is valid does not contain control chars \x00 to \x20
 const invalidPathRegex = /[^\u0021-\u00ff]/
@@ -5719,7 +5719,13 @@ function processHeader (request, key, val) {
       } else if (typeof val[i] === 'object') {
         throw new InvalidArgumentError(`invalid ${key} header`)
       } else {
-        arr.push(`${val[i]}`)
+        // Coerce primitives (and reject unsafe coercions such as functions
+        // with a crafted toString/Symbol.toPrimitive).
+        const str = `${val[i]}`
+        if (!isValidHeaderValue(str)) {
+          throw new InvalidArgumentError(`invalid ${key} header`)
+        }
+        arr.push(str)
       }
     }
     val = arr
@@ -5730,7 +5736,12 @@ function processHeader (request, key, val) {
   } else if (val === null) {
     val = ''
   } else {
+    // Coerce primitives (and reject unsafe coercions such as functions
+    // with a crafted toString/Symbol.toPrimitive).
     val = `${val}`
+    if (!isValidHeaderValue(val)) {
+      throw new InvalidArgumentError(`invalid ${key} header`)
+    }
   }
 
   if (headerName === 'host') {
@@ -5776,7 +5787,7 @@ module.exports = Request
 
 /***/ }),
 
-/***/ 4469:
+/***/ 8700:
 /***/ ((module) => {
 
 module.exports = {
@@ -5850,7 +5861,7 @@ module.exports = {
 
 /***/ }),
 
-/***/ 7626:
+/***/ 781:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 "use strict";
@@ -5859,7 +5870,7 @@ module.exports = {
 const {
   wellknownHeaderNames,
   headerNameLowerCasedRecord
-} = __nccwpck_require__(1225)
+} = __nccwpck_require__(4300)
 
 class TstNode {
   /** @type {any} */
@@ -6010,14 +6021,14 @@ module.exports = {
 
 /***/ }),
 
-/***/ 1702:
+/***/ 5893:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 "use strict";
 
 
 const assert = __nccwpck_require__(4589)
-const { kDestroyed, kBodyUsed, kListeners, kBody } = __nccwpck_require__(4469)
+const { kDestroyed, kBodyUsed, kListeners, kBody } = __nccwpck_require__(8700)
 const { IncomingMessage } = __nccwpck_require__(7067)
 const stream = __nccwpck_require__(7075)
 const net = __nccwpck_require__(7030)
@@ -6025,9 +6036,9 @@ const { Blob } = __nccwpck_require__(4573)
 const nodeUtil = __nccwpck_require__(7975)
 const { stringify } = __nccwpck_require__(1792)
 const { EventEmitter: EE } = __nccwpck_require__(8474)
-const { InvalidArgumentError } = __nccwpck_require__(2229)
-const { headerNameLowerCasedRecord } = __nccwpck_require__(1225)
-const { tree } = __nccwpck_require__(7626)
+const { InvalidArgumentError } = __nccwpck_require__(6554)
+const { headerNameLowerCasedRecord } = __nccwpck_require__(4300)
+const { tree } = __nccwpck_require__(781)
 
 const [nodeMajor, nodeMinor] = process.versions.node.split('.').map(v => Number(v))
 
@@ -6737,19 +6748,19 @@ module.exports = {
 
 /***/ }),
 
-/***/ 8951:
+/***/ 1062:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 "use strict";
 
 
-const { InvalidArgumentError } = __nccwpck_require__(2229)
-const { kClients, kRunning, kClose, kDestroy, kDispatch, kInterceptors } = __nccwpck_require__(4469)
-const DispatcherBase = __nccwpck_require__(9471)
-const Pool = __nccwpck_require__(3906)
-const Client = __nccwpck_require__(3275)
-const util = __nccwpck_require__(1702)
-const createRedirectInterceptor = __nccwpck_require__(6318)
+const { InvalidArgumentError } = __nccwpck_require__(6554)
+const { kClients, kRunning, kClose, kDestroy, kDispatch, kInterceptors } = __nccwpck_require__(8700)
+const DispatcherBase = __nccwpck_require__(9834)
+const Pool = __nccwpck_require__(2853)
+const Client = __nccwpck_require__(4952)
+const util = __nccwpck_require__(5893)
+const createRedirectInterceptor = __nccwpck_require__(7659)
 
 const kOnConnect = Symbol('onConnect')
 const kOnDisconnect = Symbol('onDisconnect')
@@ -6767,7 +6778,6 @@ function defaultFactory (origin, opts) {
 
 class Agent extends DispatcherBase {
   constructor ({ factory = defaultFactory, maxRedirections = 0, connect, ...options } = {}) {
-
     if (typeof factory !== 'function') {
       throw new InvalidArgumentError('factory must be a function.')
     }
@@ -6875,7 +6885,7 @@ module.exports = Agent
 
 /***/ }),
 
-/***/ 4107:
+/***/ 8410:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 "use strict";
@@ -6884,7 +6894,7 @@ module.exports = Agent
 const {
   BalancedPoolMissingUpstreamError,
   InvalidArgumentError
-} = __nccwpck_require__(2229)
+} = __nccwpck_require__(6554)
 const {
   PoolBase,
   kClients,
@@ -6892,10 +6902,10 @@ const {
   kAddClient,
   kRemoveClient,
   kGetDispatcher
-} = __nccwpck_require__(1994)
-const Pool = __nccwpck_require__(3906)
-const { kUrl, kInterceptors } = __nccwpck_require__(4469)
-const { parseOrigin } = __nccwpck_require__(1702)
+} = __nccwpck_require__(4455)
+const Pool = __nccwpck_require__(2853)
+const { kUrl, kInterceptors } = __nccwpck_require__(8700)
+const { parseOrigin } = __nccwpck_require__(5893)
 const kFactory = Symbol('factory')
 
 const kOptions = Symbol('options')
@@ -7092,7 +7102,7 @@ module.exports = BalancedPool
 
 /***/ }),
 
-/***/ 4935:
+/***/ 454:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 "use strict";
@@ -7101,13 +7111,14 @@ module.exports = BalancedPool
 /* global WebAssembly */
 
 const assert = __nccwpck_require__(4589)
-const util = __nccwpck_require__(1702)
-const { channels } = __nccwpck_require__(9304)
-const timers = __nccwpck_require__(9645)
+const util = __nccwpck_require__(5893)
+const { channels } = __nccwpck_require__(913)
+const timers = __nccwpck_require__(466)
 const {
   RequestContentLengthMismatchError,
   ResponseContentLengthMismatchError,
   RequestAbortedError,
+  InvalidArgumentError,
   HeadersTimeoutError,
   HeadersOverflowError,
   SocketError,
@@ -7115,7 +7126,7 @@ const {
   BodyTimeoutError,
   HTTPParserError,
   ResponseExceededMaxSizeError
-} = __nccwpck_require__(2229)
+} = __nccwpck_require__(6554)
 const {
   kUrl,
   kReset,
@@ -7148,22 +7159,25 @@ const {
   kOnError,
   kResume,
   kHTTPContext
-} = __nccwpck_require__(4469)
+} = __nccwpck_require__(8700)
 
-const constants = __nccwpck_require__(886)
+const constants = __nccwpck_require__(6359)
 const EMPTY_BUF = Buffer.alloc(0)
 const FastBuffer = Buffer[Symbol.species]
 const addListener = util.addListener
 const removeAllListeners = util.removeAllListeners
+const kIdleSocketValidation = Symbol('kIdleSocketValidation')
+const kIdleSocketValidationTimeout = Symbol('kIdleSocketValidationTimeout')
+const kSocketUsed = Symbol('kSocketUsed')
 
 let extractBody
 
 async function lazyllhttp () {
-  const llhttpWasmData = process.env.JEST_WORKER_ID ? __nccwpck_require__(2668) : undefined
+  const llhttpWasmData = process.env.JEST_WORKER_ID ? __nccwpck_require__(5361) : undefined
 
   let mod
   try {
-    mod = await WebAssembly.compile(__nccwpck_require__(1252))
+    mod = await WebAssembly.compile(__nccwpck_require__(1779))
   } catch (e) {
     /* istanbul ignore next */
 
@@ -7171,7 +7185,7 @@ async function lazyllhttp () {
     // being enabled, but the occurring of this other error
     // * https://github.com/emscripten-core/emscripten/issues/11495
     // got me to remove that check to avoid breaking Node 12.
-    mod = await WebAssembly.compile(llhttpWasmData || __nccwpck_require__(2668))
+    mod = await WebAssembly.compile(llhttpWasmData || __nccwpck_require__(5361))
   }
 
   return await WebAssembly.instantiate(mod, {
@@ -7377,27 +7391,69 @@ class Parser {
 
       const offset = llhttp.llhttp_get_error_pos(this.ptr) - currentBufferPtr
 
-      if (ret === constants.ERROR.PAUSED_UPGRADE) {
-        this.onUpgrade(data.slice(offset))
-      } else if (ret === constants.ERROR.PAUSED) {
-        this.paused = true
-        socket.unshift(data.slice(offset))
-      } else if (ret !== constants.ERROR.OK) {
-        const ptr = llhttp.llhttp_get_error_reason(this.ptr)
-        let message = ''
-        /* istanbul ignore else: difficult to make a test case for */
-        if (ptr) {
-          const len = new Uint8Array(llhttp.memory.buffer, ptr).indexOf(0)
-          message =
-            'Response does not match the HTTP/1.1 protocol (' +
-            Buffer.from(llhttp.memory.buffer, ptr, len).toString() +
-            ')'
+      if (ret !== constants.ERROR.OK) {
+        const body = data.subarray(offset)
+
+        if (ret === constants.ERROR.PAUSED_UPGRADE) {
+          this.onUpgrade(body)
+        } else if (ret === constants.ERROR.PAUSED) {
+          this.paused = true
+          socket.unshift(body)
+        } else {
+          throw this.createError(ret, body)
         }
-        throw new HTTPParserError(message, constants.ERROR[ret], data.slice(offset))
       }
     } catch (err) {
       util.destroy(socket, err)
     }
+  }
+
+  finish () {
+    assert(currentParser === null)
+    assert(this.ptr != null)
+    assert(!this.paused)
+
+    const { llhttp } = this
+
+    let ret
+
+    try {
+      currentParser = this
+      ret = llhttp.llhttp_finish(this.ptr)
+    } finally {
+      currentParser = null
+    }
+
+    if (ret === constants.ERROR.OK) {
+      return null
+    }
+
+    if (ret === constants.ERROR.PAUSED || ret === constants.ERROR.PAUSED_UPGRADE) {
+      this.paused = true
+      return null
+    }
+
+    return this.createError(ret, EMPTY_BUF)
+  }
+
+  createError (ret, data) {
+    const { llhttp, contentLength, bytesRead } = this
+
+    if (contentLength && bytesRead !== parseInt(contentLength, 10)) {
+      return new ResponseContentLengthMismatchError()
+    }
+
+    const ptr = llhttp.llhttp_get_error_reason(this.ptr)
+    let message = ''
+    if (ptr) {
+      const len = new Uint8Array(llhttp.memory.buffer, ptr).indexOf(0)
+      message =
+        'Response does not match the HTTP/1.1 protocol (' +
+        Buffer.from(llhttp.memory.buffer, ptr, len).toString() +
+        ')'
+    }
+
+    return new HTTPParserError(message, constants.ERROR[ret], data)
   }
 
   destroy () {
@@ -7424,6 +7480,11 @@ class Parser {
 
     /* istanbul ignore next: difficult to make a test case for */
     if (socket.destroyed) {
+      return -1
+    }
+
+    if (client[kRunning] === 0) {
+      util.destroy(socket, new SocketError('bad response', util.getSocketInfo(socket)))
       return -1
     }
 
@@ -7527,6 +7588,11 @@ class Parser {
 
     /* istanbul ignore next: difficult to make a test case for */
     if (socket.destroyed) {
+      return -1
+    }
+
+    if (client[kRunning] === 0) {
+      util.destroy(socket, new SocketError('bad response', util.getSocketInfo(socket)))
       return -1
     }
 
@@ -7703,6 +7769,7 @@ class Parser {
     request.onComplete(headers)
 
     client[kQueue][client[kRunningIdx]++] = null
+    socket[kSocketUsed] = true
 
     if (socket[kWriting]) {
       assert(client[kRunning] === 0)
@@ -7761,6 +7828,9 @@ async function connectH1 (client, socket) {
   socket[kWriting] = false
   socket[kReset] = false
   socket[kBlocking] = false
+  socket[kIdleSocketValidation] = 0
+  socket[kIdleSocketValidationTimeout] = null
+  socket[kSocketUsed] = false
   socket[kParser] = new Parser(client, socket, llhttpInstance)
 
   addListener(socket, 'error', function (err) {
@@ -7771,8 +7841,11 @@ async function connectH1 (client, socket) {
     // On Mac OS, we get an ECONNRESET even if there is a full body to be forwarded
     // to the user.
     if (err.code === 'ECONNRESET' && parser.statusCode && !parser.shouldKeepAlive) {
-      // We treat all incoming data so for as a valid response.
-      parser.onMessageComplete()
+      const parserErr = parser.finish()
+      if (parserErr) {
+        this[kError] = parserErr
+        this[kClient][kOnError](parserErr)
+      }
       return
     }
 
@@ -7791,8 +7864,10 @@ async function connectH1 (client, socket) {
     const parser = this[kParser]
 
     if (parser.statusCode && !parser.shouldKeepAlive) {
-      // We treat all incoming data so far as a valid response.
-      parser.onMessageComplete()
+      const parserErr = parser.finish()
+      if (parserErr) {
+        util.destroy(this, parserErr)
+      }
       return
     }
 
@@ -7802,10 +7877,11 @@ async function connectH1 (client, socket) {
     const client = this[kClient]
     const parser = this[kParser]
 
+    clearIdleSocketValidation(this)
+
     if (parser) {
       if (!this[kError] && parser.statusCode && !parser.shouldKeepAlive) {
-        // We treat all incoming data so far as a valid response.
-        parser.onMessageComplete()
+        this[kError] = parser.finish() || this[kError]
       }
 
       this[kParser].destroy()
@@ -7868,7 +7944,7 @@ async function connectH1 (client, socket) {
       return socket.destroyed
     },
     busy (request) {
-      if (socket[kWriting] || socket[kReset] || socket[kBlocking]) {
+      if (socket[kWriting] || socket[kReset] || socket[kBlocking] || socket[kIdleSocketValidation] === 1) {
         return true
       }
 
@@ -7906,6 +7982,31 @@ async function connectH1 (client, socket) {
   }
 }
 
+function clearIdleSocketValidation (socket) {
+  if (socket[kIdleSocketValidationTimeout]) {
+    clearTimeout(socket[kIdleSocketValidationTimeout])
+    socket[kIdleSocketValidationTimeout] = null
+  }
+
+  socket[kIdleSocketValidation] = 0
+}
+
+function scheduleIdleSocketValidation (client, socket) {
+  socket[kIdleSocketValidation] = 1
+  socket[kIdleSocketValidationTimeout] = setTimeout(() => {
+    socket[kIdleSocketValidationTimeout] = null
+    socket[kIdleSocketValidation] = 2
+
+    if (client[kSocket] === socket && !socket.destroyed) {
+      client[kResume]()
+    }
+  }, 0)
+  socket[kIdleSocketValidationTimeout].unref?.()
+}
+
+/**
+ * @param {import('./client.js')} client
+ */
 function resumeH1 (client) {
   const socket = client[kSocket]
 
@@ -7918,6 +8019,32 @@ function resumeH1 (client) {
     } else if (socket[kNoRef] && socket.ref) {
       socket.ref()
       socket[kNoRef] = false
+    }
+
+    if (client[kRunning] === 0 && client[kPending] > 0 && socket[kSocketUsed]) {
+      if (socket[kIdleSocketValidation] === 0) {
+        scheduleIdleSocketValidation(client, socket)
+        socket[kParser].readMore()
+        if (socket.destroyed) {
+          return
+        }
+        return
+      }
+
+      if (socket[kIdleSocketValidation] === 1) {
+        socket[kParser].readMore()
+        if (socket.destroyed) {
+          return
+        }
+        return
+      }
+    }
+
+    if (client[kRunning] === 0) {
+      socket[kParser].readMore()
+      if (socket.destroyed) {
+        return
+      }
     }
 
     if (client[kSize] === 0) {
@@ -7966,7 +8093,7 @@ function writeH1 (client, request) {
 
   if (util.isFormDataLike(body)) {
     if (!extractBody) {
-      extractBody = (__nccwpck_require__(6110).extractBody)
+      extractBody = (__nccwpck_require__(8059).extractBody)
     }
 
     const [bodyStream, contentType] = extractBody(body)
@@ -7975,8 +8102,16 @@ function writeH1 (client, request) {
     }
     body = bodyStream.stream
     contentLength = bodyStream.length
-  } else if (util.isBlobLike(body) && request.contentType == null && body.type) {
-    headers.push('content-type', body.type)
+  } else if (util.isBlobLike(body) && request.contentType == null) {
+    const contentType = body.type
+    if (contentType) {
+      const contentTypeValue = `${contentType}`
+      if (!util.isValidHeaderValue(contentTypeValue)) {
+        util.errorRequest(client, request, new InvalidArgumentError('invalid content-type header'))
+        return false
+      }
+      headers.push('content-type', contentTypeValue)
+    }
   }
 
   if (body && typeof body.read === 'function') {
@@ -8013,6 +8148,7 @@ function writeH1 (client, request) {
   }
 
   const socket = client[kSocket]
+  clearIdleSocketValidation(socket)
 
   const abort = (err) => {
     if (request.aborted || request.completed) {
@@ -8470,7 +8606,7 @@ module.exports = connectH1
 
 /***/ }),
 
-/***/ 9834:
+/***/ 99:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 "use strict";
@@ -8478,13 +8614,13 @@ module.exports = connectH1
 
 const assert = __nccwpck_require__(4589)
 const { pipeline } = __nccwpck_require__(7075)
-const util = __nccwpck_require__(1702)
+const util = __nccwpck_require__(5893)
 const {
   RequestContentLengthMismatchError,
   RequestAbortedError,
   SocketError,
   InformationalError
-} = __nccwpck_require__(2229)
+} = __nccwpck_require__(6554)
 const {
   kUrl,
   kReset,
@@ -8503,7 +8639,7 @@ const {
   kResume,
   kSize,
   kHTTPContext
-} = __nccwpck_require__(4469)
+} = __nccwpck_require__(8700)
 
 const kOpenStreams = Symbol('open streams')
 
@@ -8862,7 +8998,7 @@ function writeH2 (client, request) {
   let contentLength = util.bodyLength(body)
 
   if (util.isFormDataLike(body)) {
-    extractBody ??= (__nccwpck_require__(6110).extractBody)
+    extractBody ??= (__nccwpck_require__(8059).extractBody)
 
     const [bodyStream, contentType] = extractBody(body)
     headers['content-type'] = contentType
@@ -9222,7 +9358,7 @@ module.exports = connectH2
 
 /***/ }),
 
-/***/ 3275:
+/***/ 4952:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 "use strict";
@@ -9233,16 +9369,16 @@ module.exports = connectH2
 const assert = __nccwpck_require__(4589)
 const net = __nccwpck_require__(7030)
 const http = __nccwpck_require__(7067)
-const util = __nccwpck_require__(1702)
-const { channels } = __nccwpck_require__(9304)
-const Request = __nccwpck_require__(9481)
-const DispatcherBase = __nccwpck_require__(9471)
+const util = __nccwpck_require__(5893)
+const { channels } = __nccwpck_require__(913)
+const Request = __nccwpck_require__(4976)
+const DispatcherBase = __nccwpck_require__(9834)
 const {
   InvalidArgumentError,
   InformationalError,
   ClientDestroyedError
-} = __nccwpck_require__(2229)
-const buildConnector = __nccwpck_require__(2230)
+} = __nccwpck_require__(6554)
+const buildConnector = __nccwpck_require__(2099)
 const {
   kUrl,
   kServerName,
@@ -9284,9 +9420,9 @@ const {
   kHTTPContext,
   kMaxConcurrentStreams,
   kResume
-} = __nccwpck_require__(4469)
-const connectH1 = __nccwpck_require__(4935)
-const connectH2 = __nccwpck_require__(9834)
+} = __nccwpck_require__(8700)
+const connectH1 = __nccwpck_require__(454)
+const connectH2 = __nccwpck_require__(99)
 let deprecatedInterceptorWarned = false
 
 const kClosedResolve = Symbol('kClosedResolve')
@@ -9593,7 +9729,7 @@ class Client extends DispatcherBase {
   }
 }
 
-const createRedirectInterceptor = __nccwpck_require__(6318)
+const createRedirectInterceptor = __nccwpck_require__(7659)
 
 function onError (client, err) {
   if (
@@ -9853,19 +9989,19 @@ module.exports = Client
 
 /***/ }),
 
-/***/ 9471:
+/***/ 9834:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 "use strict";
 
 
-const Dispatcher = __nccwpck_require__(3805)
+const Dispatcher = __nccwpck_require__(50)
 const {
   ClientDestroyedError,
   ClientClosedError,
   InvalidArgumentError
-} = __nccwpck_require__(2229)
-const { kDestroy, kClose, kClosed, kDestroyed, kDispatch, kInterceptors } = __nccwpck_require__(4469)
+} = __nccwpck_require__(6554)
+const { kDestroy, kClose, kClosed, kDestroyed, kDispatch, kInterceptors } = __nccwpck_require__(8700)
 
 const kOnDestroyed = Symbol('onDestroyed')
 const kOnClosed = Symbol('onClosed')
@@ -9885,6 +10021,7 @@ class DispatcherBase extends Dispatcher {
 
   get webSocketOptions () {
     return {
+      maxFragments: this[kWebSocketOptions].maxFragments ?? 131072,
       maxPayloadSize: this[kWebSocketOptions].maxPayloadSize ?? 128 * 1024 * 1024
     }
   }
@@ -10059,7 +10196,7 @@ module.exports = DispatcherBase
 
 /***/ }),
 
-/***/ 3805:
+/***/ 50:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 "use strict";
@@ -10132,16 +10269,16 @@ module.exports = Dispatcher
 
 /***/ }),
 
-/***/ 9551:
+/***/ 2468:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 "use strict";
 
 
-const DispatcherBase = __nccwpck_require__(9471)
-const { kClose, kDestroy, kClosed, kDestroyed, kDispatch, kNoProxyAgent, kHttpProxyAgent, kHttpsProxyAgent } = __nccwpck_require__(4469)
-const ProxyAgent = __nccwpck_require__(3490)
-const Agent = __nccwpck_require__(8951)
+const DispatcherBase = __nccwpck_require__(9834)
+const { kClose, kDestroy, kClosed, kDestroyed, kDispatch, kNoProxyAgent, kHttpProxyAgent, kHttpsProxyAgent } = __nccwpck_require__(8700)
+const ProxyAgent = __nccwpck_require__(1327)
+const Agent = __nccwpck_require__(1062)
 
 const DEFAULT_PORTS = {
   'http:': 80,
@@ -10300,7 +10437,7 @@ module.exports = EnvHttpProxyAgent
 
 /***/ }),
 
-/***/ 50:
+/***/ 2547:
 /***/ ((module) => {
 
 "use strict";
@@ -10425,16 +10562,16 @@ module.exports = class FixedQueue {
 
 /***/ }),
 
-/***/ 1994:
+/***/ 4455:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 "use strict";
 
 
-const DispatcherBase = __nccwpck_require__(9471)
-const FixedQueue = __nccwpck_require__(50)
-const { kConnected, kSize, kRunning, kPending, kQueued, kBusy, kFree, kUrl, kClose, kDestroy, kDispatch } = __nccwpck_require__(4469)
-const PoolStats = __nccwpck_require__(7132)
+const DispatcherBase = __nccwpck_require__(9834)
+const FixedQueue = __nccwpck_require__(2547)
+const { kConnected, kSize, kRunning, kPending, kQueued, kBusy, kFree, kUrl, kClose, kDestroy, kDispatch } = __nccwpck_require__(8700)
+const PoolStats = __nccwpck_require__(5907)
 
 const kClients = Symbol('clients')
 const kNeedDrain = Symbol('needDrain')
@@ -10627,10 +10764,10 @@ module.exports = {
 
 /***/ }),
 
-/***/ 7132:
+/***/ 5907:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
-const { kFree, kConnected, kPending, kQueued, kRunning, kSize } = __nccwpck_require__(4469)
+const { kFree, kConnected, kPending, kQueued, kRunning, kSize } = __nccwpck_require__(8700)
 const kPool = Symbol('pool')
 
 class PoolStats {
@@ -10668,7 +10805,7 @@ module.exports = PoolStats
 
 /***/ }),
 
-/***/ 3906:
+/***/ 2853:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 "use strict";
@@ -10680,14 +10817,14 @@ const {
   kNeedDrain,
   kAddClient,
   kGetDispatcher
-} = __nccwpck_require__(1994)
-const Client = __nccwpck_require__(3275)
+} = __nccwpck_require__(4455)
+const Client = __nccwpck_require__(4952)
 const {
   InvalidArgumentError
-} = __nccwpck_require__(2229)
-const util = __nccwpck_require__(1702)
-const { kUrl, kInterceptors } = __nccwpck_require__(4469)
-const buildConnector = __nccwpck_require__(2230)
+} = __nccwpck_require__(6554)
+const util = __nccwpck_require__(5893)
+const { kUrl, kInterceptors } = __nccwpck_require__(8700)
+const buildConnector = __nccwpck_require__(2099)
 
 const kOptions = Symbol('options')
 const kConnections = Symbol('connections')
@@ -10783,20 +10920,20 @@ module.exports = Pool
 
 /***/ }),
 
-/***/ 3490:
+/***/ 1327:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 "use strict";
 
 
-const { kProxy, kClose, kDestroy, kDispatch, kInterceptors } = __nccwpck_require__(4469)
+const { kProxy, kClose, kDestroy, kDispatch, kInterceptors } = __nccwpck_require__(8700)
 const { URL } = __nccwpck_require__(3136)
-const Agent = __nccwpck_require__(8951)
-const Pool = __nccwpck_require__(3906)
-const DispatcherBase = __nccwpck_require__(9471)
-const { InvalidArgumentError, RequestAbortedError, SecureProxyConnectionError } = __nccwpck_require__(2229)
-const buildConnector = __nccwpck_require__(2230)
-const Client = __nccwpck_require__(3275)
+const Agent = __nccwpck_require__(1062)
+const Pool = __nccwpck_require__(2853)
+const DispatcherBase = __nccwpck_require__(9834)
+const { InvalidArgumentError, RequestAbortedError, SecureProxyConnectionError } = __nccwpck_require__(6554)
+const buildConnector = __nccwpck_require__(2099)
+const Client = __nccwpck_require__(4952)
 
 const kAgent = Symbol('proxy agent')
 const kClient = Symbol('proxy client')
@@ -11065,14 +11202,14 @@ module.exports = ProxyAgent
 
 /***/ }),
 
-/***/ 9412:
+/***/ 2933:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 "use strict";
 
 
-const Dispatcher = __nccwpck_require__(3805)
-const RetryHandler = __nccwpck_require__(4962)
+const Dispatcher = __nccwpck_require__(50)
+const RetryHandler = __nccwpck_require__(2505)
 
 class RetryAgent extends Dispatcher {
   #agent = null
@@ -11108,7 +11245,7 @@ module.exports = RetryAgent
 
 /***/ }),
 
-/***/ 2603:
+/***/ 2686:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 "use strict";
@@ -11117,8 +11254,8 @@ module.exports = RetryAgent
 // We include a version number for the Dispatcher API. In case of breaking changes,
 // this version number must be increased to avoid conflicts.
 const globalDispatcher = Symbol.for('undici.globalDispatcher.1')
-const { InvalidArgumentError } = __nccwpck_require__(2229)
-const Agent = __nccwpck_require__(8951)
+const { InvalidArgumentError } = __nccwpck_require__(6554)
+const Agent = __nccwpck_require__(1062)
 
 if (getGlobalDispatcher() === undefined) {
   setGlobalDispatcher(new Agent())
@@ -11148,7 +11285,7 @@ module.exports = {
 
 /***/ }),
 
-/***/ 457:
+/***/ 6074:
 /***/ ((module) => {
 
 "use strict";
@@ -11200,16 +11337,16 @@ module.exports = class DecoratorHandler {
 
 /***/ }),
 
-/***/ 3188:
+/***/ 5329:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 "use strict";
 
 
-const util = __nccwpck_require__(1702)
-const { kBodyUsed } = __nccwpck_require__(4469)
+const util = __nccwpck_require__(5893)
+const { kBodyUsed } = __nccwpck_require__(8700)
 const assert = __nccwpck_require__(4589)
-const { InvalidArgumentError } = __nccwpck_require__(2229)
+const { InvalidArgumentError } = __nccwpck_require__(6554)
 const EE = __nccwpck_require__(8474)
 
 const redirectableStatusCodes = [300, 301, 302, 303, 307, 308]
@@ -11440,25 +11577,47 @@ module.exports = RedirectHandler
 
 /***/ }),
 
-/***/ 4962:
+/***/ 2505:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 "use strict";
 
 const assert = __nccwpck_require__(4589)
 
-const { kRetryHandlerDefaultRetry } = __nccwpck_require__(4469)
-const { RequestRetryError } = __nccwpck_require__(2229)
+const { kRetryHandlerDefaultRetry } = __nccwpck_require__(8700)
+const { RequestRetryError } = __nccwpck_require__(6554)
 const {
   isDisturbed,
   parseHeaders,
   parseRangeHeader,
   wrapRequestBody
-} = __nccwpck_require__(1702)
+} = __nccwpck_require__(5893)
 
 function calculateRetryAfterHeader (retryAfter) {
   const current = Date.now()
   return new Date(retryAfter).getTime() - current
+}
+
+function validatePartialResponseContentLength (headers, range, statusCode, retryCount) {
+  const contentLength = headers['content-length']
+  if (contentLength == null) {
+    return null
+  }
+
+  if (!Number.isFinite(range.start) || !Number.isFinite(range.end)) {
+    return null
+  }
+
+  const length = Number(contentLength)
+  const expectedLength = range.end - range.start + 1
+  if (!Number.isFinite(length) || length !== expectedLength) {
+    return new RequestRetryError('Content-Length mismatch', statusCode, {
+      headers,
+      data: { count: retryCount }
+    })
+  }
+
+  return null
 }
 
 class RetryHandler {
@@ -11675,6 +11834,12 @@ class RetryHandler {
         return false
       }
 
+      const contentLengthError = validatePartialResponseContentLength(headers, contentRange, statusCode, this.retryCount)
+      if (contentLengthError != null) {
+        this.abort(contentLengthError)
+        return false
+      }
+
       const { start, size, end = size - 1 } = contentRange
 
       assert(this.start === start, 'content-range mismatch')
@@ -11696,6 +11861,12 @@ class RetryHandler {
             resume,
             statusMessage
           )
+        }
+
+        const contentLengthError = validatePartialResponseContentLength(headers, range, statusCode, this.retryCount)
+        if (contentLengthError != null) {
+          this.abort(contentLengthError)
+          return false
         }
 
         const { start, size, end = size - 1 } = range
@@ -11822,15 +11993,15 @@ module.exports = RetryHandler
 
 /***/ }),
 
-/***/ 601:
+/***/ 7098:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 "use strict";
 
 const { isIP } = __nccwpck_require__(7030)
 const { lookup } = __nccwpck_require__(610)
-const DecoratorHandler = __nccwpck_require__(457)
-const { InvalidArgumentError, InformationalError } = __nccwpck_require__(2229)
+const DecoratorHandler = __nccwpck_require__(6074)
+const { InvalidArgumentError, InformationalError } = __nccwpck_require__(6554)
 const maxInt = Math.pow(2, 31) - 1
 
 class DNSInstance {
@@ -12205,15 +12376,15 @@ module.exports = interceptorOpts => {
 
 /***/ }),
 
-/***/ 3134:
+/***/ 5915:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 "use strict";
 
 
-const util = __nccwpck_require__(1702)
-const { InvalidArgumentError, RequestAbortedError } = __nccwpck_require__(2229)
-const DecoratorHandler = __nccwpck_require__(457)
+const util = __nccwpck_require__(5893)
+const { InvalidArgumentError, RequestAbortedError } = __nccwpck_require__(6554)
+const DecoratorHandler = __nccwpck_require__(6074)
 
 class DumpHandler extends DecoratorHandler {
   #maxSize = 1024 * 1024
@@ -12336,13 +12507,13 @@ module.exports = createDumpInterceptor
 
 /***/ }),
 
-/***/ 6318:
+/***/ 7659:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 "use strict";
 
 
-const RedirectHandler = __nccwpck_require__(3188)
+const RedirectHandler = __nccwpck_require__(5329)
 
 function createRedirectInterceptor ({ maxRedirections: defaultMaxRedirections }) {
   return (dispatch) => {
@@ -12365,12 +12536,12 @@ module.exports = createRedirectInterceptor
 
 /***/ }),
 
-/***/ 3528:
+/***/ 6181:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 "use strict";
 
-const RedirectHandler = __nccwpck_require__(3188)
+const RedirectHandler = __nccwpck_require__(5329)
 
 module.exports = opts => {
   const globalMaxRedirections = opts?.maxRedirections
@@ -12397,12 +12568,12 @@ module.exports = opts => {
 
 /***/ }),
 
-/***/ 6824:
+/***/ 5107:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 "use strict";
 
-const RetryHandler = __nccwpck_require__(4962)
+const RetryHandler = __nccwpck_require__(2505)
 
 module.exports = globalOpts => {
   return dispatch => {
@@ -12424,14 +12595,14 @@ module.exports = globalOpts => {
 
 /***/ }),
 
-/***/ 886:
+/***/ 6359:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 "use strict";
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.SPECIAL_HEADERS = exports.HEADER_STATE = exports.MINOR = exports.MAJOR = exports.CONNECTION_TOKEN_CHARS = exports.HEADER_CHARS = exports.TOKEN = exports.STRICT_TOKEN = exports.HEX = exports.URL_CHAR = exports.STRICT_URL_CHAR = exports.USERINFO_CHARS = exports.MARK = exports.ALPHANUM = exports.NUM = exports.HEX_MAP = exports.NUM_MAP = exports.ALPHA = exports.FINISH = exports.H_METHOD_MAP = exports.METHOD_MAP = exports.METHODS_RTSP = exports.METHODS_ICE = exports.METHODS_HTTP = exports.METHODS = exports.LENIENT_FLAGS = exports.FLAGS = exports.TYPE = exports.ERROR = void 0;
-const utils_1 = __nccwpck_require__(8270);
+const utils_1 = __nccwpck_require__(4167);
 // C headers
 var ERROR;
 (function (ERROR) {
@@ -12709,7 +12880,7 @@ exports.SPECIAL_HEADERS = {
 
 /***/ }),
 
-/***/ 2668:
+/***/ 5361:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 "use strict";
@@ -12722,7 +12893,7 @@ module.exports = Buffer.from('AGFzbQEAAAABJwdgAX8Bf2ADf39/AX9gAX8AYAJ/fwBgBH9/f3
 
 /***/ }),
 
-/***/ 1252:
+/***/ 1779:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 "use strict";
@@ -12735,7 +12906,7 @@ module.exports = Buffer.from('AGFzbQEAAAABJwdgAX8Bf2ADf39/AX9gAX8AYAJ/fwBgBH9/f3
 
 /***/ }),
 
-/***/ 8270:
+/***/ 4167:
 /***/ ((__unused_webpack_module, exports) => {
 
 "use strict";
@@ -12757,14 +12928,14 @@ exports.enumToMap = enumToMap;
 
 /***/ }),
 
-/***/ 6583:
+/***/ 4832:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 "use strict";
 
 
-const { kClients } = __nccwpck_require__(4469)
-const Agent = __nccwpck_require__(8951)
+const { kClients } = __nccwpck_require__(8700)
+const Agent = __nccwpck_require__(1062)
 const {
   kAgent,
   kMockAgentSet,
@@ -12775,14 +12946,14 @@ const {
   kGetNetConnect,
   kOptions,
   kFactory
-} = __nccwpck_require__(4703)
-const MockClient = __nccwpck_require__(7435)
-const MockPool = __nccwpck_require__(3074)
-const { matchValue, buildMockOptions } = __nccwpck_require__(1923)
-const { InvalidArgumentError, UndiciError } = __nccwpck_require__(2229)
-const Dispatcher = __nccwpck_require__(3805)
-const Pluralizer = __nccwpck_require__(3195)
-const PendingInterceptorsFormatter = __nccwpck_require__(1808)
+} = __nccwpck_require__(436)
+const MockClient = __nccwpck_require__(7622)
+const MockPool = __nccwpck_require__(5307)
+const { matchValue, buildMockOptions } = __nccwpck_require__(1896)
+const { InvalidArgumentError, UndiciError } = __nccwpck_require__(6554)
+const Dispatcher = __nccwpck_require__(50)
+const Pluralizer = __nccwpck_require__(1336)
+const PendingInterceptorsFormatter = __nccwpck_require__(4815)
 
 class MockAgent extends Dispatcher {
   constructor (opts) {
@@ -12925,15 +13096,15 @@ module.exports = MockAgent
 
 /***/ }),
 
-/***/ 7435:
+/***/ 7622:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 "use strict";
 
 
 const { promisify } = __nccwpck_require__(7975)
-const Client = __nccwpck_require__(3275)
-const { buildMockDispatch } = __nccwpck_require__(1923)
+const Client = __nccwpck_require__(4952)
+const { buildMockDispatch } = __nccwpck_require__(1896)
 const {
   kDispatches,
   kMockAgent,
@@ -12942,10 +13113,10 @@ const {
   kOrigin,
   kOriginalDispatch,
   kConnected
-} = __nccwpck_require__(4703)
-const { MockInterceptor } = __nccwpck_require__(1949)
-const Symbols = __nccwpck_require__(4469)
-const { InvalidArgumentError } = __nccwpck_require__(2229)
+} = __nccwpck_require__(436)
+const { MockInterceptor } = __nccwpck_require__(2746)
+const Symbols = __nccwpck_require__(8700)
+const { InvalidArgumentError } = __nccwpck_require__(6554)
 
 /**
  * MockClient provides an API that extends the Client to influence the mockDispatches.
@@ -12992,13 +13163,13 @@ module.exports = MockClient
 
 /***/ }),
 
-/***/ 3863:
+/***/ 1138:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 "use strict";
 
 
-const { UndiciError } = __nccwpck_require__(2229)
+const { UndiciError } = __nccwpck_require__(6554)
 
 const kMockNotMatchedError = Symbol.for('undici.error.UND_MOCK_ERR_MOCK_NOT_MATCHED')
 
@@ -13028,13 +13199,13 @@ module.exports = {
 
 /***/ }),
 
-/***/ 1949:
+/***/ 2746:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 "use strict";
 
 
-const { getResponseData, buildKey, addMockDispatch } = __nccwpck_require__(1923)
+const { getResponseData, buildKey, addMockDispatch } = __nccwpck_require__(1896)
 const {
   kDispatches,
   kDispatchKey,
@@ -13042,9 +13213,9 @@ const {
   kDefaultTrailers,
   kContentLength,
   kMockDispatch
-} = __nccwpck_require__(4703)
-const { InvalidArgumentError } = __nccwpck_require__(2229)
-const { buildURL } = __nccwpck_require__(1702)
+} = __nccwpck_require__(436)
+const { InvalidArgumentError } = __nccwpck_require__(6554)
+const { buildURL } = __nccwpck_require__(5893)
 
 /**
  * Defines the scope API for an interceptor reply
@@ -13243,15 +13414,15 @@ module.exports.MockScope = MockScope
 
 /***/ }),
 
-/***/ 3074:
+/***/ 5307:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 "use strict";
 
 
 const { promisify } = __nccwpck_require__(7975)
-const Pool = __nccwpck_require__(3906)
-const { buildMockDispatch } = __nccwpck_require__(1923)
+const Pool = __nccwpck_require__(2853)
+const { buildMockDispatch } = __nccwpck_require__(1896)
 const {
   kDispatches,
   kMockAgent,
@@ -13260,10 +13431,10 @@ const {
   kOrigin,
   kOriginalDispatch,
   kConnected
-} = __nccwpck_require__(4703)
-const { MockInterceptor } = __nccwpck_require__(1949)
-const Symbols = __nccwpck_require__(4469)
-const { InvalidArgumentError } = __nccwpck_require__(2229)
+} = __nccwpck_require__(436)
+const { MockInterceptor } = __nccwpck_require__(2746)
+const Symbols = __nccwpck_require__(8700)
+const { InvalidArgumentError } = __nccwpck_require__(6554)
 
 /**
  * MockPool provides an API that extends the Pool to influence the mockDispatches.
@@ -13310,7 +13481,7 @@ module.exports = MockPool
 
 /***/ }),
 
-/***/ 4703:
+/***/ 436:
 /***/ ((module) => {
 
 "use strict";
@@ -13341,21 +13512,21 @@ module.exports = {
 
 /***/ }),
 
-/***/ 1923:
+/***/ 1896:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 "use strict";
 
 
-const { MockNotMatchedError } = __nccwpck_require__(3863)
+const { MockNotMatchedError } = __nccwpck_require__(1138)
 const {
   kDispatches,
   kMockAgent,
   kOriginalDispatch,
   kOrigin,
   kGetNetConnect
-} = __nccwpck_require__(4703)
-const { buildURL } = __nccwpck_require__(1702)
+} = __nccwpck_require__(436)
+const { buildURL } = __nccwpck_require__(5893)
 const { STATUS_CODES } = __nccwpck_require__(7067)
 const {
   types: {
@@ -13716,7 +13887,7 @@ module.exports = {
 
 /***/ }),
 
-/***/ 1808:
+/***/ 4815:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 "use strict";
@@ -13767,7 +13938,7 @@ module.exports = class PendingInterceptorsFormatter {
 
 /***/ }),
 
-/***/ 3195:
+/***/ 1336:
 /***/ ((module) => {
 
 "use strict";
@@ -13804,7 +13975,7 @@ module.exports = class Pluralizer {
 
 /***/ }),
 
-/***/ 9645:
+/***/ 466:
 /***/ ((module) => {
 
 "use strict";
@@ -14235,21 +14406,21 @@ module.exports = {
 
 /***/ }),
 
-/***/ 4448:
+/***/ 2991:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 "use strict";
 
 
-const { kConstruct } = __nccwpck_require__(2619)
-const { urlEquals, getFieldValues } = __nccwpck_require__(8592)
-const { kEnumerableProperty, isDisturbed } = __nccwpck_require__(1702)
-const { webidl } = __nccwpck_require__(8431)
-const { Response, cloneResponse, fromInnerResponse } = __nccwpck_require__(3009)
-const { Request, fromInnerRequest } = __nccwpck_require__(3045)
-const { kState } = __nccwpck_require__(6601)
-const { fetching } = __nccwpck_require__(9640)
-const { urlIsHttpHttpsScheme, createDeferredPromise, readAllBytes } = __nccwpck_require__(2546)
+const { kConstruct } = __nccwpck_require__(4136)
+const { urlEquals, getFieldValues } = __nccwpck_require__(6009)
+const { kEnumerableProperty, isDisturbed } = __nccwpck_require__(5893)
+const { webidl } = __nccwpck_require__(1230)
+const { Response, cloneResponse, fromInnerResponse } = __nccwpck_require__(8548)
+const { Request, fromInnerRequest } = __nccwpck_require__(8986)
+const { kState } = __nccwpck_require__(6718)
+const { fetching } = __nccwpck_require__(7579)
+const { urlIsHttpHttpsScheme, createDeferredPromise, readAllBytes } = __nccwpck_require__(9315)
 const assert = __nccwpck_require__(4589)
 
 /**
@@ -15102,16 +15273,16 @@ module.exports = {
 
 /***/ }),
 
-/***/ 7535:
+/***/ 866:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 "use strict";
 
 
-const { kConstruct } = __nccwpck_require__(2619)
-const { Cache } = __nccwpck_require__(4448)
-const { webidl } = __nccwpck_require__(8431)
-const { kEnumerableProperty } = __nccwpck_require__(1702)
+const { kConstruct } = __nccwpck_require__(4136)
+const { Cache } = __nccwpck_require__(2991)
+const { webidl } = __nccwpck_require__(1230)
+const { kEnumerableProperty } = __nccwpck_require__(5893)
 
 class CacheStorage {
   /**
@@ -15262,28 +15433,28 @@ module.exports = {
 
 /***/ }),
 
-/***/ 2619:
+/***/ 4136:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 "use strict";
 
 
 module.exports = {
-  kConstruct: (__nccwpck_require__(4469).kConstruct)
+  kConstruct: (__nccwpck_require__(8700).kConstruct)
 }
 
 
 /***/ }),
 
-/***/ 8592:
+/***/ 6009:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 "use strict";
 
 
 const assert = __nccwpck_require__(4589)
-const { URLSerializer } = __nccwpck_require__(258)
-const { isValidHeaderName } = __nccwpck_require__(2546)
+const { URLSerializer } = __nccwpck_require__(1495)
+const { isValidHeaderName } = __nccwpck_require__(9315)
 
 /**
  * @see https://url.spec.whatwg.org/#concept-url-equals
@@ -15328,7 +15499,7 @@ module.exports = {
 
 /***/ }),
 
-/***/ 8382:
+/***/ 2725:
 /***/ ((module) => {
 
 "use strict";
@@ -15348,16 +15519,16 @@ module.exports = {
 
 /***/ }),
 
-/***/ 7707:
+/***/ 7968:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 "use strict";
 
 
-const { parseSetCookie } = __nccwpck_require__(1220)
-const { stringify } = __nccwpck_require__(7059)
-const { webidl } = __nccwpck_require__(8431)
-const { Headers } = __nccwpck_require__(3210)
+const { parseSetCookie } = __nccwpck_require__(1859)
+const { stringify } = __nccwpck_require__(6714)
+const { webidl } = __nccwpck_require__(1230)
+const { Headers } = __nccwpck_require__(1405)
 
 /**
  * @typedef {Object} Cookie
@@ -15540,15 +15711,15 @@ module.exports = {
 
 /***/ }),
 
-/***/ 1220:
+/***/ 1859:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 "use strict";
 
 
-const { maxNameValuePairSize, maxAttributeValueSize } = __nccwpck_require__(8382)
-const { isCTLExcludingHtab } = __nccwpck_require__(7059)
-const { collectASequenceOfCodePointsFast } = __nccwpck_require__(258)
+const { maxNameValuePairSize, maxAttributeValueSize } = __nccwpck_require__(2725)
+const { isCTLExcludingHtab } = __nccwpck_require__(6714)
+const { collectASequenceOfCodePointsFast } = __nccwpck_require__(1495)
 const assert = __nccwpck_require__(4589)
 
 /**
@@ -15821,32 +15992,25 @@ function parseUnparsedAttributes (unparsedAttributes, cookieAttributeList = {}) 
     // If the attribute-name case-insensitively matches the string
     // "SameSite", the user agent MUST process the cookie-av as follows:
 
-    // 1. Let enforcement be "Default".
-    let enforcement = 'Default'
-
     const attributeValueLowercase = attributeValue.toLowerCase()
-    // 2. If cookie-av's attribute-value is a case-insensitive match for
-    //    "None", set enforcement to "None".
-    if (attributeValueLowercase.includes('none')) {
-      enforcement = 'None'
-    }
 
-    // 3. If cookie-av's attribute-value is a case-insensitive match for
-    //    "Strict", set enforcement to "Strict".
-    if (attributeValueLowercase.includes('strict')) {
-      enforcement = 'Strict'
+    // 1. If cookie-av's attribute-value is a case-insensitive match for
+    //    "None", append an attribute to the cookie-attribute-list with an
+    //    attribute-name of "SameSite" and an attribute-value of "None".
+    if (attributeValueLowercase === 'none') {
+      cookieAttributeList.sameSite = 'None'
+    } else if (attributeValueLowercase === 'strict') {
+      // 2. If cookie-av's attribute-value is a case-insensitive match for
+      //    "Strict", append an attribute to the cookie-attribute-list with
+      //    an attribute-name of "SameSite" and an attribute-value of
+      //    "Strict".
+      cookieAttributeList.sameSite = 'Strict'
+    } else if (attributeValueLowercase === 'lax') {
+      // 3. If cookie-av's attribute-value is a case-insensitive match for
+      //    "Lax", append an attribute to the cookie-attribute-list with an
+      //    attribute-name of "SameSite" and an attribute-value of "Lax".
+      cookieAttributeList.sameSite = 'Lax'
     }
-
-    // 4. If cookie-av's attribute-value is a case-insensitive match for
-    //    "Lax", set enforcement to "Lax".
-    if (attributeValueLowercase.includes('lax')) {
-      enforcement = 'Lax'
-    }
-
-    // 5. Append an attribute to the cookie-attribute-list with an
-    //    attribute-name of "SameSite" and an attribute-value of
-    //    enforcement.
-    cookieAttributeList.sameSite = enforcement
   } else {
     cookieAttributeList.unparsed ??= []
 
@@ -15865,7 +16029,7 @@ module.exports = {
 
 /***/ }),
 
-/***/ 7059:
+/***/ 6714:
 /***/ ((module) => {
 
 "use strict";
@@ -15976,7 +16140,7 @@ function validateCookiePath (path) {
 
     if (
       code < 0x20 || // exclude CTLs (0-31)
-      code === 0x7F || // DEL
+      code > 0x7E || // exclude DEL and non-ascii
       code === 0x3B // ;
     ) {
       throw new Error('Invalid cookie path')
@@ -15985,16 +16149,80 @@ function validateCookiePath (path) {
 }
 
 /**
- * I have no idea why these values aren't allowed to be honest,
- * but Deno tests these. - Khafra
+ * <let-dig> ::= <letter> | <digit>
+ *
+ * <letter> ::= any one of the 52 alphabetic characters A through Z in
+ * upper case and a through z in lower case
+ *
+ * <digit> ::= any one of the ten digits 0 through 9r
+ *
+ * @see https://www.rfc-editor.org/rfc/rfc1034#section-3.5
+ * @param {number} code
+ */
+function isLetterOrDigit (code) {
+  return (
+    (code >= 0x30 && code <= 0x39) || // 0-9
+    (code >= 0x41 && code <= 0x5A) || // A-Z
+    (code >= 0x61 && code <= 0x7A) // a-z
+  )
+}
+
+/**
+ * Validates a cookie domain against the "preferred name syntax".
+ *
+ * <domain>      ::= <subdomain> | " "
+ * <subdomain>   ::= <label> | <subdomain> "." <label>
+ * <label>       ::= <let-dig> [ [ <ldh-str> ] <let-dig> ]
+ * <ldh-str>     ::= <let-dig-hyp> | <let-dig-hyp> <ldh-str>
+ * <let-dig-hyp> ::= <let-dig> | "-"
+ *
+ * @see https://www.rfc-editor.org/rfc/rfc1034#section-3.5
+ * @see https://www.rfc-editor.org/rfc/rfc1123#section-2.1
+ * @see https://www.rfc-editor.org/rfc/rfc1035#section-2.3.4
  * @param {string} domain
  */
 function validateCookieDomain (domain) {
-  if (
-    domain.startsWith('-') ||
-    domain.endsWith('.') ||
-    domain.endsWith('-')
-  ) {
+  // <domain> ::= <subdomain> | " "
+  if (domain === ' ') {
+    return
+  }
+
+  if (domain.length > 255) {
+    throw new Error('Invalid cookie domain')
+  }
+
+  let labelLength = 0
+
+  for (let i = 0; i < domain.length; ++i) {
+    const code = domain.charCodeAt(i)
+
+    if (code === 0x2E) {
+      if (labelLength === 0) {
+        throw new Error('Invalid cookie domain')
+      }
+
+      if (domain.charCodeAt(i - 1) === 0x2D) { // "-"
+        throw new Error('Invalid cookie domain')
+      }
+
+      labelLength = 0
+      continue
+    }
+
+    if (labelLength === 0 && !isLetterOrDigit(code)) {
+      throw new Error('Invalid cookie domain')
+    }
+
+    if (!isLetterOrDigit(code) && code !== 0x2D) { // "-"
+      throw new Error('Invalid cookie domain')
+    }
+
+    if (++labelLength > 63) {
+      throw new Error('Invalid cookie domain')
+    }
+  }
+
+  if (labelLength === 0 || domain.charCodeAt(domain.length - 1) === 0x2D) { // "-"
     throw new Error('Invalid cookie domain')
   }
 }
@@ -16137,7 +16365,13 @@ function stringify (cookie) {
 
     const [key, ...value] = part.split('=')
 
-    out.push(`${key.trim()}=${value.join('=')}`)
+    const trimmedKey = key.trim()
+    const joinedValue = value.join('=')
+
+    validateCookieName(trimmedKey)
+    validateCookieValue(joinedValue)
+
+    out.push(`${trimmedKey}=${joinedValue}`)
   }
 
   return out.join('; ')
@@ -16155,13 +16389,13 @@ module.exports = {
 
 /***/ }),
 
-/***/ 465:
+/***/ 6960:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 "use strict";
 
 const { Transform } = __nccwpck_require__(7075)
-const { isASCIINumber, isValidLastEventId } = __nccwpck_require__(7869)
+const { isASCIINumber, isValidLastEventId } = __nccwpck_require__(8796)
 
 /**
  * @type {number[]} BOM
@@ -16561,23 +16795,23 @@ module.exports = {
 
 /***/ }),
 
-/***/ 8612:
+/***/ 1243:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 "use strict";
 
 
 const { pipeline } = __nccwpck_require__(7075)
-const { fetching } = __nccwpck_require__(9640)
-const { makeRequest } = __nccwpck_require__(3045)
-const { webidl } = __nccwpck_require__(8431)
-const { EventSourceStream } = __nccwpck_require__(465)
-const { parseMIMEType } = __nccwpck_require__(258)
-const { createFastMessageEvent } = __nccwpck_require__(9858)
-const { isNetworkError } = __nccwpck_require__(3009)
-const { delay } = __nccwpck_require__(7869)
-const { kEnumerableProperty } = __nccwpck_require__(1702)
-const { environmentSettingsObject } = __nccwpck_require__(2546)
+const { fetching } = __nccwpck_require__(7579)
+const { makeRequest } = __nccwpck_require__(8986)
+const { webidl } = __nccwpck_require__(1230)
+const { EventSourceStream } = __nccwpck_require__(6960)
+const { parseMIMEType } = __nccwpck_require__(1495)
+const { createFastMessageEvent } = __nccwpck_require__(3679)
+const { isNetworkError } = __nccwpck_require__(8548)
+const { delay } = __nccwpck_require__(8796)
+const { kEnumerableProperty } = __nccwpck_require__(5893)
+const { environmentSettingsObject } = __nccwpck_require__(9315)
 
 let experimentalWarned = false
 
@@ -17049,7 +17283,7 @@ module.exports = {
 
 /***/ }),
 
-/***/ 7869:
+/***/ 8796:
 /***/ ((module) => {
 
 "use strict";
@@ -17094,13 +17328,13 @@ module.exports = {
 
 /***/ }),
 
-/***/ 6110:
+/***/ 8059:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 "use strict";
 
 
-const util = __nccwpck_require__(1702)
+const util = __nccwpck_require__(5893)
 const {
   ReadableStreamFrom,
   isBlobLike,
@@ -17110,16 +17344,16 @@ const {
   fullyReadBody,
   extractMimeType,
   utf8DecodeBytes
-} = __nccwpck_require__(2546)
-const { FormData } = __nccwpck_require__(2044)
-const { kState } = __nccwpck_require__(6601)
-const { webidl } = __nccwpck_require__(8431)
+} = __nccwpck_require__(9315)
+const { FormData } = __nccwpck_require__(9761)
+const { kState } = __nccwpck_require__(6718)
+const { webidl } = __nccwpck_require__(1230)
 const { Blob } = __nccwpck_require__(4573)
 const assert = __nccwpck_require__(4589)
 const { isErrored, isDisturbed } = __nccwpck_require__(7075)
 const { isArrayBuffer } = __nccwpck_require__(3429)
-const { serializeAMimeType } = __nccwpck_require__(258)
-const { multipartFormDataParser } = __nccwpck_require__(7570)
+const { serializeAMimeType } = __nccwpck_require__(1495)
+const { multipartFormDataParser } = __nccwpck_require__(657)
 let random
 
 try {
@@ -17631,7 +17865,7 @@ module.exports = {
 
 /***/ }),
 
-/***/ 381:
+/***/ 4558:
 /***/ ((module) => {
 
 "use strict";
@@ -17763,7 +17997,7 @@ module.exports = {
 
 /***/ }),
 
-/***/ 258:
+/***/ 1495:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 "use strict";
@@ -18515,13 +18749,13 @@ module.exports = {
 
 /***/ }),
 
-/***/ 3699:
+/***/ 9574:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 "use strict";
 
 
-const { kConnected, kSize } = __nccwpck_require__(4469)
+const { kConnected, kSize } = __nccwpck_require__(8700)
 
 class CompatWeakRef {
   constructor (value) {
@@ -18569,15 +18803,15 @@ module.exports = function () {
 
 /***/ }),
 
-/***/ 3288:
+/***/ 9873:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 "use strict";
 
 
 const { Blob, File } = __nccwpck_require__(4573)
-const { kState } = __nccwpck_require__(6601)
-const { webidl } = __nccwpck_require__(8431)
+const { kState } = __nccwpck_require__(6718)
+const { webidl } = __nccwpck_require__(1230)
 
 // TODO(@KhafraDev): remove
 class FileLike {
@@ -18703,17 +18937,17 @@ module.exports = { FileLike, isFileLike }
 
 /***/ }),
 
-/***/ 7570:
+/***/ 657:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 "use strict";
 
 
-const { isUSVString, bufferToLowerCasedHeaderName } = __nccwpck_require__(1702)
-const { utf8DecodeBytes } = __nccwpck_require__(2546)
-const { HTTP_TOKEN_CODEPOINTS, isomorphicDecode } = __nccwpck_require__(258)
-const { isFileLike } = __nccwpck_require__(3288)
-const { makeEntry } = __nccwpck_require__(2044)
+const { isUSVString, bufferToLowerCasedHeaderName } = __nccwpck_require__(5893)
+const { utf8DecodeBytes } = __nccwpck_require__(9315)
+const { HTTP_TOKEN_CODEPOINTS, isomorphicDecode } = __nccwpck_require__(1495)
+const { isFileLike } = __nccwpck_require__(9873)
+const { makeEntry } = __nccwpck_require__(9761)
 const assert = __nccwpck_require__(4589)
 const { File: NodeFile } = __nccwpck_require__(4573)
 
@@ -19185,17 +19419,17 @@ module.exports = {
 
 /***/ }),
 
-/***/ 2044:
+/***/ 9761:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 "use strict";
 
 
-const { isBlobLike, iteratorMixin } = __nccwpck_require__(2546)
-const { kState } = __nccwpck_require__(6601)
-const { kEnumerableProperty } = __nccwpck_require__(1702)
-const { FileLike, isFileLike } = __nccwpck_require__(3288)
-const { webidl } = __nccwpck_require__(8431)
+const { isBlobLike, iteratorMixin } = __nccwpck_require__(9315)
+const { kState } = __nccwpck_require__(6718)
+const { kEnumerableProperty } = __nccwpck_require__(5893)
+const { FileLike, isFileLike } = __nccwpck_require__(9873)
+const { webidl } = __nccwpck_require__(1230)
 const { File: NativeFile } = __nccwpck_require__(4573)
 const nodeUtil = __nccwpck_require__(7975)
 
@@ -19445,7 +19679,7 @@ module.exports = { FormData, makeEntry }
 
 /***/ }),
 
-/***/ 561:
+/***/ 2620:
 /***/ ((module) => {
 
 "use strict";
@@ -19493,7 +19727,7 @@ module.exports = {
 
 /***/ }),
 
-/***/ 3210:
+/***/ 1405:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 "use strict";
@@ -19501,14 +19735,14 @@ module.exports = {
 
 
 
-const { kConstruct } = __nccwpck_require__(4469)
-const { kEnumerableProperty } = __nccwpck_require__(1702)
+const { kConstruct } = __nccwpck_require__(8700)
+const { kEnumerableProperty } = __nccwpck_require__(5893)
 const {
   iteratorMixin,
   isValidHeaderName,
   isValidHeaderValue
-} = __nccwpck_require__(2546)
-const { webidl } = __nccwpck_require__(8431)
+} = __nccwpck_require__(9315)
+const { webidl } = __nccwpck_require__(1230)
 const assert = __nccwpck_require__(4589)
 const util = __nccwpck_require__(7975)
 
@@ -20188,7 +20422,7 @@ module.exports = {
 
 /***/ }),
 
-/***/ 9640:
+/***/ 7579:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 "use strict";
@@ -20202,9 +20436,9 @@ const {
   filterResponse,
   makeResponse,
   fromInnerResponse
-} = __nccwpck_require__(3009)
-const { HeadersList } = __nccwpck_require__(3210)
-const { Request, cloneRequest } = __nccwpck_require__(3045)
+} = __nccwpck_require__(8548)
+const { HeadersList } = __nccwpck_require__(1405)
+const { Request, cloneRequest } = __nccwpck_require__(8986)
 const zlib = __nccwpck_require__(8522)
 const {
   bytesMatch,
@@ -20240,23 +20474,23 @@ const {
   buildContentRange,
   createInflate,
   extractMimeType
-} = __nccwpck_require__(2546)
-const { kState, kDispatcher } = __nccwpck_require__(6601)
+} = __nccwpck_require__(9315)
+const { kState, kDispatcher } = __nccwpck_require__(6718)
 const assert = __nccwpck_require__(4589)
-const { safelyExtractBody, extractBody } = __nccwpck_require__(6110)
+const { safelyExtractBody, extractBody } = __nccwpck_require__(8059)
 const {
   redirectStatusSet,
   nullBodyStatus,
   safeMethodsSet,
   requestBodyHeader,
   subresourceSet
-} = __nccwpck_require__(381)
+} = __nccwpck_require__(4558)
 const EE = __nccwpck_require__(8474)
 const { Readable, pipeline, finished } = __nccwpck_require__(7075)
-const { addAbortListener, isErrored, isReadable, bufferToLowerCasedHeaderName } = __nccwpck_require__(1702)
-const { dataURLProcessor, serializeAMimeType, minimizeSupportedMimeType } = __nccwpck_require__(258)
-const { getGlobalDispatcher } = __nccwpck_require__(2603)
-const { webidl } = __nccwpck_require__(8431)
+const { addAbortListener, isErrored, isReadable, bufferToLowerCasedHeaderName } = __nccwpck_require__(5893)
+const { dataURLProcessor, serializeAMimeType, minimizeSupportedMimeType } = __nccwpck_require__(1495)
+const { getGlobalDispatcher } = __nccwpck_require__(2686)
+const { webidl } = __nccwpck_require__(1230)
 const { STATUS_CODES } = __nccwpck_require__(7067)
 const GET_OR_HEAD = ['GET', 'HEAD']
 
@@ -22468,7 +22702,7 @@ module.exports = {
 
 /***/ }),
 
-/***/ 3045:
+/***/ 8986:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 "use strict";
@@ -22476,16 +22710,16 @@ module.exports = {
 
 
 
-const { extractBody, mixinBody, cloneBody, bodyUnusable } = __nccwpck_require__(6110)
-const { Headers, fill: fillHeaders, HeadersList, setHeadersGuard, getHeadersGuard, setHeadersList, getHeadersList } = __nccwpck_require__(3210)
-const { FinalizationRegistry } = __nccwpck_require__(3699)()
-const util = __nccwpck_require__(1702)
+const { extractBody, mixinBody, cloneBody, bodyUnusable } = __nccwpck_require__(8059)
+const { Headers, fill: fillHeaders, HeadersList, setHeadersGuard, getHeadersGuard, setHeadersList, getHeadersList } = __nccwpck_require__(1405)
+const { FinalizationRegistry } = __nccwpck_require__(9574)()
+const util = __nccwpck_require__(5893)
 const nodeUtil = __nccwpck_require__(7975)
 const {
   isValidHTTPToken,
   sameOrigin,
   environmentSettingsObject
-} = __nccwpck_require__(2546)
+} = __nccwpck_require__(9315)
 const {
   forbiddenMethodsSet,
   corsSafeListedMethodsSet,
@@ -22495,12 +22729,12 @@ const {
   requestCredentials,
   requestCache,
   requestDuplex
-} = __nccwpck_require__(381)
+} = __nccwpck_require__(4558)
 const { kEnumerableProperty, normalizedMethodRecordsBase, normalizedMethodRecords } = util
-const { kHeaders, kSignal, kState, kDispatcher } = __nccwpck_require__(6601)
-const { webidl } = __nccwpck_require__(8431)
-const { URLSerializer } = __nccwpck_require__(258)
-const { kConstruct } = __nccwpck_require__(4469)
+const { kHeaders, kSignal, kState, kDispatcher } = __nccwpck_require__(6718)
+const { webidl } = __nccwpck_require__(1230)
+const { URLSerializer } = __nccwpck_require__(1495)
+const { kConstruct } = __nccwpck_require__(8700)
 const assert = __nccwpck_require__(4589)
 const { getMaxListeners, setMaxListeners, getEventListeners, defaultMaxListeners } = __nccwpck_require__(8474)
 
@@ -23513,15 +23747,15 @@ module.exports = { Request, makeRequest, fromInnerRequest, cloneRequest }
 
 /***/ }),
 
-/***/ 3009:
+/***/ 8548:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 "use strict";
 
 
-const { Headers, HeadersList, fill, getHeadersGuard, setHeadersGuard, setHeadersList } = __nccwpck_require__(3210)
-const { extractBody, cloneBody, mixinBody, hasFinalizationRegistry, streamRegistry, bodyUnusable } = __nccwpck_require__(6110)
-const util = __nccwpck_require__(1702)
+const { Headers, HeadersList, fill, getHeadersGuard, setHeadersGuard, setHeadersList } = __nccwpck_require__(1405)
+const { extractBody, cloneBody, mixinBody, hasFinalizationRegistry, streamRegistry, bodyUnusable } = __nccwpck_require__(8059)
+const util = __nccwpck_require__(5893)
 const nodeUtil = __nccwpck_require__(7975)
 const { kEnumerableProperty } = util
 const {
@@ -23533,16 +23767,16 @@ const {
   isErrorLike,
   isomorphicEncode,
   environmentSettingsObject: relevantRealm
-} = __nccwpck_require__(2546)
+} = __nccwpck_require__(9315)
 const {
   redirectStatusSet,
   nullBodyStatus
-} = __nccwpck_require__(381)
-const { kState, kHeaders } = __nccwpck_require__(6601)
-const { webidl } = __nccwpck_require__(8431)
-const { FormData } = __nccwpck_require__(2044)
-const { URLSerializer } = __nccwpck_require__(258)
-const { kConstruct } = __nccwpck_require__(4469)
+} = __nccwpck_require__(4558)
+const { kState, kHeaders } = __nccwpck_require__(6718)
+const { webidl } = __nccwpck_require__(1230)
+const { FormData } = __nccwpck_require__(9761)
+const { URLSerializer } = __nccwpck_require__(1495)
+const { kConstruct } = __nccwpck_require__(8700)
 const assert = __nccwpck_require__(4589)
 const { types } = __nccwpck_require__(7975)
 
@@ -24131,7 +24365,7 @@ module.exports = {
 
 /***/ }),
 
-/***/ 6601:
+/***/ 6718:
 /***/ ((module) => {
 
 "use strict";
@@ -24148,7 +24382,7 @@ module.exports = {
 
 /***/ }),
 
-/***/ 2546:
+/***/ 9315:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 "use strict";
@@ -24156,14 +24390,14 @@ module.exports = {
 
 const { Transform } = __nccwpck_require__(7075)
 const zlib = __nccwpck_require__(8522)
-const { redirectStatusSet, referrerPolicySet: referrerPolicyTokens, badPortsSet } = __nccwpck_require__(381)
-const { getGlobalOrigin } = __nccwpck_require__(561)
-const { collectASequenceOfCodePoints, collectAnHTTPQuotedString, removeChars, parseMIMEType } = __nccwpck_require__(258)
+const { redirectStatusSet, referrerPolicySet: referrerPolicyTokens, badPortsSet } = __nccwpck_require__(4558)
+const { getGlobalOrigin } = __nccwpck_require__(2620)
+const { collectASequenceOfCodePoints, collectAnHTTPQuotedString, removeChars, parseMIMEType } = __nccwpck_require__(1495)
 const { performance } = __nccwpck_require__(643)
-const { isBlobLike, ReadableStreamFrom, isValidHTTPToken, normalizedMethodRecordsBase } = __nccwpck_require__(1702)
+const { isBlobLike, ReadableStreamFrom, isValidHTTPToken, normalizedMethodRecordsBase } = __nccwpck_require__(5893)
 const assert = __nccwpck_require__(4589)
 const { isUint8Array } = __nccwpck_require__(3429)
-const { webidl } = __nccwpck_require__(8431)
+const { webidl } = __nccwpck_require__(1230)
 
 let supportedHashes = []
 
@@ -25788,7 +26022,7 @@ module.exports = {
 
 /***/ }),
 
-/***/ 8431:
+/***/ 1230:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 "use strict";
@@ -25796,7 +26030,7 @@ module.exports = {
 
 const { types, inspect } = __nccwpck_require__(7975)
 const { markAsUncloneable } = __nccwpck_require__(5919)
-const { toUSVString } = __nccwpck_require__(1702)
+const { toUSVString } = __nccwpck_require__(5893)
 
 /** @type {import('../../../types/webidl').Webidl} */
 const webidl = {}
@@ -26491,7 +26725,7 @@ module.exports = {
 
 /***/ }),
 
-/***/ 8249:
+/***/ 108:
 /***/ ((module) => {
 
 "use strict";
@@ -26789,7 +27023,7 @@ module.exports = {
 
 /***/ }),
 
-/***/ 3453:
+/***/ 2160:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 "use strict";
@@ -26799,16 +27033,16 @@ const {
   staticPropertyDescriptors,
   readOperation,
   fireAProgressEvent
-} = __nccwpck_require__(9176)
+} = __nccwpck_require__(6405)
 const {
   kState,
   kError,
   kResult,
   kEvents,
   kAborted
-} = __nccwpck_require__(3747)
-const { webidl } = __nccwpck_require__(8431)
-const { kEnumerableProperty } = __nccwpck_require__(1702)
+} = __nccwpck_require__(6044)
+const { webidl } = __nccwpck_require__(1230)
+const { kEnumerableProperty } = __nccwpck_require__(5893)
 
 class FileReader extends EventTarget {
   constructor () {
@@ -27141,13 +27375,13 @@ module.exports = {
 
 /***/ }),
 
-/***/ 9759:
+/***/ 3160:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 "use strict";
 
 
-const { webidl } = __nccwpck_require__(8431)
+const { webidl } = __nccwpck_require__(1230)
 
 const kState = Symbol('ProgressEvent state')
 
@@ -27227,7 +27461,7 @@ module.exports = {
 
 /***/ }),
 
-/***/ 3747:
+/***/ 6044:
 /***/ ((module) => {
 
 "use strict";
@@ -27245,7 +27479,7 @@ module.exports = {
 
 /***/ }),
 
-/***/ 9176:
+/***/ 6405:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 "use strict";
@@ -27257,10 +27491,10 @@ const {
   kResult,
   kAborted,
   kLastProgressEventFired
-} = __nccwpck_require__(3747)
-const { ProgressEvent } = __nccwpck_require__(9759)
-const { getEncoding } = __nccwpck_require__(8249)
-const { serializeAMimeType, parseMIMEType } = __nccwpck_require__(258)
+} = __nccwpck_require__(6044)
+const { ProgressEvent } = __nccwpck_require__(3160)
+const { getEncoding } = __nccwpck_require__(108)
+const { serializeAMimeType, parseMIMEType } = __nccwpck_require__(1495)
 const { types } = __nccwpck_require__(7975)
 const { StringDecoder } = __nccwpck_require__(3193)
 const { btoa } = __nccwpck_require__(4573)
@@ -27644,28 +27878,28 @@ module.exports = {
 
 /***/ }),
 
-/***/ 1852:
+/***/ 6886:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 "use strict";
 
 
-const { uid, states, sentCloseFrameState, emptyBuffer, opcodes } = __nccwpck_require__(5958)
+const { uid, states, sentCloseFrameState, emptyBuffer, opcodes } = __nccwpck_require__(7753)
 const {
   kReadyState,
   kSentClose,
   kByteParser,
   kReceivedClose,
   kResponse
-} = __nccwpck_require__(8982)
-const { fireEvent, failWebsocketConnection, isClosing, isClosed, isEstablished, parseExtensions } = __nccwpck_require__(9083)
-const { channels } = __nccwpck_require__(9304)
-const { CloseEvent } = __nccwpck_require__(9858)
-const { makeRequest } = __nccwpck_require__(3045)
-const { fetching } = __nccwpck_require__(9640)
-const { Headers, getHeadersList } = __nccwpck_require__(3210)
-const { getDecodeSplit } = __nccwpck_require__(2546)
-const { WebsocketFrameSend } = __nccwpck_require__(7854)
+} = __nccwpck_require__(613)
+const { fireEvent, failWebsocketConnection, isClosing, isClosed, isEstablished, parseExtensions } = __nccwpck_require__(4134)
+const { channels } = __nccwpck_require__(913)
+const { CloseEvent } = __nccwpck_require__(3679)
+const { makeRequest } = __nccwpck_require__(8986)
+const { fetching } = __nccwpck_require__(7579)
+const { Headers, getHeadersList } = __nccwpck_require__(1405)
+const { getDecodeSplit } = __nccwpck_require__(9315)
+const { WebsocketFrameSend } = __nccwpck_require__(8562)
 
 /** @type {import('crypto')} */
 let crypto
@@ -28023,7 +28257,7 @@ module.exports = {
 
 /***/ }),
 
-/***/ 5958:
+/***/ 7753:
 /***/ ((module) => {
 
 "use strict";
@@ -28097,15 +28331,15 @@ module.exports = {
 
 /***/ }),
 
-/***/ 9858:
+/***/ 3679:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 "use strict";
 
 
-const { webidl } = __nccwpck_require__(8431)
-const { kEnumerableProperty } = __nccwpck_require__(1702)
-const { kConstruct } = __nccwpck_require__(4469)
+const { webidl } = __nccwpck_require__(1230)
+const { kEnumerableProperty } = __nccwpck_require__(5893)
+const { kConstruct } = __nccwpck_require__(8700)
 const { MessagePort } = __nccwpck_require__(5919)
 
 /**
@@ -28434,13 +28668,13 @@ module.exports = {
 
 /***/ }),
 
-/***/ 7854:
+/***/ 8562:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 "use strict";
 
 
-const { maxUnsigned16Bit } = __nccwpck_require__(5958)
+const { maxUnsigned16Bit } = __nccwpck_require__(7753)
 
 const BUFFER_SIZE = 16386
 
@@ -28538,15 +28772,15 @@ module.exports = {
 
 /***/ }),
 
-/***/ 1547:
+/***/ 9946:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 "use strict";
 
 
 const { createInflateRaw, Z_DEFAULT_WINDOWBITS } = __nccwpck_require__(8522)
-const { isValidClientWindowBits } = __nccwpck_require__(9083)
-const { MessageSizeExceededError } = __nccwpck_require__(2229)
+const { isValidClientWindowBits } = __nccwpck_require__(4134)
+const { MessageSizeExceededError } = __nccwpck_require__(6554)
 
 const tail = Buffer.from([0x00, 0x00, 0xff, 0xff])
 const kBuffer = Symbol('kBuffer')
@@ -28646,7 +28880,7 @@ module.exports = { PerMessageDeflate }
 
 /***/ }),
 
-/***/ 3838:
+/***/ 5827:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 "use strict";
@@ -28654,9 +28888,9 @@ module.exports = { PerMessageDeflate }
 
 const { Writable } = __nccwpck_require__(7075)
 const assert = __nccwpck_require__(4589)
-const { parserStates, opcodes, states, emptyBuffer, sentCloseFrameState } = __nccwpck_require__(5958)
-const { kReadyState, kSentClose, kResponse, kReceivedClose } = __nccwpck_require__(8982)
-const { channels } = __nccwpck_require__(9304)
+const { parserStates, opcodes, states, emptyBuffer, sentCloseFrameState } = __nccwpck_require__(7753)
+const { kReadyState, kSentClose, kResponse, kReceivedClose } = __nccwpck_require__(613)
+const { channels } = __nccwpck_require__(913)
 const {
   isValidStatusCode,
   isValidOpcode,
@@ -28666,11 +28900,16 @@ const {
   isControlFrame,
   isTextBinaryFrame,
   isContinuationFrame
-} = __nccwpck_require__(9083)
-const { WebsocketFrameSend } = __nccwpck_require__(7854)
-const { closeWebSocketConnection } = __nccwpck_require__(1852)
-const { PerMessageDeflate } = __nccwpck_require__(1547)
-const { MessageSizeExceededError } = __nccwpck_require__(2229)
+} = __nccwpck_require__(4134)
+const { WebsocketFrameSend } = __nccwpck_require__(8562)
+const { closeWebSocketConnection } = __nccwpck_require__(6886)
+const { PerMessageDeflate } = __nccwpck_require__(9946)
+const { MessageSizeExceededError } = __nccwpck_require__(6554)
+
+function failWebsocketConnectionWithCode (ws, code, reason) {
+  closeWebSocketConnection(ws, code, reason, Buffer.byteLength(reason))
+  failWebsocketConnection(ws, reason)
+}
 
 // This code was influenced by ws released under the MIT license.
 // Copyright (c) 2011 Einar Otto Stangvik <einaros@gmail.com>
@@ -28692,18 +28931,22 @@ class ByteParser extends Writable {
   #extensions
 
   /** @type {number} */
+  #maxFragments
+
+  /** @type {number} */
   #maxPayloadSize
 
   /**
    * @param {import('./websocket').WebSocket} ws
    * @param {Map<string, string>|null} extensions
-   * @param {{ maxPayloadSize?: number }} [options]
+   * @param {{ maxFragments?: number, maxPayloadSize?: number }} [options]
    */
   constructor (ws, extensions, options = {}) {
     super()
 
     this.ws = ws
     this.#extensions = extensions == null ? new Map() : extensions
+    this.#maxFragments = options.maxFragments ?? 0
     this.#maxPayloadSize = options.maxPayloadSize ?? 0
 
     if (this.#extensions.has('permessage-deflate')) {
@@ -28727,9 +28970,9 @@ class ByteParser extends Writable {
     if (
       this.#maxPayloadSize > 0 &&
       !isControlFrame(this.#info.opcode) &&
-      this.#info.payloadLength > this.#maxPayloadSize
+      this.#info.payloadLength + this.#fragmentsBytes > this.#maxPayloadSize
     ) {
-      failWebsocketConnection(this.ws, 'Payload size exceeds maximum allowed size')
+      failWebsocketConnectionWithCode(this.ws, 1009, 'Payload size exceeds maximum allowed size')
       return false
     }
 
@@ -28894,10 +29137,12 @@ class ByteParser extends Writable {
           this.#state = parserStates.INFO
         } else {
           if (!this.#info.compressed) {
-            this.writeFragments(body)
+            if (!this.writeFragments(body)) {
+              return
+            }
 
             if (this.#maxPayloadSize > 0 && this.#fragmentsBytes > this.#maxPayloadSize) {
-              failWebsocketConnection(this.ws, new MessageSizeExceededError().message)
+              failWebsocketConnectionWithCode(this.ws, 1009, new MessageSizeExceededError().message)
               return
             }
 
@@ -28916,14 +29161,17 @@ class ByteParser extends Writable {
               this.#info.fin,
               (error, data) => {
                 if (error) {
-                  failWebsocketConnection(this.ws, error.message)
+                  const code = error instanceof MessageSizeExceededError ? 1009 : 1007
+                  failWebsocketConnectionWithCode(this.ws, code, error.message)
                   return
                 }
 
-                this.writeFragments(data)
+                if (!this.writeFragments(data)) {
+                  return
+                }
 
                 if (this.#maxPayloadSize > 0 && this.#fragmentsBytes > this.#maxPayloadSize) {
-                  failWebsocketConnection(this.ws, new MessageSizeExceededError().message)
+                  failWebsocketConnectionWithCode(this.ws, 1009, new MessageSizeExceededError().message)
                   return
                 }
 
@@ -28993,8 +29241,17 @@ class ByteParser extends Writable {
   }
 
   writeFragments (fragment) {
+    if (
+      this.#maxFragments > 0 &&
+      this.#fragments.length === this.#maxFragments
+    ) {
+      failWebsocketConnectionWithCode(this.ws, 1008, 'Too many message fragments')
+      return false
+    }
+
     this.#fragmentsBytes += fragment.length
     this.#fragments.push(fragment)
+    return true
   }
 
   consumeFragments () {
@@ -29144,15 +29401,15 @@ module.exports = {
 
 /***/ }),
 
-/***/ 2354:
+/***/ 3279:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 "use strict";
 
 
-const { WebsocketFrameSend } = __nccwpck_require__(7854)
-const { opcodes, sendHints } = __nccwpck_require__(5958)
-const FixedQueue = __nccwpck_require__(50)
+const { WebsocketFrameSend } = __nccwpck_require__(8562)
+const { opcodes, sendHints } = __nccwpck_require__(7753)
+const FixedQueue = __nccwpck_require__(2547)
 
 /** @type {typeof Uint8Array} */
 const FastBuffer = Buffer[Symbol.species]
@@ -29256,7 +29513,7 @@ module.exports = { SendQueue }
 
 /***/ }),
 
-/***/ 8982:
+/***/ 613:
 /***/ ((module) => {
 
 "use strict";
@@ -29276,17 +29533,17 @@ module.exports = {
 
 /***/ }),
 
-/***/ 9083:
+/***/ 4134:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 "use strict";
 
 
-const { kReadyState, kController, kResponse, kBinaryType, kWebSocketURL } = __nccwpck_require__(8982)
-const { states, opcodes } = __nccwpck_require__(5958)
-const { ErrorEvent, createFastMessageEvent } = __nccwpck_require__(9858)
+const { kReadyState, kController, kResponse, kBinaryType, kWebSocketURL } = __nccwpck_require__(613)
+const { states, opcodes } = __nccwpck_require__(7753)
+const { ErrorEvent, createFastMessageEvent } = __nccwpck_require__(3679)
 const { isUtf8 } = __nccwpck_require__(4573)
-const { collectASequenceOfCodePointsFast, removeHTTPWhitespace } = __nccwpck_require__(258)
+const { collectASequenceOfCodePointsFast, removeHTTPWhitespace } = __nccwpck_require__(1495)
 
 /* globals Blob */
 
@@ -29606,16 +29863,16 @@ module.exports = {
 
 /***/ }),
 
-/***/ 3380:
+/***/ 8435:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 "use strict";
 
 
-const { webidl } = __nccwpck_require__(8431)
-const { URLSerializer } = __nccwpck_require__(258)
-const { environmentSettingsObject } = __nccwpck_require__(2546)
-const { staticPropertyDescriptors, states, sentCloseFrameState, sendHints } = __nccwpck_require__(5958)
+const { webidl } = __nccwpck_require__(1230)
+const { URLSerializer } = __nccwpck_require__(1495)
+const { environmentSettingsObject } = __nccwpck_require__(9315)
+const { staticPropertyDescriptors, states, sentCloseFrameState, sendHints } = __nccwpck_require__(7753)
 const {
   kWebSocketURL,
   kReadyState,
@@ -29624,21 +29881,21 @@ const {
   kResponse,
   kSentClose,
   kByteParser
-} = __nccwpck_require__(8982)
+} = __nccwpck_require__(613)
 const {
   isConnecting,
   isEstablished,
   isClosing,
   isValidSubprotocol,
   fireEvent
-} = __nccwpck_require__(9083)
-const { establishWebSocketConnection, closeWebSocketConnection } = __nccwpck_require__(1852)
-const { ByteParser } = __nccwpck_require__(3838)
-const { kEnumerableProperty, isBlobLike } = __nccwpck_require__(1702)
-const { getGlobalDispatcher } = __nccwpck_require__(2603)
+} = __nccwpck_require__(4134)
+const { establishWebSocketConnection, closeWebSocketConnection } = __nccwpck_require__(6886)
+const { ByteParser } = __nccwpck_require__(5827)
+const { kEnumerableProperty, isBlobLike } = __nccwpck_require__(5893)
+const { getGlobalDispatcher } = __nccwpck_require__(2686)
 const { types } = __nccwpck_require__(7975)
-const { ErrorEvent, CloseEvent } = __nccwpck_require__(9858)
-const { SendQueue } = __nccwpck_require__(2354)
+const { ErrorEvent, CloseEvent } = __nccwpck_require__(3679)
+const { SendQueue } = __nccwpck_require__(3279)
 
 // https://websockets.spec.whatwg.org/#interface-definition
 class WebSocket extends EventTarget {
@@ -30047,9 +30304,12 @@ class WebSocket extends EventTarget {
     // once this happens, the connection is open
     this[kResponse] = response
 
-    const maxPayloadSize = this[kController]?.dispatcher?.webSocketOptions?.maxPayloadSize
+    const webSocketOptions = this[kController]?.dispatcher?.webSocketOptions
+    const maxFragments = webSocketOptions?.maxFragments
+    const maxPayloadSize = webSocketOptions?.maxPayloadSize
 
     const parser = new ByteParser(this, parsedExtensions, {
+      maxFragments,
       maxPayloadSize
     })
     parser.on('drain', onParserDrain)
@@ -30430,181 +30690,181 @@ module.exports = require("util");
 
 /***/ }),
 
-/***/ 975:
-/***/ ((module) => {
+/***/ 7997:
+/***/ ((__unused_webpack_module, exports) => {
 
 "use strict";
 var __webpack_unused_export__;
 
-
-const NullObject = function NullObject () { }
-NullObject.prototype = Object.create(null)
-
-/**
- * RegExp to match *( ";" parameter ) in RFC 7231 sec 3.1.1.1
- *
- * parameter     = token "=" ( token / quoted-string )
- * token         = 1*tchar
- * tchar         = "!" / "#" / "$" / "%" / "&" / "'" / "*"
- *               / "+" / "-" / "." / "^" / "_" / "`" / "|" / "~"
- *               / DIGIT / ALPHA
- *               ; any VCHAR, except delimiters
- * quoted-string = DQUOTE *( qdtext / quoted-pair ) DQUOTE
- * qdtext        = HTAB / SP / %x21 / %x23-5B / %x5D-7E / obs-text
- * obs-text      = %x80-FF
- * quoted-pair   = "\" ( HTAB / SP / VCHAR / obs-text )
+/*!
+ * content-type
+ * Copyright(c) 2015 Douglas Christopher Wilson
+ * MIT Licensed
  */
-const paramRE = /; *([!#$%&'*+.^\w`|~-]+)=("(?:[\v\u0020\u0021\u0023-\u005b\u005d-\u007e\u0080-\u00ff]|\\[\v\u0020-\u00ff])*"|[!#$%&'*+.^\w`|~-]+) */gu
-
+__webpack_unused_export__ = ({ value: true });
+__webpack_unused_export__ = format;
+exports.qg = parse;
+const TEXT_REGEXP = /^[\u0009\u0020-\u007e\u0080-\u00ff]*$/;
+const TOKEN_REGEXP = /^[!#$%&'*+.^_`|~0-9A-Za-z-]+$/;
 /**
- * RegExp to match quoted-pair in RFC 7230 sec 3.2.6
- *
- * quoted-pair = "\" ( HTAB / SP / VCHAR / obs-text )
- * obs-text    = %x80-FF
+ * RegExp to match chars that must be quoted-pair in RFC 9110 sec 5.6.4
  */
-const quotedPairRE = /\\([\v\u0020-\u00ff])/gu
-
+const QUOTE_REGEXP = /[\\"]/g;
 /**
- * RegExp to match type in RFC 7231 sec 3.1.1.1
+ * RegExp to match type in RFC 9110 sec 8.3.1
  *
  * media-type = type "/" subtype
  * type       = token
  * subtype    = token
  */
-const mediaTypeRE = /^[!#$%&'*+.^\w|~-]+\/[!#$%&'*+.^\w|~-]+$/u
-
-// default ContentType to prevent repeated object creation
-const defaultContentType = { type: '', parameters: new NullObject() }
-Object.freeze(defaultContentType.parameters)
-Object.freeze(defaultContentType)
-
+const TYPE_REGEXP = /^[!#$%&'*+.^_`|~0-9A-Za-z-]+\/[!#$%&'*+.^_`|~0-9A-Za-z-]+$/;
 /**
- * Parse media type to object.
- *
- * @param {string|object} header
- * @return {Object}
- * @public
+ * Null object perf optimization. Faster than `Object.create(null)` and `{ __proto__: null }`.
  */
-
-function parse (header) {
-  if (typeof header !== 'string') {
-    throw new TypeError('argument header is required and must be a string')
-  }
-
-  let index = header.indexOf(';')
-  const type = index !== -1
-    ? header.slice(0, index).trim()
-    : header.trim()
-
-  if (mediaTypeRE.test(type) === false) {
-    throw new TypeError('invalid media type')
-  }
-
-  const result = {
-    type: type.toLowerCase(),
-    parameters: new NullObject()
-  }
-
-  // parse parameters
-  if (index === -1) {
-    return result
-  }
-
-  let key
-  let match
-  let value
-
-  paramRE.lastIndex = index
-
-  while ((match = paramRE.exec(header))) {
-    if (match.index !== index) {
-      throw new TypeError('invalid parameter format')
+const NullObject = /* @__PURE__ */ (() => {
+    const C = function () { };
+    C.prototype = Object.create(null);
+    return C;
+})();
+/**
+ * Format an object into a `Content-Type` header.
+ */
+function format(obj) {
+    const { type, parameters } = obj;
+    if (!type || !TYPE_REGEXP.test(type)) {
+        throw new TypeError(`Invalid type: ${type}`);
     }
-
-    index += match[0].length
-    key = match[1].toLowerCase()
-    value = match[2]
-
-    if (value[0] === '"') {
-      // remove quotes and escapes
-      value = value
-        .slice(1, value.length - 1)
-
-      quotedPairRE.test(value) && (value = value.replace(quotedPairRE, '$1'))
+    let result = type;
+    if (parameters) {
+        for (const param of Object.keys(parameters)) {
+            if (!TOKEN_REGEXP.test(param)) {
+                throw new TypeError(`Invalid parameter name: ${param}`);
+            }
+            result += `; ${param}=${qstring(parameters[param])}`;
+        }
     }
-
-    result.parameters[key] = value
-  }
-
-  if (index !== header.length) {
-    throw new TypeError('invalid parameter format')
-  }
-
-  return result
+    return result;
 }
-
-function safeParse (header) {
-  if (typeof header !== 'string') {
-    return defaultContentType
-  }
-
-  let index = header.indexOf(';')
-  const type = index !== -1
-    ? header.slice(0, index).trim()
-    : header.trim()
-
-  if (mediaTypeRE.test(type) === false) {
-    return defaultContentType
-  }
-
-  const result = {
-    type: type.toLowerCase(),
-    parameters: new NullObject()
-  }
-
-  // parse parameters
-  if (index === -1) {
-    return result
-  }
-
-  let key
-  let match
-  let value
-
-  paramRE.lastIndex = index
-
-  while ((match = paramRE.exec(header))) {
-    if (match.index !== index) {
-      return defaultContentType
-    }
-
-    index += match[0].length
-    key = match[1].toLowerCase()
-    value = match[2]
-
-    if (value[0] === '"') {
-      // remove quotes and escapes
-      value = value
-        .slice(1, value.length - 1)
-
-      quotedPairRE.test(value) && (value = value.replace(quotedPairRE, '$1'))
-    }
-
-    result.parameters[key] = value
-  }
-
-  if (index !== header.length) {
-    return defaultContentType
-  }
-
-  return result
+/**
+ * Parse a `Content-Type` header.
+ */
+function parse(header, options) {
+    const len = header.length;
+    let index = skipOWS(header, 0, len);
+    const valueStart = index;
+    index = skipValue(header, index, len);
+    const valueEnd = trailingOWS(header, valueStart, index);
+    const type = header.slice(valueStart, valueEnd).toLowerCase();
+    const parameters = options?.parameters === false
+        ? new NullObject()
+        : parseParameters(header, index, len);
+    return { type, parameters };
 }
-
-__webpack_unused_export__ = { parse, safeParse }
-__webpack_unused_export__ = parse
-module.exports.xL = safeParse
-__webpack_unused_export__ = defaultContentType
-
+const SP = 32; // " "
+const HTAB = 9; // "\t"
+const SEMI = 59; // ";"
+const EQ = 61; // "="
+const DQUOTE = 34; // '"'
+const BSLASH = 92; // "\\"
+/**
+ * Parses the parameters of a `Content-Type` header starting at the given index.
+ */
+function parseParameters(header, index, len) {
+    const parameters = new NullObject();
+    parameter: while (index < len) {
+        index = skipOWS(header, index + 1 /* Skip over ; */, len);
+        const keyStart = index;
+        while (index < len) {
+            const code = header.charCodeAt(index);
+            if (code === SEMI)
+                continue parameter;
+            if (code === EQ) {
+                const keyEnd = trailingOWS(header, keyStart, index);
+                const key = header.slice(keyStart, keyEnd).toLowerCase();
+                index = skipOWS(header, index + 1, len);
+                if (index < len && header.charCodeAt(index) === DQUOTE) {
+                    index++;
+                    let value = "";
+                    while (index < len) {
+                        const code = header.charCodeAt(index++);
+                        if (code === DQUOTE) {
+                            index = skipValue(header, index, len);
+                            if (parameters[key] === undefined)
+                                parameters[key] = value;
+                            break;
+                        }
+                        if (code === BSLASH && index < len) {
+                            value += header[index++];
+                            continue;
+                        }
+                        value += String.fromCharCode(code);
+                    }
+                    continue parameter;
+                }
+                const valueStart = index;
+                index = skipValue(header, index, len);
+                if (parameters[key] === undefined) {
+                    const valueEnd = trailingOWS(header, valueStart, index);
+                    parameters[key] = header.slice(valueStart, valueEnd);
+                }
+                continue parameter;
+            }
+            index++;
+        }
+    }
+    return parameters;
+}
+/**
+ * Skip over characters until a semicolon.
+ */
+function skipValue(str, index, len) {
+    while (index < len) {
+        const char = str.charCodeAt(index);
+        if (char === SEMI)
+            break;
+        index++;
+    }
+    return index;
+}
+/**
+ * Skip optional whitespace (OWS) in an HTTP header value.
+ *
+ * OWS is defined in RFC 9110 sec 5.6.3 as SP (" ") or HTAB ("\t").
+ */
+function skipOWS(header, index, len) {
+    while (index < len) {
+        const char = header.charCodeAt(index);
+        if (char !== SP && char !== HTAB)
+            break;
+        index++;
+    }
+    return index;
+}
+/**
+ * Trim optional whitespace (OWS) from the end of a substring.
+ *
+ * OWS is defined in RFC 9110 sec 5.6.3 as SP (" ") or HTAB ("\t").
+ */
+function trailingOWS(header, start, end) {
+    while (end > start) {
+        const char = header.charCodeAt(end - 1);
+        if (char !== SP && char !== HTAB)
+            break;
+        end--;
+    }
+    return end;
+}
+/**
+ * Serialize a parameter value.
+ */
+function qstring(str) {
+    if (TOKEN_REGEXP.test(str))
+        return str;
+    if (TEXT_REGEXP.test(str))
+        return `"${str.replace(QUOTE_REGEXP, "\\$&")}"`;
+    throw new TypeError(`Invalid parameter value: ${str}`);
+}
+//# sourceMappingURL=index.js.map
 
 /***/ })
 
@@ -30641,6 +30901,9 @@ __webpack_unused_export__ = defaultContentType
 /******/ 	}
 /******/ 	
 /************************************************************************/
+/******/ 	/* webpack/runtime/asset-relocator-loader */
+/******/ 	if (typeof __nccwpck_require__ !== 'undefined') __nccwpck_require__.ab = __dirname + "/";
+/******/ 	
 /******/ 	/* webpack/runtime/define property getters */
 /******/ 	(() => {
 /******/ 		// define getter functions for harmony exports
@@ -30668,10 +30931,6 @@ __webpack_unused_export__ = defaultContentType
 /******/ 			Object.defineProperty(exports, '__esModule', { value: true });
 /******/ 		};
 /******/ 	})();
-/******/ 	
-/******/ 	/* webpack/runtime/compat */
-/******/ 	
-/******/ 	if (typeof __nccwpck_require__ !== 'undefined') __nccwpck_require__.ab = __dirname + "/";
 /******/ 	
 /************************************************************************/
 var __webpack_exports__ = {};
@@ -30953,9 +31212,9 @@ class DecodedURL extends URL {
 }
 //# sourceMappingURL=proxy.js.map
 // EXTERNAL MODULE: ./node_modules/.pnpm/tunnel@0.0.6/node_modules/tunnel/index.js
-var node_modules_tunnel = __nccwpck_require__(329);
-// EXTERNAL MODULE: ./node_modules/.pnpm/undici@6.25.0/node_modules/undici/index.js
-var undici = __nccwpck_require__(9522);
+var node_modules_tunnel = __nccwpck_require__(7013);
+// EXTERNAL MODULE: ./node_modules/.pnpm/undici@6.28.0/node_modules/undici/index.js
+var undici = __nccwpck_require__(7305);
 ;// CONCATENATED MODULE: ./node_modules/.pnpm/@actions+http-client@4.0.1/node_modules/@actions/http-client/lib/index.js
 /* eslint-disable @typescript-eslint/no-explicit-any */
 var __awaiter = (undefined && undefined.__awaiter) || function (thisArg, _arguments, P, generator) {
@@ -33633,6 +33892,701 @@ function getIDToken(aud) {
 //# sourceMappingURL=core.js.map
 ;// CONCATENATED MODULE: external "node:path"
 const external_node_path_namespaceObject = require("node:path");
+;// CONCATENATED MODULE: ./src/langfuse/project.ts
+
+/**
+ * Resolve the Langfuse project id from the action's API credentials. A
+ * public/secret key pair is scoped to exactly one project, so the first
+ * entry of `/api/public/projects` is it.
+ *
+ * Returns `null` on any failure — the caller falls back to not rendering
+ * the "View on Langfuse" link rather than blowing up.
+ */
+async function resolveProjectId(params) {
+    const { baseUrl, publicKey, secretKey } = params;
+    if (!baseUrl || !publicKey || !secretKey)
+        return null;
+    try {
+        const auth = Buffer.from(`${publicKey}:${secretKey}`).toString("base64");
+        const res = await fetch(`${stripTrailingSlash(baseUrl)}/api/public/projects`, {
+            headers: { Authorization: `Basic ${auth}` },
+        });
+        if (!res.ok) {
+            core_debug(`resolveProjectId: /api/public/projects returned ${res.status}`);
+            return null;
+        }
+        const body = (await res.json());
+        const id = body.data?.[0]?.id ?? null;
+        core_debug(`resolveProjectId: ${id ?? "<unresolved>"}`);
+        return id;
+    }
+    catch (err) {
+        const msg = err instanceof Error ? err.message : String(err);
+        core_debug(`resolveProjectId failed: ${msg}`);
+        return null;
+    }
+}
+/**
+ * Build the Langfuse UI link to an experiment's results page.
+ *   <base>/project/<project_id>/experiments/results?baseline=<experiment_id>
+ */
+function buildExperimentResultsUrl(params) {
+    const { baseUrl, projectId, experimentId } = params;
+    const base = stripTrailingSlash(baseUrl);
+    return `${base}/project/${encodeURIComponent(projectId)}/experiments/results?baseline=${encodeURIComponent(experimentId)}`;
+}
+function buildDatasetItemUrl(params) {
+    const { baseUrl, projectId, datasetId, itemId } = params;
+    const base = stripTrailingSlash(baseUrl);
+    return `${base}/project/${encodeURIComponent(projectId)}/datasets/${encodeURIComponent(datasetId)}/items/${encodeURIComponent(itemId)}`;
+}
+function stripTrailingSlash(s) {
+    return s.endsWith("/") ? s.slice(0, -1) : s;
+}
+
+;// CONCATENATED MODULE: ./src/experiment-result.ts
+
+function asRecord(value) {
+    if (!value || typeof value !== "object")
+        return null;
+    return value;
+}
+function toSnakeCase(key) {
+    return key.replace(/[A-Z]/g, (match) => `_${match.toLowerCase()}`);
+}
+function pickField(obj, ...keys) {
+    const record = asRecord(obj);
+    if (!record)
+        return undefined;
+    for (const key of keys) {
+        if (key in record && record[key] !== undefined)
+            return record[key];
+    }
+    return undefined;
+}
+function pickCanonicalField(obj, canonicalKey, ...extraAliases) {
+    return pickField(obj, canonicalKey, toSnakeCase(canonicalKey), ...extraAliases);
+}
+function asEvaluation(raw) {
+    const record = asRecord(raw);
+    if (!record)
+        return null;
+    const name = typeof record.name === "string" ? record.name : null;
+    if (!name)
+        return null;
+    const evaluation = {
+        name,
+        value: (record.value ?? null),
+    };
+    const comment = typeof record.comment === "string" ? record.comment : undefined;
+    if (comment !== undefined)
+        evaluation.comment = comment;
+    const metadata = asRecord(record.metadata);
+    if (metadata)
+        evaluation.metadata = metadata;
+    const dataType = pickCanonicalField(record, "dataType");
+    if (dataType)
+        evaluation.dataType = dataType;
+    const configId = pickCanonicalField(record, "configId");
+    if (configId)
+        evaluation.configId = configId;
+    return evaluation;
+}
+function asItemResult(raw) {
+    const record = asRecord(raw);
+    if (!record)
+        return null;
+    const rawItem = asRecord(record.item) ?? {};
+    const expectedOutput = pickCanonicalField(rawItem, "expectedOutput");
+    const { expected_output: _expectedOutputSnake, ...restItem } = rawItem;
+    const item = {
+        ...restItem,
+        ...(expectedOutput !== undefined ? { expectedOutput } : {}),
+    };
+    const itemId = pickField(item, "id") ?? pickCanonicalField(record, "datasetItemId");
+    if (itemId && item.id === undefined)
+        item.id = itemId;
+    const evaluations = Array.isArray(record.evaluations)
+        ? record.evaluations
+            .map(asEvaluation)
+            .filter((value) => value !== null)
+        : [];
+    const normalized = {
+        item,
+        input: pickField(record, "input") ?? item.input,
+        expectedOutput: pickCanonicalField(record, "expectedOutput") ?? item.expectedOutput,
+        output: record.output,
+        evaluations,
+    };
+    const traceId = pickCanonicalField(record, "traceId");
+    if (traceId)
+        normalized.traceId = traceId;
+    const datasetRunId = pickCanonicalField(record, "datasetRunId");
+    if (datasetRunId)
+        normalized.datasetRunId = datasetRunId;
+    return normalized;
+}
+function normalizeExperimentResult(raw) {
+    const record = asRecord(raw);
+    if (!record)
+        return null;
+    const runEvaluationsRaw = pickCanonicalField(record, "runEvaluations") ?? [];
+    const itemResultsRaw = pickCanonicalField(record, "itemResults") ?? [];
+    const normalized = {
+        runName: pickCanonicalField(record, "runName") ?? pickField(record, "name"),
+        itemResults: itemResultsRaw
+            .map(asItemResult)
+            .filter((value) => value !== null),
+        runEvaluations: runEvaluationsRaw
+            .map(asEvaluation)
+            .filter((value) => value !== null),
+    };
+    const experimentId = pickCanonicalField(record, "experimentId");
+    if (experimentId)
+        normalized.experimentId = experimentId;
+    const datasetRunId = pickCanonicalField(record, "datasetRunId");
+    if (datasetRunId)
+        normalized.datasetRunId = datasetRunId;
+    return normalized;
+}
+/**
+ * The JS SDK's `runName` usually appends an ISO timestamp; strip it when we
+ * want the user-provided experiment name for display.
+ */
+function experimentDisplayName(result) {
+    if (!result.runName)
+        return undefined;
+    return result.runName.replace(/ - \d{4}-\d{2}-\d{2}T[^ ]+$/, "") || result.runName;
+}
+function resolveLangfuseExperimentUrl(params) {
+    const { result, baseUrl, projectId } = params;
+    if (!result)
+        return null;
+    if (!result.datasetRunId)
+        return null;
+    if (baseUrl && projectId && typeof result.experimentId === "string" && result.experimentId) {
+        return buildExperimentResultsUrl({
+            baseUrl,
+            projectId,
+            experimentId: result.experimentId,
+        });
+    }
+    return null;
+}
+
+;// CONCATENATED MODULE: ./src/comment/body.ts
+// The pure text layer of the PR comment: markers, section parsing/merging,
+// and markdown rendering. Everything here is a function from strings to
+// strings — the GitHub API orchestration lives in `./post`.
+
+
+
+// ---------------------------------------------------------------------------
+// Markers
+// ---------------------------------------------------------------------------
+/**
+ * Top-level marker identifying the single PR comment for a workflow run.
+ * All action invocations in the same run share the same comment — they
+ * splice their own sections into its body.
+ */
+function runMarker(runId) {
+    return `<!-- langfuse-experiment-action run_id=${encodeURIComponent(runId)} -->`;
+}
+/**
+ * Delimiters wrapping one invocation's section inside the run comment,
+ * keyed on the full `SectionKey` — the job display name is the only
+ * per-leg identity GitHub gives us for matrix jobs.
+ *
+ * The trailing space on `start` is load-bearing: markers are matched by
+ * `indexOf` prefix, and the space terminates the job key so `job=a` can
+ * never match `job=ab` (`encodeURIComponent` never emits a space).
+ *
+ * The `/2` versions the format. Released (pre-job-key) action versions
+ * match sections by the literal prefix `…:start script=<encoded>` and pair
+ * it with the first legacy end marker for the same script — without `/2`,
+ * an old-version job re-running in a mixed-version run could anchor on a
+ * new section's start marker and splice out everything up to a legacy end
+ * marker, deleting other jobs' sections. `/2` makes new markers invisible
+ * to the old matcher, so old jobs append alongside instead.
+ */
+function sectionMarkers(key) {
+    const script = encodeURIComponent(key.scriptPath);
+    const job = encodeURIComponent(key.jobKey);
+    return {
+        start: `<!-- langfuse-experiment-action:start/2 script=${script} job=${job} `,
+        end: `<!-- langfuse-experiment-action:end/2 script=${script} job=${job} -->`,
+    };
+}
+function overviewMarkers() {
+    return {
+        start: "<!-- langfuse-experiment-action:overview:start -->",
+        end: "<!-- langfuse-experiment-action:overview:end -->",
+    };
+}
+function detailsMarkers() {
+    return {
+        start: "<!-- langfuse-experiment-action:details:start -->",
+        end: "<!-- langfuse-experiment-action:details:end -->",
+    };
+}
+/**
+ * Human-readable label for a script file. Extensions are kept (distinguishes
+ * `experiment.py` from `experiment.ts`) and the immediate parent directory
+ * is prefixed when informative, so several experiments named `experiment.py`
+ * in different folders don't collapse to the same display string.
+ */
+function scriptLabel(scriptPath, scriptName) {
+    const parent = external_node_path_namespaceObject.basename(external_node_path_namespaceObject.dirname(scriptPath));
+    if (!parent || parent === "." || parent === "/")
+        return scriptName;
+    return `${parent}/${scriptName}`;
+}
+// ---------------------------------------------------------------------------
+// Cell formatting
+// ---------------------------------------------------------------------------
+const CELL_MAX = 80;
+/**
+ * Maximum rows shown in the per-item `<details>` table. GitHub caps
+ * comments at 64 KB and a realistic item row is ~80 chars; 50 rows keeps
+ * us comfortably under the cap even for multi-script directories, and
+ * bigger lists are hard to scan by eye anyway. The full set is always one
+ * click away via the "View on Langfuse" link in the subtitle.
+ */
+const MAX_ITEMS_SHOWN = 50;
+function stringifyCell(v) {
+    if (typeof v === "string")
+        return v;
+    if (v == null)
+        return "";
+    if (typeof v === "number" || typeof v === "boolean")
+        return String(v);
+    try {
+        return JSON.stringify(v);
+    }
+    catch {
+        return String(v);
+    }
+}
+/** Escape + truncate a value to fit inside a markdown table cell. */
+function cell(v, maxLen = CELL_MAX) {
+    let s = stringifyCell(v).replace(/[\r\n]+/g, " ");
+    if (s.length > maxLen)
+        s = s.slice(0, maxLen - 1) + "…";
+    s = s.replace(/\\/g, "\\\\").replace(/\|/g, "\\|");
+    return s || "—";
+}
+function formatScore(v) {
+    if (typeof v === "number")
+        return v.toFixed(3);
+    if (v == null)
+        return "—";
+    return cell(v, 32);
+}
+function statusSummary(err) {
+    if (!err)
+        return { icon: "✅", status: "✅ Pass" };
+    if (err.isRegression)
+        return { icon: "❌", status: "❌ Regression" };
+    return { icon: "❌", status: "❌ Error" };
+}
+function renderActionLinks(runUrl, langfuseUrl, localDataset) {
+    const actions = [];
+    if (runUrl)
+        actions.push(`[View GitHub Action Run](${runUrl})`);
+    if (langfuseUrl)
+        actions.push(`[View in Langfuse](${langfuseUrl})`);
+    if (localDataset)
+        actions.push("Local dataset");
+    return actions;
+}
+function renderActionMetadata(runUrl, langfuseUrl, localDataset) {
+    const attrs = [];
+    if (runUrl)
+        attrs.push(`run=${encodeURIComponent(runUrl)}`);
+    if (langfuseUrl)
+        attrs.push(`langfuse=${encodeURIComponent(langfuseUrl)}`);
+    if (localDataset)
+        attrs.push("local_dataset=true");
+    return attrs.length > 0 ? attrs.join(" ") : null;
+}
+function renderSectionStartMarker(key, opts = {}) {
+    const { start } = sectionMarkers(key);
+    const attrs = renderActionMetadata(opts.runUrl, opts.langfuseUrl, opts.localDataset);
+    return `${start}${attrs ? `${attrs} ` : ""}-->`;
+}
+function parseActionAttributes(raw) {
+    const attrs = new Map((raw ?? "")
+        .split(/\s+/)
+        .filter(Boolean)
+        .map((part) => {
+        const [key, ...valueParts] = part.split("=");
+        return [key ?? "", valueParts.join("=")];
+    }));
+    const runUrl = attrs.get("run") ? decodeURIComponent(attrs.get("run") ?? "") : undefined;
+    const langfuseUrl = attrs.get("langfuse")
+        ? decodeURIComponent(attrs.get("langfuse") ?? "")
+        : undefined;
+    return {
+        runUrl,
+        langfuseUrl,
+        localDataset: attrs.get("local_dataset") === "true",
+    };
+}
+function renderOverviewTable(metas) {
+    const byDisplayName = new Map();
+    for (const meta of metas) {
+        const group = byDisplayName.get(meta.displayName) ?? [];
+        group.push(meta);
+        byDisplayName.set(meta.displayName, group);
+    }
+    const rows = metas.map((meta) => {
+        const group = byDisplayName.get(meta.displayName) ?? [];
+        let experiment = cell(meta.displayName, 56);
+        if (group.length > 1) {
+            // Colliding display names usually mean matrix legs sharing a script —
+            // the job name is what tells them apart. Decided per row: fall back to
+            // the script label only when another collider shares *this* row's job
+            // key (distinct scripts, same job), so one ambiguous row doesn't strip
+            // the job key from every other row in the group.
+            const jobKeyShared = group.some((other) => other !== meta && (other.jobKey ?? "") === (meta.jobKey ?? ""));
+            const disambiguator = meta.jobKey && !jobKeyShared ? meta.jobKey : meta.scriptLabel;
+            experiment = `${cell(meta.displayName, 48)} (\`${cell(disambiguator, 32)}\`)`;
+        }
+        return [
+            experiment,
+            cell(meta.status, 20),
+            renderActionLinks(meta.runUrl, meta.langfuseUrl, meta.localDataset).join(" · ") || "—",
+        ];
+    });
+    return [
+        "| Experiment | Status | Actions |",
+        "| --- | --- | --- |",
+        ...rows.map((row) => `| ${row.join(" | ")} |`),
+    ].join("\n");
+}
+function replaceMarkedBlock(body, start, end, replacement) {
+    const startIdx = body.indexOf(start);
+    const endIdx = body.indexOf(end, startIdx >= 0 ? startIdx : 0);
+    if (startIdx === -1 || endIdx === -1 || endIdx <= startIdx)
+        return body;
+    const before = body.slice(0, startIdx).replace(/\s+$/, "");
+    const after = body.slice(endIdx + end.length).replace(/^\s+/, "");
+    return `${before}\n\n${replacement}\n\n${after}`.replace(/\n{3,}/g, "\n\n").trimEnd() + "\n";
+}
+function parseSectionOverview(body) {
+    const sections = [];
+    // The `/2` and `job=` are optional so sections written by pre-job-key
+    // action versions (possible when one run mixes action versions across
+    // jobs) still parse.
+    const regex = /<!-- langfuse-experiment-action:start(\/2)? script=([^ >]+)(?: job=([^ >]*))?([^>]*)-->/g;
+    let match;
+    while ((match = regex.exec(body)) !== null) {
+        const version = match[1] ?? "";
+        const encodedScriptPath = match[2];
+        if (!encodedScriptPath)
+            continue;
+        const scriptPath = decodeURIComponent(encodedScriptPath);
+        const encodedJobKey = match[3];
+        // Reconstruct the end marker in the same format the section was written
+        // in — from the *encoded* captures, so we match byte-for-byte.
+        const end = encodedJobKey === undefined
+            ? `<!-- langfuse-experiment-action:end${version} script=${encodedScriptPath} -->`
+            : `<!-- langfuse-experiment-action:end${version} script=${encodedScriptPath} job=${encodedJobKey} -->`;
+        const sectionStart = match.index;
+        const sectionEnd = body.indexOf(end, sectionStart);
+        if (sectionEnd === -1)
+            continue;
+        const sectionBody = body.slice(sectionStart, sectionEnd + end.length);
+        const summaryText = sectionBody.match(/<details(?: open)?><summary>(.*?)<\/summary>/s)?.[1];
+        if (!summaryText)
+            continue;
+        const firstSpace = summaryText.indexOf(" ");
+        if (firstSpace === -1)
+            continue;
+        const displayName = summaryText
+            .slice(firstSpace + 1)
+            .replace(/ \(&lt;a href="[^"]+"&gt;Source&lt;\/a&gt;\)$/, "")
+            .replace(/ \(<a href="[^"]+">Source<\/a>\)$/, "");
+        const scriptLabelText = scriptLabel(scriptPath, external_node_path_namespaceObject.basename(scriptPath));
+        const status = sectionBody.includes("> **Run failed —")
+            ? "❌ Error"
+            : sectionBody.match(/^> \*\*.+:\*\*/m)
+                ? "❌ Regression"
+                : "✅ Pass";
+        const startAttrs = parseActionAttributes(match[4]?.trim());
+        const legacyActionMeta = parseActionAttributes(sectionBody.match(/<!-- langfuse-experiment-action:actions ([^>]+) -->/)?.[1]);
+        const runUrl = startAttrs.runUrl ?? legacyActionMeta.runUrl;
+        const langfuseUrl = startAttrs.langfuseUrl ?? legacyActionMeta.langfuseUrl;
+        const localDataset = startAttrs.localDataset ?? legacyActionMeta.localDataset;
+        sections.push({
+            scriptPath,
+            jobKey: encodedJobKey === undefined ? undefined : decodeURIComponent(encodedJobKey),
+            displayName,
+            scriptLabel: scriptLabelText,
+            status,
+            runUrl,
+            langfuseUrl,
+            localDataset,
+        });
+    }
+    return sections;
+}
+function refreshOverview(body) {
+    const { start: overviewStart, end: overviewEnd } = overviewMarkers();
+    const { start: detailsStart, end: detailsEnd } = detailsMarkers();
+    const withoutOverview = replaceMarkedBlock(body, overviewStart, overviewEnd, "");
+    const withoutLayout = replaceMarkedBlock(withoutOverview, detailsStart, detailsEnd, "");
+    const metas = parseSectionOverview(withoutLayout);
+    if (metas.length === 0)
+        return withoutLayout;
+    // Matches both current (`/2`) and legacy section starts so the overview
+    // lands above the first section regardless of which action version wrote it.
+    const firstSectionIdx = withoutLayout.search(/<!-- langfuse-experiment-action:start(?:\/2)? script=/);
+    if (firstSectionIdx === -1)
+        return withoutLayout;
+    const overviewBlock = [overviewStart, renderOverviewTable(metas), overviewEnd].join("\n");
+    const detailsBlock = [detailsStart, "**Details**", detailsEnd].join("\n");
+    const before = withoutLayout.slice(0, firstSectionIdx).replace(/\s+$/, "");
+    const after = withoutLayout.slice(firstSectionIdx).replace(/^\s+/, "");
+    return `${before}\n\n${overviewBlock}\n\n${detailsBlock}\n\n${after}`
+        .replace(/\n{3,}/g, "\n\n")
+        .trimEnd()
+        .concat("\n");
+}
+/**
+ * Job display names come from workflow YAML — including dynamically built
+ * matrices (`fromJSON(...)` over changed files, external config) — so they
+ * can contain arbitrary text. Unescaped, a crafted name could break out of
+ * the `<summary>` element or forge a `<!-- langfuse-experiment-action`
+ * marker inside the body (escaping `<` neutralizes both).
+ */
+function escapeHtml(s) {
+    return s
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;");
+}
+function renderSectionSummary(params) {
+    return `${params.icon} ${params.displayName}`;
+}
+function renderSummarySourceLink(scriptUrl) {
+    if (!scriptUrl)
+        return "";
+    return ` (<a href="${scriptUrl}">Source</a>)`;
+}
+// ---------------------------------------------------------------------------
+// Rendering
+// ---------------------------------------------------------------------------
+function renderScoresTable(evaluations) {
+    if (evaluations.length === 0)
+        return "";
+    const rows = evaluations.map((e) => `| \`${e.name}\` | ${formatScore(e.value)} |`);
+    return ["| Score | Value |", "| --- | --- |", ...rows].join("\n");
+}
+function extractLangfuseProjectRef(langfuseUrl) {
+    if (!langfuseUrl)
+        return null;
+    try {
+        const url = new URL(langfuseUrl);
+        const projectIdx = url.pathname.indexOf("/project/");
+        if (projectIdx === -1)
+            return null;
+        const basePath = url.pathname.slice(0, projectIdx);
+        const projectPath = url.pathname.slice(projectIdx + "/project/".length);
+        const [projectId] = projectPath.split("/", 1);
+        if (!projectId)
+            return null;
+        return {
+            baseUrl: `${url.origin}${basePath}`,
+            projectId: decodeURIComponent(projectId),
+        };
+    }
+    catch {
+        return null;
+    }
+}
+function itemLinkUrl(itemResult, langfuseUrl) {
+    const itemId = typeof itemResult.item.id === "string" ? itemResult.item.id : undefined;
+    const datasetId = typeof itemResult.item.dataset_id === "string"
+        ? itemResult.item.dataset_id
+        : typeof itemResult.item.datasetId === "string"
+            ? itemResult.item.datasetId
+            : undefined;
+    if (!itemId || !datasetId)
+        return undefined;
+    const projectRef = extractLangfuseProjectRef(langfuseUrl);
+    if (!projectRef)
+        return undefined;
+    return buildDatasetItemUrl({
+        baseUrl: projectRef.baseUrl,
+        projectId: projectRef.projectId,
+        datasetId,
+        itemId,
+    });
+}
+function renderItemsTable(itemResults, opts = {}) {
+    if (itemResults.length === 0)
+        return "";
+    const evaluatorNames = Array.from(new Set(itemResults.flatMap((r) => r.evaluations.map((e) => e.name))));
+    const header = ["Item", "Input", "Expected", "Output", ...evaluatorNames];
+    const rows = itemResults.map((r, idx) => {
+        const label = String(idx + 1);
+        const itemUrl = itemLinkUrl(r, opts.langfuseUrl);
+        const scoreByName = new Map(r.evaluations.map((e) => [e.name, e.value]));
+        const cells = [
+            itemUrl ? `[${label}](${itemUrl})` : label,
+            cell(r.input),
+            cell(r.expectedOutput),
+            cell(r.output),
+            ...evaluatorNames.map((n) => scoreByName.has(n)
+                ? formatScore(scoreByName.get(n))
+                : "—"),
+        ];
+        return `| ${cells.join(" | ")} |`;
+    });
+    return [`| ${header.join(" | ")} |`, `| ${header.map(() => "---").join(" | ")} |`, ...rows].join("\n");
+}
+/**
+ * GitHub alert callouts — `[!WARNING]` for regressions (the user's own gate
+ * fired → expected failure), `[!CAUTION]` for unrelated crashes
+ * (unexpected). See
+ * https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#alerts
+ */
+function renderErrorCallout(err) {
+    if (err.isRegression) {
+        return `> **${err.name}:** ${err.message}`;
+    }
+    return `> **Run failed — ${err.name}:** ${err.message}`;
+}
+/**
+ * Render one `ScriptResult` as a complete PR-comment section, wrapped in
+ * start/end markers keyed on the script path.
+ *
+ * Heading comes from the normalized SDK-style `runName`; on a crash (no
+ * result) we fall back to the script filename so the section still shows
+ * something recognisable.
+ */
+function renderScriptSection(opts) {
+    const { result: scriptResult, jobKey = "", jobLabel, runUrl, scriptUrl } = opts;
+    const key = { scriptPath: scriptResult.scriptPath, jobKey };
+    const { end } = sectionMarkers(key);
+    const normalized = scriptResult.normalizedResult;
+    const langfuseUrl = scriptResult.langfuseExperimentUrl ?? undefined;
+    const localDataset = Boolean(normalized && !normalized.datasetRunId);
+    const failed = scriptResult.error !== null;
+    const displayName = (normalized ? experimentDisplayName(normalized) : undefined) ?? scriptResult.scriptName;
+    const { icon } = statusSummary(scriptResult.error);
+    const summary = renderSectionSummary({
+        icon,
+        displayName: jobLabel ? `${displayName} — ${escapeHtml(jobLabel)}` : displayName,
+    });
+    const lines = [
+        renderSectionStartMarker(key, {
+            runUrl,
+            langfuseUrl,
+            localDataset,
+        }),
+        failed
+            ? `<details open><summary>${summary}${renderSummarySourceLink(scriptUrl)}</summary>`
+            : `<details><summary>${summary}${renderSummarySourceLink(scriptUrl)}</summary>`,
+        "",
+    ];
+    if (scriptResult.error) {
+        lines.push(renderErrorCallout(scriptResult.error));
+        lines.push("");
+    }
+    if (normalized && normalized.runEvaluations.length > 0) {
+        lines.push("<br>");
+        lines.push("");
+        lines.push(renderScoresTable(normalized.runEvaluations));
+        lines.push("");
+    }
+    if (normalized && normalized.itemResults.length > 0) {
+        const total = normalized.itemResults.length;
+        const visible = normalized.itemResults.slice(0, MAX_ITEMS_SHOWN);
+        const hiddenCount = total - visible.length;
+        lines.push(`<details><summary>Item results (${total})</summary>`);
+        lines.push("");
+        lines.push(renderItemsTable(visible, { langfuseUrl }));
+        if (hiddenCount > 0) {
+            lines.push("");
+            if (langfuseUrl) {
+                lines.push(`_Showing first ${visible.length} of ${total} — [View in Langfuse](${langfuseUrl}) for the full set._`);
+            }
+            else {
+                lines.push(`_Showing first ${visible.length} of ${total}._`);
+            }
+        }
+        lines.push("");
+        lines.push("</details>");
+        lines.push("");
+    }
+    if (!scriptResult.error &&
+        !normalized?.runEvaluations.length &&
+        !normalized?.itemResults.length) {
+        lines.push("_No evaluations or items were returned._");
+        lines.push("");
+    }
+    lines.push("</details>");
+    lines.push(end);
+    return `${lines.join("\n").trimEnd()}\n`;
+}
+// ---------------------------------------------------------------------------
+// Comment body assembly
+// ---------------------------------------------------------------------------
+// Brand icon from https://langfuse.com/brand. Inline in the H1 gives the
+// comment a recognizable signature without dominating the layout.
+const LANGFUSE_ICON = "https://langfuse.com/brand-assets/icon/color/langfuse-icon.png";
+/**
+ * The top-level `# …` title of the comment. Shown once per run, preserved
+ * across upserts.
+ */
+function renderCommentTitle(opts = {}) {
+    // `align="center"` is what actually works on GitHub comments; their
+    // markdown sanitizer drops inline `style`/CSS, but keeps the legacy
+    // `align` attribute. See
+    // https://github.com/orgs/community/discussions/183876
+    const icon = `<img src="${LANGFUSE_ICON}" height="32" alt="" align="center" />`;
+    const parts = [];
+    if (opts.shortSha)
+        parts.push(`\`${opts.shortSha}\``);
+    if (opts.runAttempt && opts.runAttempt > 1)
+        parts.push(`(#${opts.runAttempt})`);
+    const suffix = parts.length > 0 ? `: ${parts.join(" ")}` : "";
+    return `### ${icon} Experiment Results${suffix}`;
+}
+function buildFreshCommentBody(runId, titleOpts, sections) {
+    const body = [runMarker(runId), renderCommentTitle(titleOpts), ...sections].join("\n\n");
+    return refreshOverview(`${body.trimEnd()}\n`);
+}
+function refreshCommentTitle(body, titleOpts) {
+    const title = renderCommentTitle(titleOpts);
+    const lines = body.split("\n");
+    const titleIdx = lines.findIndex((line) => line.startsWith(`### <img src="${LANGFUSE_ICON}"`));
+    if (titleIdx !== -1) {
+        lines[titleIdx] = title;
+        return lines.join("\n");
+    }
+    const markerIdx = lines.findIndex((line) => line.startsWith("<!-- langfuse-experiment-action run_id="));
+    if (markerIdx !== -1) {
+        lines.splice(markerIdx + 1, 0, "", title);
+        return lines.join("\n");
+    }
+    return `${title}\n\n${body.replace(/^\s+/, "")}`;
+}
+/**
+ * Replace an existing section with the same `SectionKey` in place, or
+ * append it to the end of the body if none exists.
+ */
+function upsertSection(existingBody, key, section) {
+    const { start, end } = sectionMarkers(key);
+    const updated = replaceMarkedBlock(existingBody, start, end, section);
+    if (updated !== existingBody)
+        return updated;
+    return `${existingBody.replace(/\s+$/, "")}\n\n${section}\n`;
+}
+
 ;// CONCATENATED MODULE: ./node_modules/.pnpm/@actions+github@9.1.1/node_modules/@actions/github/lib/context.js
 
 
@@ -33687,7 +34641,7 @@ class Context {
 }
 //# sourceMappingURL=context.js.map
 // EXTERNAL MODULE: ./node_modules/.pnpm/@actions+http-client@3.0.2/node_modules/@actions/http-client/lib/index.js
-var lib = __nccwpck_require__(7708);
+var lib = __nccwpck_require__(2504);
 ;// CONCATENATED MODULE: ./node_modules/.pnpm/@actions+github@9.1.1/node_modules/@actions/github/lib/internal/utils.js
 var utils_awaiter = (undefined && undefined.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
@@ -34247,23 +35201,278 @@ function withDefaults(oldDefaults, newDefaults) {
 var endpoint = withDefaults(null, DEFAULTS);
 
 
-// EXTERNAL MODULE: ./node_modules/.pnpm/fast-content-type-parse@3.0.0/node_modules/fast-content-type-parse/index.js
-var fast_content_type_parse = __nccwpck_require__(975);
-;// CONCATENATED MODULE: ./node_modules/.pnpm/json-with-bigint@3.5.8/node_modules/json-with-bigint/json-with-bigint.js
+// EXTERNAL MODULE: ./node_modules/.pnpm/content-type@2.0.0/node_modules/content-type/dist/index.js
+var dist = __nccwpck_require__(7997);
+;// CONCATENATED MODULE: ./node_modules/.pnpm/json-with-bigint@3.5.10/node_modules/json-with-bigint/json-with-bigint.js
 const intRegex = /^-?\d+$/;
 const noiseValue = /^-?\d+n+$/; // Noise - strings that match the custom format before being converted to it
 const originalStringify = JSON.stringify;
 const originalParse = JSON.parse;
 const customFormat = /^-?\d+n$/;
 
-const bigIntsStringify = /([\[:])?"(-?\d+)n"($|([\\n]|\s)*(\s|[\\n])*[,\}\]])/g;
-const noiseStringify =
-  /([\[:])?("-?\d+n+)n("$|"([\\n]|\s)*(\s|[\\n])*[,\}\]])/g;
+const bigIntsStringify = /([\[:])?"(-?\d+)n"($|\s*[,\}\]])/g;
+const noiseStringify = /([\[:])?("-?\d+n+)n("$|"\s*[,\}\]])/g;
 
 /**
  * @typedef {(this: any, key: string | number | undefined, value: any) => any} Replacer
  * @typedef {(key: string | number | undefined, value: any, context?: { source: string }) => any} Reviver
  */
+
+/**
+ * Checks if a value is unstringifiable according to native JSON.stringify rules.
+ *
+ * @param {any} val The value to check.
+ * @returns {boolean} True if the value is undefined, a function, or a symbol.
+ */
+const isUnstringifiable = (val) =>
+  val === undefined || typeof val === "function" || typeof val === "symbol";
+
+/**
+ * Checks if a value is a native JSON.rawJSON object (Node.js 22+).
+ *
+ * @param {any} val The value to check.
+ * @returns {boolean} True if the value is a RawJSON instance.
+ */
+const isRawJSON = (val) =>
+  val !== null &&
+  typeof val === "object" &&
+  val.constructor &&
+  val.constructor.name === "RawJSON";
+
+/**
+ * Iteratively converts a JS value to a JSON string.
+ * Used as a fallback when the native JSON.stringify hits the Maximum Call Stack size.
+ * Fully compliant with JSON formatting (space), replacers, and toJSON behaviors.
+ *
+ * @param {any} rootValue The value to stringify.
+ * @param {Replacer | Array<string | number> | null} [replacer] User's custom replacer function.
+ * @param {string | number} [spaceParam] Indentation for pretty-printing.
+ * @returns {string | undefined} The generated JSON string.
+ */
+const stringifyIteratively = (rootValue, replacer, spaceParam) => {
+  let space = "";
+
+  if (typeof spaceParam === "number") {
+    space = " ".repeat(Math.min(10, Math.max(0, Math.floor(spaceParam))));
+  } else if (typeof spaceParam === "string") {
+    space = spaceParam.slice(0, 10);
+  }
+
+  const isFunctionReplacer = typeof replacer === "function";
+  const propertyList = Array.isArray(replacer)
+    ? new Set(replacer.map(String))
+    : null;
+
+  /**
+   * Prepares a value for stringification by resolving toJSON, handling BigInts,
+   * applying custom replacers, and unwrapping primitive objects.
+   *
+   * @param {object|Array} parent The parent object or array holding the value.
+   * @param {string} key The key associated with the value.
+   * @param {any} val The raw value to process.
+   * @returns {any} The processed value ready for stringification.
+   */
+  const prepareVal = (parent, key, val) => {
+    const isObject = val !== null && typeof val === "object";
+    const hasToJSON = isObject && typeof val.toJSON === "function";
+
+    if (hasToJSON) {
+      val = val.toJSON(key);
+    }
+
+    const isNoise = typeof val === "string" && noiseValue.test(val);
+
+    if (isNoise) return val + "n";
+
+    const isBigInt = typeof val === "bigint";
+
+    if (isBigInt) {
+      const supportsRawJSON = "rawJSON" in JSON;
+
+      if (supportsRawJSON) return JSON.rawJSON(val.toString());
+
+      return val.toString() + "n";
+    }
+
+    if (isFunctionReplacer) {
+      val = replacer.call(parent, key, val);
+    }
+
+    const isPostReplacerObject = val !== null && typeof val === "object";
+
+    if (isPostReplacerObject) {
+      const isPrimitiveWrapper =
+        val instanceof Number ||
+        val instanceof String ||
+        val instanceof Boolean;
+
+      if (isPrimitiveWrapper) {
+        val = val.valueOf();
+      }
+    }
+
+    return val;
+  };
+
+  const rootProcessed = prepareVal({ "": rootValue }, "", rootValue);
+
+  if (isUnstringifiable(rootProcessed)) {
+    return undefined;
+  }
+
+  const isRootPrimitive =
+    rootProcessed === null || typeof rootProcessed !== "object";
+  const isRootNativeRawJSON = isRawJSON(rootProcessed);
+
+  if (isRootPrimitive || isRootNativeRawJSON) {
+    return originalStringify(rootProcessed);
+  }
+
+  const chunks = [];
+  let level = 0;
+
+  const stack = [
+    {
+      parent: { "": rootProcessed },
+      key: "",
+      val: rootProcessed,
+      isArray: Array.isArray(rootProcessed),
+      keys: Array.isArray(rootProcessed) ? null : Object.keys(rootProcessed),
+      index: 0,
+      first: true,
+    },
+  ];
+
+  const visited = new WeakSet([rootProcessed]);
+
+  while (stack.length > 0) {
+    const node = stack[stack.length - 1];
+
+    if (node.index === 0) {
+      chunks.push(node.isArray ? "[" : "{");
+      level++;
+    }
+
+    let isDone = false;
+
+    if (node.isArray) {
+      if (node.index < node.val.length) {
+        if (!node.first) chunks.push(",");
+
+        if (space) chunks.push("\n" + space.repeat(level));
+
+        const childRaw = node.val[node.index];
+        const childVal = prepareVal(node.val, String(node.index), childRaw);
+
+        if (isUnstringifiable(childVal)) {
+          chunks.push("null");
+          node.first = false;
+          node.index++;
+        } else {
+          const isComplexObject =
+            childVal !== null && typeof childVal === "object";
+          const isNativeRaw = isRawJSON(childVal);
+
+          if (isComplexObject && !isNativeRaw) {
+            if (visited.has(childVal)) {
+              throw new TypeError("Converting circular structure to JSON");
+            }
+
+            visited.add(childVal);
+
+            stack.push({
+              parent: node.val,
+              key: String(node.index),
+              val: childVal,
+              isArray: Array.isArray(childVal),
+              keys: Array.isArray(childVal) ? null : Object.keys(childVal),
+              index: 0,
+              first: true,
+            });
+
+            node.first = false;
+            node.index++;
+          } else {
+            chunks.push(originalStringify(childVal));
+            node.first = false;
+            node.index++;
+          }
+        }
+      } else {
+        isDone = true;
+      }
+    } else {
+      while (node.index < node.keys.length) {
+        const k = node.keys[node.index++];
+
+        const isFilteredOutByArray = propertyList && !propertyList.has(k);
+
+        if (isFilteredOutByArray) continue;
+
+        const childRaw = node.val[k];
+        const childVal = prepareVal(node.val, k, childRaw);
+
+        if (isUnstringifiable(childVal)) continue;
+
+        if (!node.first) chunks.push(",");
+
+        if (space) {
+          chunks.push("\n" + space.repeat(level) + originalStringify(k) + ": ");
+        } else {
+          chunks.push(originalStringify(k) + ":");
+        }
+
+        const isComplexObject =
+          childVal !== null && typeof childVal === "object";
+        const isNativeRaw = isRawJSON(childVal);
+
+        if (isComplexObject && !isNativeRaw) {
+          if (visited.has(childVal)) {
+            throw new TypeError("Converting circular structure to JSON");
+          }
+
+          visited.add(childVal);
+
+          stack.push({
+            parent: node.val,
+            key: k,
+            val: childVal,
+            isArray: Array.isArray(childVal),
+            keys: Array.isArray(childVal) ? null : Object.keys(childVal),
+            index: 0,
+            first: true,
+          });
+
+          node.first = false;
+
+          break; // Stop current loop level to process the newly pushed stack node
+        } else {
+          chunks.push(originalStringify(childVal));
+          node.first = false;
+        }
+      }
+
+      const isNodeFullyProcessed =
+        node.index >= node.keys.length && stack[stack.length - 1] === node;
+
+      if (isNodeFullyProcessed) {
+        isDone = true;
+      }
+    }
+
+    if (isDone) {
+      level--;
+
+      if (!node.first && space) chunks.push("\n" + space.repeat(level));
+
+      chunks.push(node.isArray ? "]" : "}");
+      visited.delete(node.val);
+      stack.pop();
+    }
+  }
+
+  return chunks.join("");
+};
 
 /**
  * Converts a JavaScript value to a JSON string.
@@ -34276,55 +35485,87 @@ const noiseStringify =
  *
  * @param {*} value The value to convert to a JSON string.
  * @param {Replacer | Array<string | number> | null} [replacer]
- *   A function that alters the behavior of the stringification process,
- *   or an array of strings/numbers to indicate properties to exclude.
+ * A function that alters the behavior of the stringification process,
+ * or an array of strings/numbers to indicate properties to exclude.
  * @param {string | number} [space]
- *   A string or number to specify indentation or pretty-printing.
+ * A string or number to specify indentation or pretty-printing.
  * @returns {string} The JSON string representation.
  */
 const JSONStringify = (value, replacer, space) => {
-  if ("rawJSON" in JSON) {
-    return originalStringify(
+  try {
+    const supportsRawJSON = "rawJSON" in JSON;
+
+    if (supportsRawJSON) {
+      return originalStringify(
+        value,
+        (key, val) => {
+          if (typeof val === "bigint") return JSON.rawJSON(val.toString());
+
+          const hasFunctionReplacer = typeof replacer === "function";
+
+          if (hasFunctionReplacer) return replacer(key, val);
+
+          const isKeyInArrayReplacer =
+            Array.isArray(replacer) && replacer.includes(key);
+
+          if (isKeyInArrayReplacer) return val;
+
+          return val;
+        },
+        space,
+      );
+    }
+
+    if (!value) return originalStringify(value, replacer, space);
+
+    const convertedToCustomJSON = originalStringify(
       value,
-      (key, value) => {
-        if (typeof value === "bigint") return JSON.rawJSON(value.toString());
+      (key, val) => {
+        const isNoise = typeof val === "string" && noiseValue.test(val);
 
-        if (typeof replacer === "function") return replacer(key, value);
+        if (isNoise) return val.toString() + "n"; // Mark noise values with additional "n" to offset the deletion of one "n" during the processing
 
-        if (Array.isArray(replacer) && replacer.includes(key)) return value;
+        if (typeof val === "bigint") return val.toString() + "n";
 
-        return value;
+        const hasFunctionReplacer = typeof replacer === "function";
+
+        if (hasFunctionReplacer) return replacer(key, val);
+
+        const isKeyInArrayReplacer =
+          Array.isArray(replacer) && replacer.includes(key);
+
+        if (isKeyInArrayReplacer) return val;
+
+        return val;
       },
       space,
     );
+
+    const processedJSON = convertedToCustomJSON.replace(
+      bigIntsStringify,
+      "$1$2$3",
+    ); // Delete one "n" off the end of every BigInt value
+
+    const denoisedJSON = processedJSON.replace(noiseStringify, "$1$2$3"); // Remove one "n" off the end of every noisy string
+
+    return denoisedJSON;
+  } catch (error) {
+    if (error instanceof RangeError) {
+      const convertedJSON = stringifyIteratively(value, replacer, space);
+
+      if (convertedJSON === undefined) return undefined;
+
+      const supportsRawJSON = "rawJSON" in JSON;
+
+      if (supportsRawJSON) return convertedJSON;
+
+      const processedJSON = convertedJSON.replace(bigIntsStringify, "$1$2$3");
+
+      return processedJSON.replace(noiseStringify, "$1$2$3");
+    }
+
+    throw error;
   }
-
-  if (!value) return originalStringify(value, replacer, space);
-
-  const convertedToCustomJSON = originalStringify(
-    value,
-    (key, value) => {
-      const isNoise = typeof value === "string" && noiseValue.test(value);
-
-      if (isNoise) return value.toString() + "n"; // Mark noise values with additional "n" to offset the deletion of one "n" during the processing
-
-      if (typeof value === "bigint") return value.toString() + "n";
-
-      if (typeof replacer === "function") return replacer(key, value);
-
-      if (Array.isArray(replacer) && replacer.includes(key)) return value;
-
-      return value;
-    },
-    space,
-  );
-  const processedJSON = convertedToCustomJSON.replace(
-    bigIntsStringify,
-    "$1$2$3",
-  ); // Delete one "n" off the end of every BigInt value
-  const denoisedJSON = processedJSON.replace(noiseStringify, "$1$2$3"); // Remove one "n" off the end of every noisy string
-
-  return denoisedJSON;
 };
 
 const featureCache = new Map();
@@ -34372,12 +35613,15 @@ const isContextSourceSupported = () => {
 const convertMarkedBigIntsReviver = (key, value, context, userReviver) => {
   const isCustomFormatBigInt =
     typeof value === "string" && customFormat.test(value);
+
   if (isCustomFormatBigInt) return BigInt(value.slice(0, -1));
 
   const isNoiseValue = typeof value === "string" && noiseValue.test(value);
   if (isNoiseValue) return value.slice(0, -1);
 
-  if (typeof userReviver !== "function") return value;
+  const hasUserReviver = typeof userReviver === "function";
+
+  if (!hasUserReviver) return value;
 
   return userReviver(key, value, context);
 };
@@ -34395,15 +35639,18 @@ const convertMarkedBigIntsReviver = (key, value, context, userReviver) => {
  */
 const JSONParseV2 = (text, reviver) => {
   return JSON.parse(text, (key, value, context) => {
-    const isBigNumber =
-      typeof value === "number" &&
-      (value > Number.MAX_SAFE_INTEGER || value < Number.MIN_SAFE_INTEGER);
+    const isNumber = typeof value === "number";
+    const isOutOfBounds =
+      value > Number.MAX_SAFE_INTEGER || value < Number.MIN_SAFE_INTEGER;
+    const isBigNumber = isNumber && isOutOfBounds;
     const isInt = context && intRegex.test(context.source);
     const isBigInt = isBigNumber && isInt;
 
     if (isBigInt) return BigInt(context.source);
 
-    if (typeof reviver !== "function") return value;
+    const hasCustomReviver = typeof reviver === "function";
+
+    if (!hasCustomReviver) return value;
 
     return reviver(key, value, context);
   });
@@ -34416,6 +35663,105 @@ const stringsOrLargeNumbers =
 const noiseValueWithQuotes = /^"-?\d+n+"$/; // Noise - strings that match the custom format before being converted to it
 
 /**
+ * Iteratively traverses the parsed object bottom-up (post-order),
+ * emulating the native JSON.parse reviver behavior.
+ * This avoids Call Stack overflows (RangeError) on deeply nested structures.
+ *
+ * @param {any} parsed The natively parsed JSON object.
+ * @param {Reviver} [userReviver] User's custom reviver function.
+ * @returns {any} The fully processed object.
+ */
+const applyReviverIteratively = (parsed, userReviver) => {
+  const rootHolder = { "": parsed };
+  const stack = [{ parent: rootHolder, key: "", visited: false }];
+
+  while (stack.length > 0) {
+    const node = stack[stack.length - 1];
+
+    if (!node.visited) {
+      node.visited = true;
+
+      const value = node.parent[node.key];
+      const isComplexObject = value !== null && typeof value === "object";
+
+      if (isComplexObject) {
+        const keys = Object.keys(value);
+
+        for (let i = keys.length - 1; i >= 0; i--) {
+          stack.push({ parent: value, key: keys[i], visited: false });
+        }
+      }
+    } else {
+      const { parent, key } = node;
+      let value = parent[key];
+
+      if (typeof value === "string") {
+        const isCustomFormatBigInt = customFormat.test(value);
+
+        if (isCustomFormatBigInt) {
+          value = BigInt(value.slice(0, -1));
+        } else {
+          const isNoise = noiseValue.test(value);
+
+          if (isNoise) value = value.slice(0, -1);
+        }
+      }
+
+      const hasUserReviver = typeof userReviver === "function";
+
+      if (hasUserReviver) {
+        value = userReviver.call(parent, key, value);
+      }
+
+      const isDeleted = value === undefined;
+
+      if (isDeleted) {
+        delete parent[key];
+      } else {
+        parent[key] = value;
+      }
+
+      stack.pop();
+    }
+  }
+
+  return rootHolder[""];
+};
+
+/**
+ * Pre-processes the JSON string to mark large numbers with an 'n' suffix.
+ *
+ * @param {string} text The raw JSON string.
+ * @returns {string} The serialized string with marked BigInts.
+ */
+const serializeBigInts = (text) => {
+  return text.replace(
+    stringsOrLargeNumbers,
+    (match, digits, fractional, exponential) => {
+      const isString = match[0] === '"';
+      const isNoise = isString && noiseValueWithQuotes.test(match);
+
+      if (isNoise) return match.substring(0, match.length - 1) + 'n"'; // Mark noise values with additional "n" to offset the deletion of one "n" during the processing
+
+      const hasFractionalOrExponential = fractional || exponential;
+
+      // With a fixed number of digits, we can correctly use lexicographical comparison to do a numeric comparison
+      const isLessThanMaxSafeInt =
+        digits &&
+        (digits.length < MAX_DIGITS ||
+          (digits.length === MAX_DIGITS && digits <= MAX_INT));
+
+      const isStandardValue =
+        isString || hasFractionalOrExponential || isLessThanMaxSafeInt;
+
+      if (isStandardValue) return match;
+
+      return '"' + match + 'n"';
+    },
+  );
+};
+
+/**
  * Converts a JSON string into a JavaScript value.
  *
  * Supports parsing of large integers using two strategies:
@@ -34426,42 +35772,34 @@ const noiseValueWithQuotes = /^"-?\d+n+"$/; // Noise - strings that match the cu
  *
  * @param {string} text A valid JSON string.
  * @param {Reviver} [reviver]
- *   A function that transforms the results. This function is called for each member
- *   of the object. If a member contains nested objects, the nested objects are
- *   transformed before the parent object is.
+ * A function that transforms the results. This function is called for each member
+ * of the object. If a member contains nested objects, the nested objects are
+ * transformed before the parent object is.
  * @returns {any} The parsed JavaScript value.
  * @throws {SyntaxError} If text is not valid JSON.
  */
 const JSONParse = (text, reviver) => {
   if (!text) return originalParse(text, reviver);
 
-  if (isContextSourceSupported()) return JSONParseV2(text, reviver); // Shortcut to a faster (2x) and simpler version
+  try {
+    if (isContextSourceSupported()) return JSONParseV2(text, reviver); // Shortcut to a faster (2x) and simpler version
 
-  // Find and mark big numbers with "n"
-  const serializedData = text.replace(
-    stringsOrLargeNumbers,
-    (text, digits, fractional, exponential) => {
-      const isString = text[0] === '"';
-      const isNoise = isString && noiseValueWithQuotes.test(text);
+    // Find and mark big numbers with "n"
+    const serializedData = serializeBigInts(text);
 
-      if (isNoise) return text.substring(0, text.length - 1) + 'n"'; // Mark noise values with additional "n" to offset the deletion of one "n" during the processing
+    return originalParse(serializedData, (key, value, context) =>
+      convertMarkedBigIntsReviver(key, value, context, reviver),
+    );
+  } catch (error) {
+    if (error instanceof RangeError) {
+      const serializedData = serializeBigInts(text);
+      const parsed = originalParse(serializedData);
 
-      const isFractionalOrExponential = fractional || exponential;
-      const isLessThanMaxSafeInt =
-        digits &&
-        (digits.length < MAX_DIGITS ||
-          (digits.length === MAX_DIGITS && digits <= MAX_INT)); // With a fixed number of digits, we can correctly use lexicographical comparison to do a numeric comparison
+      return applyReviverIteratively(parsed, reviver);
+    }
 
-      if (isString || isFractionalOrExponential || isLessThanMaxSafeInt)
-        return text;
-
-      return '"' + text + 'n"';
-    },
-  );
-
-  return originalParse(serializedData, (key, value, context) =>
-    convertMarkedBigIntsReviver(key, value, context, reviver),
-  );
+    throw error;
+  }
 };
 
 
@@ -34507,7 +35845,7 @@ class RequestError extends Error {
 }
 
 
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@octokit+request@10.0.8/node_modules/@octokit/request/dist-bundle/index.js
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@octokit+request@10.0.11/node_modules/@octokit/request/dist-bundle/index.js
 // pkg/dist-src/index.js
 
 
@@ -34515,7 +35853,7 @@ class RequestError extends Error {
 
 
 // pkg/dist-src/version.js
-var dist_bundle_VERSION = "10.0.8";
+var dist_bundle_VERSION = "10.0.11";
 
 // pkg/dist-src/defaults.js
 var defaults_default = {
@@ -34644,7 +35982,7 @@ async function getResponseData(response) {
   if (!contentType) {
     return response.text().catch(noop);
   }
-  const mimetype = (0,fast_content_type_parse/* safeParse */.xL)(contentType);
+  const mimetype = (0,dist/* parse */.qg)(contentType);
   if (isJSONResponse(mimetype)) {
     let text = "";
     try {
@@ -34672,9 +36010,10 @@ function toErrorMessage(data) {
   if (data instanceof ArrayBuffer) {
     return "Unknown error";
   }
-  if ("message" in data) {
-    const suffix = "documentation_url" in data ? ` - ${data.documentation_url}` : "";
-    return Array.isArray(data.errors) ? `${data.message}: ${data.errors.map((v) => JSON.stringify(v)).join(", ")}${suffix}` : `${data.message}${suffix}`;
+  if (typeof data === "object" && data !== null && "message" in data) {
+    const objectData = data;
+    const suffix = "documentation_url" in objectData ? ` - ${objectData.documentation_url}` : "";
+    return Array.isArray(objectData.errors) ? `${objectData.message}: ${objectData.errors.map((v) => JSON.stringify(v)).join(", ")}${suffix}` : `${objectData.message}${suffix}`;
   }
   return `Unknown error: ${JSON.stringify(data)}`;
 }
@@ -37949,188 +39288,6 @@ function getOctokit(token, options, ...additionalPlugins) {
     return new GitHubWithPlugins(getOctokitOptions(token, options));
 }
 //# sourceMappingURL=github.js.map
-;// CONCATENATED MODULE: ./src/langfuse/project.ts
-
-/**
- * Resolve the Langfuse project id from the action's API credentials. A
- * public/secret key pair is scoped to exactly one project, so the first
- * entry of `/api/public/projects` is it.
- *
- * Returns `null` on any failure — the caller falls back to not rendering
- * the "View on Langfuse" link rather than blowing up.
- */
-async function resolveProjectId(params) {
-    const { baseUrl, publicKey, secretKey } = params;
-    if (!baseUrl || !publicKey || !secretKey)
-        return null;
-    try {
-        const auth = Buffer.from(`${publicKey}:${secretKey}`).toString("base64");
-        const res = await fetch(`${stripTrailingSlash(baseUrl)}/api/public/projects`, {
-            headers: { Authorization: `Basic ${auth}` },
-        });
-        if (!res.ok) {
-            core_debug(`resolveProjectId: /api/public/projects returned ${res.status}`);
-            return null;
-        }
-        const body = (await res.json());
-        const id = body.data?.[0]?.id ?? null;
-        core_debug(`resolveProjectId: ${id ?? "<unresolved>"}`);
-        return id;
-    }
-    catch (err) {
-        const msg = err instanceof Error ? err.message : String(err);
-        core_debug(`resolveProjectId failed: ${msg}`);
-        return null;
-    }
-}
-/**
- * Build the Langfuse UI link to an experiment's results page.
- *   <base>/project/<project_id>/experiments/results?baseline=<experiment_id>
- */
-function buildExperimentResultsUrl(params) {
-    const { baseUrl, projectId, experimentId } = params;
-    const base = stripTrailingSlash(baseUrl);
-    return `${base}/project/${encodeURIComponent(projectId)}/experiments/results?baseline=${encodeURIComponent(experimentId)}`;
-}
-function buildDatasetItemUrl(params) {
-    const { baseUrl, projectId, datasetId, itemId } = params;
-    const base = stripTrailingSlash(baseUrl);
-    return `${base}/project/${encodeURIComponent(projectId)}/datasets/${encodeURIComponent(datasetId)}/items/${encodeURIComponent(itemId)}`;
-}
-function stripTrailingSlash(s) {
-    return s.endsWith("/") ? s.slice(0, -1) : s;
-}
-
-;// CONCATENATED MODULE: ./src/experiment-result.ts
-
-function asRecord(value) {
-    if (!value || typeof value !== "object")
-        return null;
-    return value;
-}
-function toSnakeCase(key) {
-    return key.replace(/[A-Z]/g, (match) => `_${match.toLowerCase()}`);
-}
-function pickField(obj, ...keys) {
-    const record = asRecord(obj);
-    if (!record)
-        return undefined;
-    for (const key of keys) {
-        if (key in record && record[key] !== undefined)
-            return record[key];
-    }
-    return undefined;
-}
-function pickCanonicalField(obj, canonicalKey, ...extraAliases) {
-    return pickField(obj, canonicalKey, toSnakeCase(canonicalKey), ...extraAliases);
-}
-function asEvaluation(raw) {
-    const record = asRecord(raw);
-    if (!record)
-        return null;
-    const name = typeof record.name === "string" ? record.name : null;
-    if (!name)
-        return null;
-    const evaluation = {
-        name,
-        value: (record.value ?? null),
-    };
-    const comment = typeof record.comment === "string" ? record.comment : undefined;
-    if (comment !== undefined)
-        evaluation.comment = comment;
-    const metadata = asRecord(record.metadata);
-    if (metadata)
-        evaluation.metadata = metadata;
-    const dataType = pickCanonicalField(record, "dataType");
-    if (dataType)
-        evaluation.dataType = dataType;
-    const configId = pickCanonicalField(record, "configId");
-    if (configId)
-        evaluation.configId = configId;
-    return evaluation;
-}
-function asItemResult(raw) {
-    const record = asRecord(raw);
-    if (!record)
-        return null;
-    const rawItem = asRecord(record.item) ?? {};
-    const expectedOutput = pickCanonicalField(rawItem, "expectedOutput");
-    const { expected_output: _expectedOutputSnake, ...restItem } = rawItem;
-    const item = {
-        ...restItem,
-        ...(expectedOutput !== undefined ? { expectedOutput } : {}),
-    };
-    const itemId = pickField(item, "id") ?? pickCanonicalField(record, "datasetItemId");
-    if (itemId && item.id === undefined)
-        item.id = itemId;
-    const evaluations = Array.isArray(record.evaluations)
-        ? record.evaluations
-            .map(asEvaluation)
-            .filter((value) => value !== null)
-        : [];
-    const normalized = {
-        item,
-        input: pickField(record, "input") ?? item.input,
-        expectedOutput: pickCanonicalField(record, "expectedOutput") ?? item.expectedOutput,
-        output: record.output,
-        evaluations,
-    };
-    const traceId = pickCanonicalField(record, "traceId");
-    if (traceId)
-        normalized.traceId = traceId;
-    const datasetRunId = pickCanonicalField(record, "datasetRunId");
-    if (datasetRunId)
-        normalized.datasetRunId = datasetRunId;
-    return normalized;
-}
-function normalizeExperimentResult(raw) {
-    const record = asRecord(raw);
-    if (!record)
-        return null;
-    const runEvaluationsRaw = pickCanonicalField(record, "runEvaluations") ?? [];
-    const itemResultsRaw = pickCanonicalField(record, "itemResults") ?? [];
-    const normalized = {
-        runName: pickCanonicalField(record, "runName") ?? pickField(record, "name"),
-        itemResults: itemResultsRaw
-            .map(asItemResult)
-            .filter((value) => value !== null),
-        runEvaluations: runEvaluationsRaw
-            .map(asEvaluation)
-            .filter((value) => value !== null),
-    };
-    const experimentId = pickCanonicalField(record, "experimentId");
-    if (experimentId)
-        normalized.experimentId = experimentId;
-    const datasetRunId = pickCanonicalField(record, "datasetRunId");
-    if (datasetRunId)
-        normalized.datasetRunId = datasetRunId;
-    return normalized;
-}
-/**
- * The JS SDK's `runName` usually appends an ISO timestamp; strip it when we
- * want the user-provided experiment name for display.
- */
-function experimentDisplayName(result) {
-    if (!result.runName)
-        return undefined;
-    return result.runName.replace(/ - \d{4}-\d{2}-\d{2}T[^ ]+$/, "") || result.runName;
-}
-function resolveLangfuseExperimentUrl(params) {
-    const { result, baseUrl, projectId } = params;
-    if (!result)
-        return null;
-    if (!result.datasetRunId)
-        return null;
-    if (baseUrl && projectId && typeof result.experimentId === "string" && result.experimentId) {
-        return buildExperimentResultsUrl({
-            baseUrl,
-            projectId,
-            experimentId: result.experimentId,
-        });
-    }
-    return null;
-}
-
 ;// CONCATENATED MODULE: ./src/github/errors.ts
 function errorStatus(err) {
     return typeof err.status === "number"
@@ -38142,8 +39299,49 @@ function errorMessage(err) {
 }
 
 // EXTERNAL MODULE: ./node_modules/.pnpm/bottleneck@2.19.5/node_modules/bottleneck/light.js
-var light = __nccwpck_require__(9900);
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@octokit+plugin-retry@8.1.0_@octokit+core@7.0.6/node_modules/@octokit/plugin-retry/dist-bundle/index.js
+var light = __nccwpck_require__(2384);
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@octokit+request-error@7.1.1/node_modules/@octokit/request-error/dist-src/index.js
+class dist_src_RequestError extends Error {
+  name;
+  /**
+   * http status code
+   */
+  status;
+  /**
+   * Request options that lead to the error.
+   */
+  request;
+  /**
+   * Response object if a response was received
+   */
+  response;
+  constructor(message, statusCode, options) {
+    super(message, { cause: options.cause });
+    this.name = "HttpError";
+    this.status = Number.parseInt(statusCode);
+    if (Number.isNaN(this.status)) {
+      this.status = 0;
+    }
+    /* v8 ignore else -- @preserve -- Bug with vitest coverage where it sees an else branch that doesn't exist */
+    if ("response" in options) {
+      this.response = options.response;
+    }
+    const requestCopy = Object.assign({}, options.request);
+    if (options.request.headers.authorization) {
+      requestCopy.headers = Object.assign({}, options.request.headers, {
+        authorization: options.request.headers.authorization.replace(
+          /(?<! ) .*$/,
+          " [REDACTED]"
+        )
+      });
+    }
+    requestCopy.url = requestCopy.url.replace(/\bclient_secret=\w+/g, "client_secret=[REDACTED]").replace(/\baccess_token=\w+/g, "access_token=[REDACTED]");
+    this.request = requestCopy;
+  }
+}
+
+
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@octokit+plugin-retry@8.1.1_@octokit+core@7.0.6/node_modules/@octokit/plugin-retry/dist-bundle/index.js
 // pkg/dist-src/version.js
 var plugin_retry_dist_bundle_VERSION = "0.0.0-development";
 
@@ -38186,7 +39384,7 @@ async function requestWithGraphqlErrorHandling(state, octokit, request, options)
   if (response.data && response.data.errors && response.data.errors.length > 0 && /Something went wrong while executing your query/.test(
     response.data.errors[0].message
   )) {
-    const error = new RequestError(response.data.errors[0].message, 500, {
+    const error = new dist_src_RequestError(response.data.errors[0].message, 500, {
       request: options,
       response
     });
@@ -38226,7 +39424,7 @@ function retry(octokit, octokitOptions) {
 retry.VERSION = plugin_retry_dist_bundle_VERSION;
 
 
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@octokit+plugin-throttling@11.0.3_@octokit+core@7.0.6/node_modules/@octokit/plugin-throttling/dist-bundle/index.js
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@octokit+plugin-throttling@11.0.5_@octokit+core@7.0.6/node_modules/@octokit/plugin-throttling/dist-bundle/index.js
 // pkg/dist-src/index.js
 
 
@@ -38361,18 +39559,13 @@ function throttling(octokit, octokitOptions) {
   if (typeof connection !== "undefined") {
     common.connection = connection;
   }
-  if (groups.global == null) {
-    createGroups(Bottleneck, common);
-  }
   const state = Object.assign(
     {
       clustering: connection != null,
       triggersNotification,
       fallbackSecondaryRateRetryAfter: 60,
       retryAfterBaseValue: 1e3,
-      retryLimiter: new Bottleneck(),
-      id,
-      ...groups
+      id
     },
     octokitOptions.throttle
   );
@@ -38389,65 +39582,84 @@ function throttling(octokit, octokitOptions) {
         })
     `);
   }
-  const events = {};
-  const emitter = new Bottleneck.Events(events);
-  events.on("secondary-limit", state.onSecondaryRateLimit);
-  events.on("rate-limit", state.onRateLimit);
-  events.on(
-    "error",
-    (e) => octokit.log.warn("Error in throttling-plugin limit handler", e)
-  );
-  state.retryLimiter.on("failed", async function(error, info) {
-    const [state2, request, options] = info.args;
-    const { pathname } = new URL(options.url, "http://github.test");
-    const shouldRetryGraphQL = pathname.startsWith("/graphql") && error.status !== 401;
-    if (!(shouldRetryGraphQL || error.status === 403 || error.status === 429)) {
+  let initialized = false;
+  const initializeBottleneck = () => {
+    if (initialized) {
       return;
     }
-    const retryCount = ~~request.retryCount;
-    request.retryCount = retryCount;
-    options.request.retryCount = retryCount;
-    const { wantRetry, retryAfter = 0 } = await (async function() {
-      if (/\bsecondary rate\b/i.test(error.message)) {
-        const retryAfter2 = Number(error.response.headers["retry-after"]) || state2.fallbackSecondaryRateRetryAfter;
-        const wantRetry2 = await emitter.trigger(
-          "secondary-limit",
-          retryAfter2,
-          options,
-          octokit,
-          retryCount
-        );
-        return { wantRetry: wantRetry2, retryAfter: retryAfter2 };
-      }
-      if (error.response.headers != null && error.response.headers["x-ratelimit-remaining"] === "0" || (error.response.data?.errors ?? []).some(
-        (error2) => error2.type === "RATE_LIMITED"
-      )) {
-        const rateLimitReset = new Date(
-          ~~error.response.headers["x-ratelimit-reset"] * 1e3
-        ).getTime();
-        const retryAfter2 = Math.max(
-          // Add one second so we retry _after_ the reset time
-          // https://docs.github.com/en/rest/overview/resources-in-the-rest-api?apiVersion=2022-11-28#exceeding-the-rate-limit
-          Math.ceil((rateLimitReset - Date.now()) / 1e3) + 1,
-          0
-        );
-        const wantRetry2 = await emitter.trigger(
-          "rate-limit",
-          retryAfter2,
-          options,
-          octokit,
-          retryCount
-        );
-        return { wantRetry: wantRetry2, retryAfter: retryAfter2 };
-      }
-      return {};
-    })();
-    if (wantRetry) {
-      request.retryCount++;
-      return retryAfter * state2.retryAfterBaseValue;
+    initialized = true;
+    if (groups.global == null) {
+      createGroups(Bottleneck, common);
     }
+    state.global = state.global ?? groups.global;
+    state.auth = state.auth ?? groups.auth;
+    state.search = state.search ?? groups.search;
+    state.write = state.write ?? groups.write;
+    state.notifications = state.notifications ?? groups.notifications;
+    state.retryLimiter = state.retryLimiter ?? new Bottleneck();
+    const events = {};
+    const emitter = new Bottleneck.Events(events);
+    events.on("secondary-limit", state.onSecondaryRateLimit);
+    events.on("rate-limit", state.onRateLimit);
+    events.on(
+      "error",
+      (e) => octokit.log.warn("Error in throttling-plugin limit handler", e)
+    );
+    state.retryLimiter.on("failed", async function(error, info) {
+      const [state2, request, options] = info.args;
+      const { pathname } = new URL(options.url, "http://github.test");
+      const shouldRetryGraphQL = pathname.startsWith("/graphql") && error.status !== 401;
+      if (!(shouldRetryGraphQL || error.status === 403 || error.status === 429)) {
+        return;
+      }
+      const retryCount = ~~request.retryCount;
+      request.retryCount = retryCount;
+      options.request.retryCount = retryCount;
+      const { wantRetry, retryAfter = 0 } = await (async function() {
+        if (/\bsecondary rate\b/i.test(error.message)) {
+          const retryAfter2 = Number(error.response.headers["retry-after"]) || state2.fallbackSecondaryRateRetryAfter;
+          const wantRetry2 = await emitter.trigger(
+            "secondary-limit",
+            retryAfter2,
+            options,
+            octokit,
+            retryCount
+          );
+          return { wantRetry: wantRetry2, retryAfter: retryAfter2 };
+        }
+        if (error.response.headers != null && error.response.headers["x-ratelimit-remaining"] === "0" || (error.response.data?.errors ?? []).some(
+          (error2) => error2.type === "RATE_LIMITED"
+        )) {
+          const rateLimitReset = new Date(
+            ~~error.response.headers["x-ratelimit-reset"] * 1e3
+          ).getTime();
+          const retryAfter2 = Math.max(
+            // Add one second so we retry _after_ the reset time
+            // https://docs.github.com/en/rest/overview/resources-in-the-rest-api?apiVersion=2022-11-28#exceeding-the-rate-limit
+            Math.ceil((rateLimitReset - Date.now()) / 1e3) + 1,
+            0
+          );
+          const wantRetry2 = await emitter.trigger(
+            "rate-limit",
+            retryAfter2,
+            options,
+            octokit,
+            retryCount
+          );
+          return { wantRetry: wantRetry2, retryAfter: retryAfter2 };
+        }
+        return {};
+      })();
+      if (wantRetry) {
+        request.retryCount++;
+        return retryAfter * state2.retryAfterBaseValue;
+      }
+    });
+  };
+  octokit.hook.wrap("request", (request, options) => {
+    initializeBottleneck();
+    return dist_bundle_wrapRequest(state, request, options);
   });
-  octokit.hook.wrap("request", dist_bundle_wrapRequest.bind(null, state));
   return {};
 }
 throttling.VERSION = plugin_throttling_dist_bundle_VERSION;
@@ -38490,78 +39702,7 @@ function makeOctokit(token) {
     }, retry, throttling);
 }
 
-;// CONCATENATED MODULE: ./src/github/job-url.ts
-
-
-
-
-/**
- * Resolve the URL to the specific job this action is running in. Returns
- * `null` when the API can't be reached or the job can't be pinned down —
- * callers should then fall back to the workflow-run URL.
- *
- * Why an API call is unavoidable: `GITHUB_JOB` is the YAML job *key*, not
- * the numeric job id that appears in the URL, and GitHub doesn't expose
- * that id anywhere in the runner environment. We list jobs on the current
- * run attempt and pick ours by `runner_name` (a runner only executes one
- * job at a time on a given attempt, so this is deterministic). If the env
- * var is unexpectedly empty we fall through to a "single in-progress job"
- * match before giving up.
- *
- * Requires `actions: read` on the workflow token. On 403 we surface a
- * single warning so callers can self-diagnose.
- */
-async function resolveJobUrl(params) {
-    const { token, runId, runAttempt, runnerName } = params;
-    if (!token || !runId)
-        return null;
-    const runIdNum = Number(runId);
-    const attemptNum = Math.max(1, Number(runAttempt) || 1);
-    if (!Number.isFinite(runIdNum))
-        return null;
-    const octokit = makeOctokit(token);
-    const { owner, repo } = github_context.repo;
-    try {
-        const { data } = await octokit.rest.actions.listJobsForWorkflowRunAttempt({
-            owner,
-            repo,
-            run_id: runIdNum,
-            attempt_number: attemptNum,
-        });
-        if (runnerName) {
-            const match = data.jobs.find((j) => j.runner_name === runnerName);
-            if (match?.html_url)
-                return match.html_url;
-        }
-        // Fallback for the rare case where RUNNER_NAME is empty (some
-        // self-hosted setups): a single in-progress job is unambiguously us.
-        const inProgress = data.jobs.filter((j) => j.status === "in_progress");
-        if (inProgress.length === 1 && inProgress[0].html_url) {
-            return inProgress[0].html_url;
-        }
-        warning(`Could not identify the current job (runner="${runnerName ?? ""}", ` +
-            `${data.jobs.length} jobs, ${inProgress.length} in progress). ` +
-            "Falling back to the workflow-run URL.");
-        return null;
-    }
-    catch (err) {
-        const status = errorStatus(err);
-        const msg = errorMessage(err);
-        if (status === 403) {
-            warning("Job-URL lookup was denied (HTTP 403). Grant `actions: read` to the " +
-                "workflow (or the specific job) so the PR comment can link directly " +
-                "to the job run. Falling back to the workflow-run URL.");
-        }
-        else {
-            warning(`Job-URL lookup failed (${status ?? "no status"}): ${msg}. ` +
-                "Falling back to the workflow-run URL.");
-        }
-        return null;
-    }
-}
-
 ;// CONCATENATED MODULE: ./src/metadata.ts
-
 /**
  * Namespace prepended to every default metadata key. Makes action-generated
  * metadata unambiguous alongside whatever the user adds via
@@ -38586,7 +39727,7 @@ const DEFAULT_METADATA = {
     // cases in one entry.
     actor: (env) => env.GITHUB_TRIGGERING_ACTOR ?? env.GITHUB_ACTOR ?? null,
     pr_url: resolvePrUrl,
-    github_job_url: resolveJobUrlMetadata,
+    github_job_url: (_env, opts) => opts.jobUrl ?? null,
 };
 /**
  * The full default metadata bag for the current action invocation:
@@ -38594,12 +39735,11 @@ const DEFAULT_METADATA = {
  * + user-supplied `custom` metadata layered on top.
  *
  * Custom entries win on key collisions so authors can override anything the
- * action would emit automatically. Omit `token` to skip the job-URL lookup
- * (useful in tests).
+ * action would emit automatically.
  */
 async function resolveDefaultMetadata(options = {}) {
     const env = options.env ?? process.env;
-    const opts = { token: options.token };
+    const opts = { jobUrl: options.jobUrl };
     const resolved = await Promise.all(Object.entries(DEFAULT_METADATA).map(async ([name, resolve]) => [name, await resolve(env, opts)]));
     const metadata = {};
     for (const [name, value] of resolved) {
@@ -38657,16 +39797,6 @@ function resolvePrUrl(env) {
     const server = env.GITHUB_SERVER_URL ?? "https://github.com";
     return `${server}/${repo}/pull/${prMatch[1]}`;
 }
-async function resolveJobUrlMetadata(env, opts) {
-    if (!opts.token)
-        return null;
-    return resolveJobUrl({
-        token: opts.token,
-        runId: env.GITHUB_RUN_ID ?? "",
-        runAttempt: env.GITHUB_RUN_ATTEMPT ?? "1",
-        runnerName: env.RUNNER_NAME,
-    });
-}
 function normalizeRepoPath(scriptPath, workspace) {
     const normalizedScript = scriptPath.replace(/\\/g, "/");
     const normalizedWorkspace = workspace.replace(/\\/g, "/").replace(/\/+$/, "");
@@ -38679,464 +39809,50 @@ function normalizeRepoPath(scriptPath, workspace) {
     return normalizedScript.slice(normalizedWorkspace.length + 1);
 }
 
-;// CONCATENATED MODULE: ./src/comment.ts
+;// CONCATENATED MODULE: ./src/comment/post.ts
+// The GitHub API layer of the PR comment: resolving the canonical comment
+// for a run, the convergent merge-verify-retry upsert, and the high-level
+// entry point used by `main.ts`. All text assembly lives in `./body`.
 
 
 
 
 
 
-
-
-// ---------------------------------------------------------------------------
-// Markers
-// ---------------------------------------------------------------------------
 /**
- * Top-level marker identifying the single PR comment for a workflow run.
- * All action invocations in the same run share the same comment — they
- * splice their own sections into its body.
+ * Bound on the merge-verify-retry loop below. Each retry only fires when a
+ * concurrent job clobbered our write, so in practice one or two attempts
+ * suffice even for large matrices.
  */
-function runMarker(runId) {
-    return `<!-- langfuse-experiment-action run_id=${encodeURIComponent(runId)} -->`;
-}
+const MAX_UPSERT_ATTEMPTS = 5;
 /**
- * Delimiters wrapping one script's section inside the run comment. We key
- * the marker on the script *path* (encoded) so two scripts whose SDK
- * experiment names happen to collide still get separate sections.
+ * Delay before the verify read. Long enough that a racing writer's update
+ * (a read-modify-write round trip against the GitHub API is typically a
+ * few hundred ms) usually lands before we re-read; jittered so retrying
+ * jobs desynchronize instead of clobbering each other in lockstep.
  */
-function sectionMarkers(scriptPath) {
-    const key = encodeURIComponent(scriptPath);
-    return {
-        start: `<!-- langfuse-experiment-action:start script=${key}`,
-        end: `<!-- langfuse-experiment-action:end script=${key} -->`,
-    };
-}
-function overviewMarkers() {
-    return {
-        start: "<!-- langfuse-experiment-action:overview:start -->",
-        end: "<!-- langfuse-experiment-action:overview:end -->",
-    };
-}
-function detailsMarkers() {
-    return {
-        start: "<!-- langfuse-experiment-action:details:start -->",
-        end: "<!-- langfuse-experiment-action:details:end -->",
-    };
+const VERIFY_DELAY_BASE_MS = 300;
+const VERIFY_DELAY_JITTER_MS = 600;
+/** GitHub may serve comment bodies with CRLF; we always write LF. */
+function normalizeLineEndings(s) {
+    return s.replace(/\r\n/g, "\n");
 }
 /**
- * Human-readable label for a script file. Extensions are kept (distinguishes
- * `experiment.py` from `experiment.ts`) and the immediate parent directory
- * is prefixed when informative, so several experiments named `experiment.py`
- * in different folders don't collapse to the same display string.
+ * The comment all racing jobs converge on: the *oldest* (lowest-id) comment
+ * carrying the run marker. Lowest-id is a deterministic tiebreak every job
+ * agrees on when a creation race produced duplicates.
  */
-function scriptLabel(scriptPath, scriptName) {
-    const parent = external_node_path_namespaceObject.basename(external_node_path_namespaceObject.dirname(scriptPath));
-    if (!parent || parent === "." || parent === "/")
-        return scriptName;
-    return `${parent}/${scriptName}`;
-}
-// ---------------------------------------------------------------------------
-// Cell formatting
-// ---------------------------------------------------------------------------
-const CELL_MAX = 80;
-/**
- * Maximum rows shown in the per-item `<details>` table. GitHub caps
- * comments at 64 KB and a realistic item row is ~80 chars; 50 rows keeps
- * us comfortably under the cap even for multi-script directories, and
- * bigger lists are hard to scan by eye anyway. The full set is always one
- * click away via the "View on Langfuse" link in the subtitle.
- */
-const MAX_ITEMS_SHOWN = 50;
-function stringifyCell(v) {
-    if (typeof v === "string")
-        return v;
-    if (v == null)
-        return "";
-    if (typeof v === "number" || typeof v === "boolean")
-        return String(v);
-    try {
-        return JSON.stringify(v);
-    }
-    catch {
-        return String(v);
-    }
-}
-/** Escape + truncate a value to fit inside a markdown table cell. */
-function cell(v, maxLen = CELL_MAX) {
-    let s = stringifyCell(v).replace(/[\r\n]+/g, " ");
-    if (s.length > maxLen)
-        s = s.slice(0, maxLen - 1) + "…";
-    s = s.replace(/\\/g, "\\\\").replace(/\|/g, "\\|");
-    return s || "—";
-}
-function formatScore(v) {
-    if (typeof v === "number")
-        return v.toFixed(3);
-    if (v == null)
-        return "—";
-    return cell(v, 32);
-}
-function statusSummary(err) {
-    if (!err)
-        return { icon: "✅", status: "✅ Pass" };
-    if (err.isRegression)
-        return { icon: "❌", status: "❌ Regression" };
-    return { icon: "❌", status: "❌ Error" };
-}
-function renderActionLinks(runUrl, langfuseUrl, localDataset) {
-    const actions = [];
-    if (runUrl)
-        actions.push(`[View GitHub Action Run](${runUrl})`);
-    if (langfuseUrl)
-        actions.push(`[View in Langfuse](${langfuseUrl})`);
-    if (localDataset)
-        actions.push("Local dataset");
-    return actions;
-}
-function renderActionMetadata(runUrl, langfuseUrl, localDataset) {
-    const attrs = [];
-    if (runUrl)
-        attrs.push(`run=${encodeURIComponent(runUrl)}`);
-    if (langfuseUrl)
-        attrs.push(`langfuse=${encodeURIComponent(langfuseUrl)}`);
-    if (localDataset)
-        attrs.push("local_dataset=true");
-    return attrs.length > 0 ? attrs.join(" ") : null;
-}
-function renderSectionStartMarker(scriptPath, opts = {}) {
-    const { start } = sectionMarkers(scriptPath);
-    const attrs = renderActionMetadata(opts.runUrl, opts.langfuseUrl, opts.localDataset);
-    return `${start}${attrs ? ` ${attrs}` : ""} -->`;
-}
-function parseActionAttributes(raw) {
-    const attrs = new Map((raw ?? "")
-        .split(/\s+/)
-        .filter(Boolean)
-        .map((part) => {
-        const [key, ...valueParts] = part.split("=");
-        return [key ?? "", valueParts.join("=")];
-    }));
-    const runUrl = attrs.get("run") ? decodeURIComponent(attrs.get("run") ?? "") : undefined;
-    const langfuseUrl = attrs.get("langfuse")
-        ? decodeURIComponent(attrs.get("langfuse") ?? "")
-        : undefined;
-    return {
-        runUrl,
-        langfuseUrl,
-        localDataset: attrs.get("local_dataset") === "true",
-    };
-}
-function renderOverviewTable(metas) {
-    const duplicates = new Map();
-    for (const meta of metas) {
-        duplicates.set(meta.displayName, (duplicates.get(meta.displayName) ?? 0) + 1);
-    }
-    const rows = metas.map((meta) => {
-        const experiment = (duplicates.get(meta.displayName) ?? 0) > 1
-            ? `${cell(meta.displayName, 48)} (\`${cell(meta.scriptLabel, 32)}\`)`
-            : cell(meta.displayName, 56);
-        return [
-            experiment,
-            cell(meta.status, 20),
-            renderActionLinks(meta.runUrl, meta.langfuseUrl, meta.localDataset).join(" · ") || "—",
-        ];
+async function findCanonicalComment(octokit, repo, issueNumber, marker) {
+    const comments = await octokit.paginate(octokit.rest.issues.listComments, {
+        ...repo,
+        issue_number: issueNumber,
+        per_page: 100,
     });
-    return [
-        "| Experiment | Status | Actions |",
-        "| --- | --- | --- |",
-        ...rows.map((row) => `| ${row.join(" | ")} |`),
-    ].join("\n");
-}
-function replaceMarkedBlock(body, start, end, replacement) {
-    const startIdx = body.indexOf(start);
-    const endIdx = body.indexOf(end, startIdx >= 0 ? startIdx : 0);
-    if (startIdx === -1 || endIdx === -1 || endIdx <= startIdx)
-        return body;
-    const before = body.slice(0, startIdx).replace(/\s+$/, "");
-    const after = body.slice(endIdx + end.length).replace(/^\s+/, "");
-    return `${before}\n\n${replacement}\n\n${after}`.replace(/\n{3,}/g, "\n\n").trimEnd() + "\n";
-}
-function parseSectionOverview(body) {
-    const sections = [];
-    const regex = /<!-- langfuse-experiment-action:start script=([^ >]+)([^>]*)-->/g;
-    let match;
-    while ((match = regex.exec(body)) !== null) {
-        const encodedScriptPath = match[1];
-        if (!encodedScriptPath)
-            continue;
-        const scriptPath = decodeURIComponent(encodedScriptPath);
-        const { end } = sectionMarkers(scriptPath);
-        const sectionStart = match.index;
-        const sectionEnd = body.indexOf(end, sectionStart);
-        if (sectionEnd === -1)
-            continue;
-        const sectionBody = body.slice(sectionStart, sectionEnd + end.length);
-        const summaryText = sectionBody.match(/<details(?: open)?><summary>(.*?)<\/summary>/s)?.[1];
-        if (!summaryText)
-            continue;
-        const firstSpace = summaryText.indexOf(" ");
-        if (firstSpace === -1)
-            continue;
-        const displayName = summaryText
-            .slice(firstSpace + 1)
-            .replace(/ \(&lt;a href="[^"]+"&gt;Source&lt;\/a&gt;\)$/, "")
-            .replace(/ \(<a href="[^"]+">Source<\/a>\)$/, "");
-        const scriptLabelText = scriptLabel(scriptPath, external_node_path_namespaceObject.basename(scriptPath));
-        const status = sectionBody.includes("> **Run failed —")
-            ? "❌ Error"
-            : sectionBody.match(/^> \*\*.+:\*\*/m)
-                ? "❌ Regression"
-                : "✅ Pass";
-        const startAttrs = parseActionAttributes(match[2]?.trim());
-        const legacyActionMeta = parseActionAttributes(sectionBody.match(/<!-- langfuse-experiment-action:actions ([^>]+) -->/)?.[1]);
-        const runUrl = startAttrs.runUrl ?? legacyActionMeta.runUrl;
-        const langfuseUrl = startAttrs.langfuseUrl ?? legacyActionMeta.langfuseUrl;
-        const localDataset = startAttrs.localDataset ?? legacyActionMeta.localDataset;
-        sections.push({
-            scriptPath,
-            displayName,
-            scriptLabel: scriptLabelText,
-            status,
-            runUrl,
-            langfuseUrl,
-            localDataset,
-        });
-    }
-    return sections;
-}
-function refreshOverview(body) {
-    const { start: overviewStart, end: overviewEnd } = overviewMarkers();
-    const { start: detailsStart, end: detailsEnd } = detailsMarkers();
-    const withoutOverview = replaceMarkedBlock(body, overviewStart, overviewEnd, "");
-    const withoutLayout = replaceMarkedBlock(withoutOverview, detailsStart, detailsEnd, "");
-    const metas = parseSectionOverview(withoutLayout);
-    if (metas.length === 0)
-        return withoutLayout;
-    const firstSectionIdx = withoutLayout.indexOf("<!-- langfuse-experiment-action:start script=");
-    if (firstSectionIdx === -1)
-        return withoutLayout;
-    const overviewBlock = [overviewStart, renderOverviewTable(metas), overviewEnd].join("\n");
-    const detailsBlock = [detailsStart, "**Details**", detailsEnd].join("\n");
-    const before = withoutLayout.slice(0, firstSectionIdx).replace(/\s+$/, "");
-    const after = withoutLayout.slice(firstSectionIdx).replace(/^\s+/, "");
-    return `${before}\n\n${overviewBlock}\n\n${detailsBlock}\n\n${after}`
-        .replace(/\n{3,}/g, "\n\n")
-        .trimEnd()
-        .concat("\n");
-}
-function renderSectionSummary(params) {
-    return `${params.icon} ${params.displayName}`;
-}
-function renderSummarySourceLink(scriptUrl) {
-    if (!scriptUrl)
-        return "";
-    return ` (<a href="${scriptUrl}">Source</a>)`;
-}
-// ---------------------------------------------------------------------------
-// Rendering
-// ---------------------------------------------------------------------------
-function renderScoresTable(evaluations) {
-    if (evaluations.length === 0)
-        return "";
-    const rows = evaluations.map((e) => `| \`${e.name}\` | ${formatScore(e.value)} |`);
-    return ["| Score | Value |", "| --- | --- |", ...rows].join("\n");
-}
-function extractLangfuseProjectRef(langfuseUrl) {
-    if (!langfuseUrl)
+    const candidates = comments.filter((c) => typeof c.body === "string" && c.body.includes(marker));
+    if (candidates.length === 0)
         return null;
-    try {
-        const url = new URL(langfuseUrl);
-        const projectIdx = url.pathname.indexOf("/project/");
-        if (projectIdx === -1)
-            return null;
-        const basePath = url.pathname.slice(0, projectIdx);
-        const projectPath = url.pathname.slice(projectIdx + "/project/".length);
-        const [projectId] = projectPath.split("/", 1);
-        if (!projectId)
-            return null;
-        return {
-            baseUrl: `${url.origin}${basePath}`,
-            projectId: decodeURIComponent(projectId),
-        };
-    }
-    catch {
-        return null;
-    }
-}
-function itemLinkUrl(itemResult, langfuseUrl) {
-    const itemId = typeof itemResult.item.id === "string" ? itemResult.item.id : undefined;
-    const datasetId = typeof itemResult.item.dataset_id === "string"
-        ? itemResult.item.dataset_id
-        : typeof itemResult.item.datasetId === "string"
-            ? itemResult.item.datasetId
-            : undefined;
-    if (!itemId || !datasetId)
-        return undefined;
-    const projectRef = extractLangfuseProjectRef(langfuseUrl);
-    if (!projectRef)
-        return undefined;
-    return buildDatasetItemUrl({
-        baseUrl: projectRef.baseUrl,
-        projectId: projectRef.projectId,
-        datasetId,
-        itemId,
-    });
-}
-function renderItemsTable(itemResults, opts = {}) {
-    if (itemResults.length === 0)
-        return "";
-    const evaluatorNames = Array.from(new Set(itemResults.flatMap((r) => r.evaluations.map((e) => e.name))));
-    const header = ["Item", "Input", "Expected", "Output", ...evaluatorNames];
-    const rows = itemResults.map((r, idx) => {
-        const label = String(idx + 1);
-        const itemUrl = itemLinkUrl(r, opts.langfuseUrl);
-        const scoreByName = new Map(r.evaluations.map((e) => [e.name, e.value]));
-        const cells = [
-            itemUrl ? `[${label}](${itemUrl})` : label,
-            cell(r.input),
-            cell(r.expectedOutput),
-            cell(r.output),
-            ...evaluatorNames.map((n) => scoreByName.has(n)
-                ? formatScore(scoreByName.get(n))
-                : "—"),
-        ];
-        return `| ${cells.join(" | ")} |`;
-    });
-    return [`| ${header.join(" | ")} |`, `| ${header.map(() => "---").join(" | ")} |`, ...rows].join("\n");
-}
-/**
- * GitHub alert callouts — `[!WARNING]` for regressions (the user's own gate
- * fired → expected failure), `[!CAUTION]` for unrelated crashes
- * (unexpected). See
- * https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#alerts
- */
-function renderErrorCallout(err) {
-    if (err.isRegression) {
-        return `> **${err.name}:** ${err.message}`;
-    }
-    return `> **Run failed — ${err.name}:** ${err.message}`;
-}
-/**
- * Render one `ScriptResult` as a complete PR-comment section, wrapped in
- * start/end markers keyed on the script path.
- *
- * Heading comes from the normalized SDK-style `runName`; on a crash (no
- * result) we fall back to the script filename so the section still shows
- * something recognisable.
- */
-function renderScriptSection(opts) {
-    const { result: scriptResult, runUrl, scriptUrl } = opts;
-    const { end } = sectionMarkers(scriptResult.scriptPath);
-    const normalized = scriptResult.normalizedResult;
-    const langfuseUrl = scriptResult.langfuseExperimentUrl ?? undefined;
-    const localDataset = Boolean(normalized && !normalized.datasetRunId);
-    const failed = scriptResult.error !== null;
-    const displayName = (normalized ? experimentDisplayName(normalized) : undefined) ?? scriptResult.scriptName;
-    const { icon } = statusSummary(scriptResult.error);
-    const summary = renderSectionSummary({
-        icon,
-        displayName,
-    });
-    const lines = [
-        renderSectionStartMarker(scriptResult.scriptPath, { runUrl, langfuseUrl, localDataset }),
-        failed
-            ? `<details open><summary>${summary}${renderSummarySourceLink(scriptUrl)}</summary>`
-            : `<details><summary>${summary}${renderSummarySourceLink(scriptUrl)}</summary>`,
-        "",
-    ];
-    if (scriptResult.error) {
-        lines.push(renderErrorCallout(scriptResult.error));
-        lines.push("");
-    }
-    if (normalized && normalized.runEvaluations.length > 0) {
-        lines.push("<br>");
-        lines.push("");
-        lines.push(renderScoresTable(normalized.runEvaluations));
-        lines.push("");
-    }
-    if (normalized && normalized.itemResults.length > 0) {
-        const total = normalized.itemResults.length;
-        const visible = normalized.itemResults.slice(0, MAX_ITEMS_SHOWN);
-        const hiddenCount = total - visible.length;
-        lines.push(`<details><summary>Item results (${total})</summary>`);
-        lines.push("");
-        lines.push(renderItemsTable(visible, { langfuseUrl }));
-        if (hiddenCount > 0) {
-            lines.push("");
-            if (langfuseUrl) {
-                lines.push(`_Showing first ${visible.length} of ${total} — [View in Langfuse](${langfuseUrl}) for the full set._`);
-            }
-            else {
-                lines.push(`_Showing first ${visible.length} of ${total}._`);
-            }
-        }
-        lines.push("");
-        lines.push("</details>");
-        lines.push("");
-    }
-    if (!scriptResult.error &&
-        !normalized?.runEvaluations.length &&
-        !normalized?.itemResults.length) {
-        lines.push("_No evaluations or items were returned._");
-        lines.push("");
-    }
-    lines.push("</details>");
-    lines.push(end);
-    return `${lines.join("\n").trimEnd()}\n`;
-}
-// ---------------------------------------------------------------------------
-// Comment body assembly
-// ---------------------------------------------------------------------------
-// Brand icon from https://langfuse.com/brand. Inline in the H1 gives the
-// comment a recognizable signature without dominating the layout.
-const LANGFUSE_ICON = "https://langfuse.com/brand-assets/icon/color/langfuse-icon.png";
-/**
- * The top-level `# …` title of the comment. Shown once per run, preserved
- * across upserts.
- */
-function renderCommentTitle(opts = {}) {
-    // `align="center"` is what actually works on GitHub comments; their
-    // markdown sanitizer drops inline `style`/CSS, but keeps the legacy
-    // `align` attribute. See
-    // https://github.com/orgs/community/discussions/183876
-    const icon = `<img src="${LANGFUSE_ICON}" height="32" alt="" align="center" />`;
-    const parts = [];
-    if (opts.shortSha)
-        parts.push(`\`${opts.shortSha}\``);
-    if (opts.runAttempt && opts.runAttempt > 1)
-        parts.push(`(#${opts.runAttempt})`);
-    const suffix = parts.length > 0 ? `: ${parts.join(" ")}` : "";
-    return `### ${icon} Experiment Results${suffix}`;
-}
-function buildFreshCommentBody(runId, titleOpts, sections) {
-    const body = [runMarker(runId), renderCommentTitle(titleOpts), ...sections].join("\n\n");
-    return refreshOverview(`${body.trimEnd()}\n`);
-}
-function refreshCommentTitle(body, titleOpts) {
-    const title = renderCommentTitle(titleOpts);
-    const lines = body.split("\n");
-    const titleIdx = lines.findIndex((line) => line.startsWith(`### <img src="${LANGFUSE_ICON}"`));
-    if (titleIdx !== -1) {
-        lines[titleIdx] = title;
-        return lines.join("\n");
-    }
-    const markerIdx = lines.findIndex((line) => line.startsWith("<!-- langfuse-experiment-action run_id="));
-    if (markerIdx !== -1) {
-        lines.splice(markerIdx + 1, 0, "", title);
-        return lines.join("\n");
-    }
-    return `${title}\n\n${body.replace(/^\s+/, "")}`;
-}
-/**
- * Replace an existing section keyed on `scriptPath` in place, or append it
- * to the end of the body if none exists.
- */
-function upsertSection(existingBody, scriptPath, section) {
-    const { start, end } = sectionMarkers(scriptPath);
-    const updated = replaceMarkedBlock(existingBody, start, end, section);
-    if (updated !== existingBody)
-        return updated;
-    return `${existingBody.replace(/\s+$/, "")}\n\n${section}\n`;
+    const oldest = candidates.reduce((a, b) => (a.id <= b.id ? a : b));
+    return { id: oldest.id, body: oldest.body ?? "" };
 }
 /**
  * Post (or upsert) the single PR comment for this workflow run.
@@ -39144,15 +39860,27 @@ function upsertSection(existingBody, scriptPath, section) {
  *   - If no comment exists yet for `runId`, create one carrying the title
  *     and all provided sections.
  *   - If a comment exists, splice each section into the existing body
- *     (replace-in-place for scripts whose paths we've rendered before in
+ *     (replace-in-place for `(script, job)` keys we've rendered before in
  *     this run, append otherwise), then update the comment in one API
  *     call.
  *
  * Different `runId`s always get fresh comments so users see evolution
  * across commits and re-pushes.
+ *
+ * Parallel jobs (e.g. matrix legs) race on this shared comment and GitHub
+ * offers no compare-and-swap for comments, so the upsert is *convergent*
+ * instead of atomic: every writer merges into the canonical comment
+ * (preserving other jobs' sections), then verifies its own sections
+ * survived and retries the merge if a concurrent writer clobbered them.
+ * A job that loses a creation race deletes its duplicate — but only after
+ * its sections are verified inside the canonical comment, so a job killed
+ * mid-loop leaves at worst a duplicate comment, never missing data.
+ * Residual risk: a job killed mid-retry can still leave its sections
+ * missing — hence the warning on exhaustion.
  */
 async function postPrComment(opts) {
     const { sections, token, runId, shortSha, runAttempt } = opts;
+    const sleep = opts.sleep ?? ((ms) => new Promise((resolve) => setTimeout(resolve, ms)));
     const ctx = github_context;
     const pr = ctx.payload.pull_request;
     if (!pr) {
@@ -39171,46 +39899,90 @@ async function postPrComment(opts) {
     }
     const octokit = makeOctokit(token);
     const marker = runMarker(runId);
+    const repo = { owner: ctx.repo.owner, repo: ctx.repo.repo };
     core_debug(`PR comment run marker: ${marker}`);
     core_debug(`Upserting ${sections.length} section(s).`);
     try {
-        const existing = await octokit.paginate(octokit.rest.issues.listComments, {
-            owner: ctx.repo.owner,
-            repo: ctx.repo.repo,
-            issue_number: pr.number,
-            per_page: 100,
-        });
-        const match = existing.find((c) => typeof c.body === "string" && c.body.includes(marker));
-        const titleOpts = { shortSha, runAttempt };
-        let body;
-        if (match) {
-            body = refreshCommentTitle(match.body ?? marker, titleOpts);
+        let ourCreatedId = null;
+        for (let attempt = 1; attempt <= MAX_UPSERT_ATTEMPTS; attempt++) {
+            try {
+                const canonical = await findCanonicalComment(octokit, repo, pr.number, marker);
+                const titleOpts = { shortSha, runAttempt };
+                if (canonical) {
+                    let body = refreshCommentTitle(canonical.body, titleOpts);
+                    for (const section of sections) {
+                        body = upsertSection(body, section, section.markdown);
+                    }
+                    body = refreshOverview(body);
+                    await octokit.rest.issues.updateComment({ ...repo, comment_id: canonical.id, body });
+                }
+                else if (ourCreatedId === null) {
+                    let body = buildFreshCommentBody(runId, titleOpts, []);
+                    for (const section of sections) {
+                        body = upsertSection(body, section, section.markdown);
+                    }
+                    body = refreshOverview(body);
+                    const created = await octokit.rest.issues.createComment({
+                        ...repo,
+                        issue_number: pr.number,
+                        body,
+                    });
+                    ourCreatedId = created.data.id;
+                }
+                // Else: we already created a comment but the listing doesn't show
+                // it yet (read lag). Creating again would just spawn another
+                // duplicate — wait for the verify read below instead.
+                await sleep(VERIFY_DELAY_BASE_MS + Math.random() * VERIFY_DELAY_JITTER_MS);
+                const verified = await findCanonicalComment(octokit, repo, pr.number, marker);
+                // Compare full section content, not just the markers: a stale
+                // concurrent write can carry an *older* version of our section (same
+                // markers, outdated body), e.g. when re-running a leg. Sections land
+                // in the body verbatim modulo trailing-whitespace collapsing, so a
+                // substring check on the trimmed markdown is exact.
+                const verifiedBody = normalizeLineEndings(verified?.body ?? "");
+                const contentOk = verified !== null &&
+                    sections.every(({ markdown }) => verifiedBody.includes(normalizeLineEndings(markdown).trimEnd()));
+                if (!contentOk) {
+                    core_debug(`PR comment write was clobbered by a concurrent job (attempt ${attempt}).`);
+                    continue;
+                }
+                if (ourCreatedId !== null && verified.id !== ourCreatedId) {
+                    // We lost a creation race, and our sections are now *verified*
+                    // inside the canonical comment — only now is our duplicate safe
+                    // to drop. Deleting before the verify could lose data: had the
+                    // merge been clobbered and this job killed, the duplicate would
+                    // have been the only surviving copy of our sections.
+                    try {
+                        await octokit.rest.issues.deleteComment({ ...repo, comment_id: ourCreatedId });
+                        ourCreatedId = null;
+                    }
+                    catch (deleteErr) {
+                        if (errorStatus(deleteErr) === 404) {
+                            ourCreatedId = null;
+                        }
+                        else {
+                            // Retry the delete on the next attempt rather than leaving
+                            // an orphan duplicate behind.
+                            core_debug(`Failed to delete duplicate comment: ${errorMessage(deleteErr)}`);
+                            continue;
+                        }
+                    }
+                }
+                info(`Upserted run ${runId} comment ${verified.id} on PR #${pr.number}.`);
+                return;
+            }
+            catch (attemptErr) {
+                // A transient API failure (5xx, timeout) shouldn't abort the
+                // remaining attempts — riding out flaky moments is the point of
+                // the loop. Permission errors can't heal on retry; rethrow so the
+                // outer handler prints the actionable hint.
+                if (errorStatus(attemptErr) === 403)
+                    throw attemptErr;
+                core_debug(`PR comment attempt ${attempt} failed (${errorMessage(attemptErr)}); retrying.`);
+            }
         }
-        else {
-            body = buildFreshCommentBody(runId, titleOpts, []);
-        }
-        for (const { scriptPath, markdown } of sections) {
-            body = upsertSection(body, scriptPath, markdown);
-        }
-        body = refreshOverview(body);
-        if (match) {
-            await octokit.rest.issues.updateComment({
-                owner: ctx.repo.owner,
-                repo: ctx.repo.repo,
-                comment_id: match.id,
-                body,
-            });
-            info(`Updated run ${runId} comment ${match.id} on PR #${pr.number}.`);
-        }
-        else {
-            await octokit.rest.issues.createComment({
-                owner: ctx.repo.owner,
-                repo: ctx.repo.repo,
-                issue_number: pr.number,
-                body,
-            });
-            info(`Posted run ${runId} comment on PR #${pr.number}.`);
-        }
+        warning(`PR comment for run ${runId} may be incomplete: concurrent jobs kept racing on the ` +
+            `shared comment for ${MAX_UPSERT_ATTEMPTS} attempts. Re-run this job to refresh it.`);
     }
     catch (err) {
         const status = errorStatus(err);
@@ -39229,17 +40001,30 @@ async function postPrComment(opts) {
  * one section per `ScriptResult`, and hands the batch to `postPrComment`.
  */
 async function publishExperimentComment(opts) {
-    const { inputs, results, metadata } = opts;
+    const { inputs, results, jobInfo } = opts;
     const env = opts.env ?? process.env;
-    // Prefer the job URL (set by the metadata resolver when the API call
-    // succeeded); fall back to the workflow-run URL so the comment still
-    // carries a link even when job-id resolution fails.
-    const jobUrl = metadata["langfuse.github_job_url"];
-    const runUrl = jobUrl ?? buildWorkflowRunUrl(env) ?? undefined;
+    // Fall back to the workflow-run URL so the comment still carries a link
+    // even when job resolution failed (e.g. no `actions: read`).
+    const runUrl = jobInfo?.htmlUrl ?? buildWorkflowRunUrl(env) ?? undefined;
+    // The job display name is the only per-leg identity for matrix jobs.
+    // Without it (no `actions: read`) fall back to the YAML job key, which
+    // still separates different jobs — just not legs of the same matrix.
+    const jobKey = jobInfo?.name ?? env.GITHUB_JOB ?? "";
+    // Surface the job name in section summaries only for matrix legs, whose
+    // display name is "<job key> (<matrix values>)" — the one shape where the
+    // experiment name alone can't tell sections apart. Renamed non-matrix
+    // jobs keep today's rendering (their name adds no signal, and changing it
+    // would alter existing consumers' comments on upgrade).
+    const jobLabel = jobInfo?.name && env.GITHUB_JOB && jobInfo.name.startsWith(`${env.GITHUB_JOB} (`)
+        ? jobInfo.name
+        : undefined;
     const sections = results.map((result) => ({
         scriptPath: result.scriptPath,
+        jobKey,
         markdown: renderScriptSection({
             result,
+            jobKey,
+            jobLabel,
             runUrl,
             scriptUrl: buildScriptBlobUrl(result.scriptPath, env) ?? undefined,
         }),
@@ -39254,6 +40039,10 @@ async function publishExperimentComment(opts) {
         runAttempt: Number.isFinite(runAttempt) ? runAttempt : 1,
     });
 }
+
+;// CONCATENATED MODULE: ./src/comment/index.ts
+
+
 
 ;// CONCATENATED MODULE: ./node_modules/.pnpm/@actions+glob@0.7.0/node_modules/@actions/glob/lib/internal-glob-options-helper.js
 
@@ -39602,7 +40391,7 @@ const range = (a, b, str) => {
     return result;
 };
 //# sourceMappingURL=index.js.map
-;// CONCATENATED MODULE: ./node_modules/.pnpm/brace-expansion@5.0.6/node_modules/brace-expansion/dist/esm/index.js
+;// CONCATENATED MODULE: ./node_modules/.pnpm/brace-expansion@5.0.9/node_modules/brace-expansion/dist/esm/index.js
 
 const escSlash = '\0SLASH' + Math.random() + '\0';
 const escOpen = '\0OPEN' + Math.random() + '\0';
@@ -39620,6 +40409,17 @@ const closePattern = /\\}/g;
 const commaPattern = /\\,/g;
 const periodPattern = /\\\./g;
 const EXPANSION_MAX = 100_000;
+// `EXPANSION_MAX` caps the *number* of expansions, but not their length. An
+// input like `'{a,b}'.repeat(1500)` stays under that count - its output is
+// truncated to 100k results - while making every result ~1500 characters
+// long. The result set, and the intermediate arrays built while combining
+// brace sets, then grow large enough to exhaust memory and crash the process
+// (CVE-2026-14257). `EXPANSION_MAX_LENGTH` bounds the total number of
+// characters the accumulator may hold at any point, so memory stays flat no
+// matter how many brace groups are chained. The limit sits well above any
+// realistic expansion (100k results hitting `EXPANSION_MAX` measure ~1M
+// characters) so legitimate input is unaffected.
+const EXPANSION_MAX_LENGTH = 4_000_000;
 function numeric(str) {
     return !isNaN(str) ? parseInt(str, 10) : str.charCodeAt(0);
 }
@@ -39669,7 +40469,7 @@ function esm_expand(str, options = {}) {
     if (!str) {
         return [];
     }
-    const { max = EXPANSION_MAX } = options;
+    const { max = EXPANSION_MAX, maxLength = EXPANSION_MAX_LENGTH } = options;
     // I don't know why Bash 4.3 does this, but it does.
     // Anything starting with {} will have the first two bytes preserved
     // but *only* at the top level, so {},a}b will not expand to anything,
@@ -39679,7 +40479,7 @@ function esm_expand(str, options = {}) {
     if (str.slice(0, 2) === '{}') {
         str = '\\{\\}' + str.slice(2);
     }
-    return expand_(escapeBraces(str), max, true).map(unescapeBraces);
+    return expand_(escapeBraces(str), max, maxLength, true).map(unescapeBraces);
 }
 function embrace(str) {
     return '{' + str + '}';
@@ -39693,22 +40493,117 @@ function lte(i, y) {
 function gte(i, y) {
     return i >= y;
 }
-function expand_(str, max, isTop) {
-    /** @type {string[]} */
-    const expansions = [];
-    const m = balanced('{', '}', str);
-    if (!m)
-        return [str];
-    // no need to expand pre, since it is guaranteed to be free of brace-sets
-    const pre = m.pre;
-    const post = m.post.length ? expand_(m.post, max, false) : [''];
-    if (/\$$/.test(m.pre)) {
-        for (let k = 0; k < post.length && k < max; k++) {
-            const expansion = pre + '{' + m.body + '}' + post[k];
-            expansions.push(expansion);
+// Build `{ acc[a] + pre + values[v] }` for every combination, capping the
+// number of results at `max` and the total number of characters at `maxLength`.
+// This is the one place output grows, so bounding it here keeps the single
+// accumulator - and therefore memory - flat regardless of how many brace groups
+// are combined (CVE-2026-14257).
+function combine(acc, pre, values, max, maxLength, dropEmpties) {
+    const out = [];
+    let length = 0;
+    for (let a = 0; a < acc.length; a++) {
+        for (let v = 0; v < values.length; v++) {
+            if (out.length >= max)
+                return out;
+            const expansion = acc[a] + pre + values[v];
+            // Bash drops empty results at the top level. Skip them before they count
+            // against `max`, so `max` bounds the number of *kept* results.
+            if (dropEmpties && !expansion)
+                continue;
+            if (length + expansion.length > maxLength)
+                return out;
+            out.push(expansion);
+            length += expansion.length;
         }
     }
-    else {
+    return out;
+}
+// The expansion values of a single numeric (`1..5`) or alphabetic (`a..e..2`)
+// sequence body.
+function expandSequence(body, isAlphaSequence, max, maxLength) {
+    const n = body.split(/\.\./);
+    const N = [];
+    // A sequence body always splits into two or three parts, but the compiler
+    // can't know that.
+    /* c8 ignore start */
+    if (n[0] === undefined || n[1] === undefined) {
+        return N;
+    }
+    /* c8 ignore stop */
+    const x = numeric(n[0]);
+    const y = numeric(n[1]);
+    const width = Math.max(n[0].length, n[1].length);
+    let incr = n.length === 3 && n[2] !== undefined ?
+        Math.max(Math.abs(numeric(n[2])), 1)
+        : 1;
+    let test = lte;
+    const reverse = y < x;
+    if (reverse) {
+        incr *= -1;
+        test = gte;
+    }
+    const pad = n.some(isPadded);
+    let length = 0;
+    for (let i = x; test(i, y) && N.length < max; i += incr) {
+        let c;
+        if (isAlphaSequence) {
+            c = String.fromCharCode(i);
+            if (c === '\\') {
+                c = '';
+            }
+        }
+        else {
+            c = String(i);
+            if (pad) {
+                const need = width - c.length;
+                if (need > 0) {
+                    const z = new Array(need + 1).join('0');
+                    if (i < 0) {
+                        c = '-' + z + c.slice(1);
+                    }
+                    else {
+                        c = z + c;
+                    }
+                }
+            }
+        }
+        if (length + c.length > maxLength)
+            break;
+        N.push(c);
+        length += c.length;
+    }
+    return N;
+}
+function expand_(str, max, maxLength, isTop) {
+    // Consume the string's top-level brace groups left to right, threading a
+    // running set of combined prefixes (`acc`). Expanding the tail iteratively -
+    // rather than recursing on `m.post` once per group - keeps the native stack
+    // depth constant, so deeply chained input (`'{a,b}'.repeat(3000)`) can no
+    // longer overflow the stack, and leaves a single accumulator whose size
+    // `maxLength` bounds directly (CVE-2026-14257).
+    let acc = [''];
+    // Bash drops empty results, but only when the *first* top-level group is a
+    // comma set - a sequence like `{a..\}` may legitimately yield ''. The drop
+    // is on the final strings, so it is applied to whichever `combine` produces
+    // them (the one with no brace set left in the tail).
+    let dropEmpties = false;
+    let firstGroup = true;
+    for (;;) {
+        const m = balanced('{', '}', str);
+        // No brace set left: the rest of the string is literal.
+        if (!m) {
+            return combine(acc, str, [''], max, maxLength, dropEmpties);
+        }
+        // no need to expand pre, since it is guaranteed to be free of brace-sets
+        const pre = m.pre;
+        if (/\$$/.test(pre)) {
+            acc = combine(acc, pre + '{' + m.body + '}', [''], max, maxLength, dropEmpties && !m.post.length);
+            firstGroup = false;
+            if (!m.post.length)
+                break;
+            str = m.post;
+            continue;
+        }
         const isNumericSequence = /^-?\d+\.\.-?\d+(?:\.\.-?\d+)?$/.test(m.body);
         const isAlphaSequence = /^[a-zA-Z]\.\.[a-zA-Z](?:\.\.-?\d+)?$/.test(m.body);
         const isSequence = isNumericSequence || isAlphaSequence;
@@ -39717,87 +40612,69 @@ function expand_(str, max, isTop) {
             // {a},b}
             if (m.post.match(/,(?!,).*\}/)) {
                 str = m.pre + '{' + m.body + escClose + m.post;
-                return expand_(str, max, true);
+                isTop = true;
+                continue;
             }
-            return [str];
+            // Nothing here expands, so the whole remaining string is literal.
+            return combine(acc, pre + '{' + m.body + '}' + m.post, [''], max, maxLength, dropEmpties);
         }
-        let n;
+        if (firstGroup) {
+            dropEmpties = isTop && !isSequence;
+            firstGroup = false;
+        }
+        let values;
         if (isSequence) {
-            n = m.body.split(/\.\./);
+            values = expandSequence(m.body, isAlphaSequence, max, maxLength);
         }
         else {
-            n = parseCommaParts(m.body);
+            let n = parseCommaParts(m.body);
             if (n.length === 1 && n[0] !== undefined) {
                 // x{{a,b}}y ==> x{a}y x{b}y
-                n = expand_(n[0], max, false).map(embrace);
+                n = expand_(n[0], max, maxLength, false).map(embrace);
                 //XXX is this necessary? Can't seem to hit it in tests.
                 /* c8 ignore start */
                 if (n.length === 1) {
-                    return post.map(p => m.pre + n[0] + p);
+                    acc = combine(acc, pre + n[0], [''], max, maxLength, dropEmpties && !m.post.length);
+                    if (!m.post.length)
+                        break;
+                    str = m.post;
+                    continue;
                 }
                 /* c8 ignore stop */
             }
-        }
-        // at this point, n is the parts, and we know it's not a comma set
-        // with a single entry.
-        let N;
-        if (isSequence && n[0] !== undefined && n[1] !== undefined) {
-            const x = numeric(n[0]);
-            const y = numeric(n[1]);
-            const width = Math.max(n[0].length, n[1].length);
-            let incr = n.length === 3 && n[2] !== undefined ?
-                Math.max(Math.abs(numeric(n[2])), 1)
-                : 1;
-            let test = lte;
-            const reverse = y < x;
-            if (reverse) {
-                incr *= -1;
-                test = gte;
+            // Values that `combine` is going to drop as empty produce no result, so
+            // they must not count against `max` - otherwise `{a,,b}` with `max: 2`
+            // would stop at `['a', '']` and yield one result instead of two. Skipping
+            // them outright keeps `values` bounded while leaving `max` a bound on
+            // *kept* results.
+            let dropsEmpties = dropEmpties && !m.post.length && !pre;
+            for (let d = 0; dropsEmpties && d < acc.length; d++) {
+                if (acc[d]) {
+                    dropsEmpties = false;
+                }
             }
-            const pad = n.some(isPadded);
-            N = [];
-            for (let i = x; test(i, y) && N.length < max; i += incr) {
-                let c;
-                if (isAlphaSequence) {
-                    c = String.fromCharCode(i);
-                    if (c === '\\') {
-                        c = '';
+            values = [];
+            let valuesLength = 0;
+            outer: for (let j = 0; j < n.length; j++) {
+                const expanded = expand_(n[j], max, maxLength, false);
+                for (let k = 0; k < expanded.length; k++) {
+                    const v = expanded[k];
+                    if (dropsEmpties && !v)
+                        continue;
+                    if (values.length >= max || valuesLength + v.length > maxLength) {
+                        break outer;
                     }
-                }
-                else {
-                    c = String(i);
-                    if (pad) {
-                        const need = width - c.length;
-                        if (need > 0) {
-                            const z = new Array(need + 1).join('0');
-                            if (i < 0) {
-                                c = '-' + z + c.slice(1);
-                            }
-                            else {
-                                c = z + c;
-                            }
-                        }
-                    }
-                }
-                N.push(c);
-            }
-        }
-        else {
-            N = [];
-            for (let j = 0; j < n.length; j++) {
-                N.push.apply(N, expand_(n[j], max, false));
-            }
-        }
-        for (let j = 0; j < N.length; j++) {
-            for (let k = 0; k < post.length && expansions.length < max; k++) {
-                const expansion = pre + N[j] + post[k];
-                if (!isTop || isSequence || expansion) {
-                    expansions.push(expansion);
+                    values.push(v);
+                    valuesLength += v.length;
                 }
             }
         }
+        acc = combine(acc, pre, values, max, maxLength, dropEmpties && !m.post.length);
+        if (!m.post.length)
+            break;
+        str = m.post;
     }
-    return expansions;
+    return acc;
 }
 //# sourceMappingURL=index.js.map
 ;// CONCATENATED MODULE: ./node_modules/.pnpm/minimatch@10.2.5/node_modules/minimatch/dist/esm/assert-valid-pattern.js
@@ -42842,7 +43719,7 @@ async function executeWrapper(opts) {
 
 
 
-const WRAPPER_PATH = external_node_path_namespaceObject.join(__dirname, "wrappers", "node_runner.mjs");
+const WRAPPER_PATH = __nccwpck_require__.ab + "node_runner.mjs";
 /**
  * Primary SDK package the user's script is expected to import. The version
  * check + `sdk_version` pin both apply to this package.
@@ -42879,7 +43756,7 @@ class NodeScript extends ExperimentScript {
             scriptName: this.name,
             runtime: this.runtime,
             command: tsxBin,
-            wrapperPath: WRAPPER_PATH,
+            wrapperPath: __nccwpck_require__.ab + "node_runner.mjs",
             runnerEnv,
             runtimeLabel: "Node",
         });
@@ -42929,7 +43806,7 @@ async function ensureNodeSdk(sdkVersion, skipInstallation) {
 
 
 
-const python_WRAPPER_PATH = external_node_path_namespaceObject.join(__dirname, "wrappers", "python_runner.py");
+const python_WRAPPER_PATH = __nccwpck_require__.ab + "python_runner.py";
 const PY_PACKAGE = "langfuse";
 class PythonScript extends ExperimentScript {
     runtime = "python";
@@ -42939,7 +43816,7 @@ class PythonScript extends ExperimentScript {
             scriptName: this.name,
             runtime: this.runtime,
             command: "python",
-            wrapperPath: python_WRAPPER_PATH,
+            wrapperPath: __nccwpck_require__.ab + "python_runner.py",
             runnerEnv: buildBaseRunnerEnv(env),
             runtimeLabel: "Python",
         });
@@ -43033,9 +43910,107 @@ async function setupExperimentScripts(discovered, options) {
     });
 }
 
-;// CONCATENATED MODULE: ./node_modules/.pnpm/valibot@1.3.1_typescript@6.0.3/node_modules/valibot/dist/index.mjs
+;// CONCATENATED MODULE: ./src/github/job-info.ts
+
+
+
+
+/**
+ * Resolve the job this action is running in. Returns `null` when the API
+ * can't be reached or the job can't be pinned down — callers should then
+ * fall back to the workflow-run URL / `$GITHUB_JOB`.
+ *
+ * Why an API call is unavoidable: `GITHUB_JOB` is the YAML job *key*, not
+ * the numeric job id that appears in the URL nor the matrix-aware display
+ * name, and GitHub doesn't expose either anywhere in the runner
+ * environment. We list jobs on the current run attempt and pick ours by
+ * `runner_name` (a runner only executes one job at a time on a given
+ * attempt, so this is deterministic). If the env var is unexpectedly empty
+ * we fall through to a "single in-progress job" match before giving up.
+ *
+ * Requires `actions: read` on the workflow token. On 403 we surface a
+ * single warning so callers can self-diagnose.
+ */
+async function resolveJobInfo(params) {
+    const { token, runId, runAttempt, runnerName } = params;
+    if (!token || !runId)
+        return null;
+    const runIdNum = Number(runId);
+    const attemptNum = Math.max(1, Number(runAttempt) || 1);
+    if (!Number.isFinite(runIdNum))
+        return null;
+    const octokit = makeOctokit(token);
+    const { owner, repo } = github_context.repo;
+    try {
+        // Paginate: the default page size is 30 and matrices routinely exceed
+        // that, which would silently hide our own job from the listing.
+        const jobs = await octokit.paginate(octokit.rest.actions.listJobsForWorkflowRunAttempt, {
+            owner,
+            repo,
+            run_id: runIdNum,
+            attempt_number: attemptNum,
+            per_page: 100,
+        });
+        if (runnerName) {
+            const candidates = jobs.filter((j) => j.runner_name === runnerName);
+            if (candidates.length === 1) {
+                return { htmlUrl: candidates[0].html_url, name: candidates[0].name };
+            }
+            if (candidates.length > 1) {
+                // Runner names repeat when self-hosted runners share a name or a
+                // runner already served earlier jobs of this attempt. Only one job
+                // runs on a runner at a time, so a single in-progress candidate is
+                // unambiguously us. Anything else: give up rather than guess — a
+                // wrong pick could hand two matrix legs the same display name and
+                // silently collapse their comment sections onto one key.
+                const running = candidates.filter((j) => j.status === "in_progress");
+                if (running.length === 1) {
+                    return { htmlUrl: running[0].html_url, name: running[0].name };
+                }
+                warning(`Could not disambiguate ${candidates.length} jobs on runner "${runnerName}" ` +
+                    `(${running.length} in progress). Falling back to the workflow-run URL.`);
+                return null;
+            }
+            // No candidate for our runner name (listing lag) — fall through to
+            // the single-in-progress heuristic below.
+        }
+        // Fallback for the rare case where RUNNER_NAME is empty (some
+        // self-hosted setups): a single in-progress job is unambiguously us.
+        const inProgress = jobs.filter((j) => j.status === "in_progress");
+        if (inProgress.length === 1) {
+            return { htmlUrl: inProgress[0].html_url, name: inProgress[0].name };
+        }
+        warning(`Could not identify the current job (runner="${runnerName ?? ""}", ` +
+            `${jobs.length} jobs, ${inProgress.length} in progress). ` +
+            "Falling back to the workflow-run URL.");
+        return null;
+    }
+    catch (err) {
+        const status = errorStatus(err);
+        const msg = errorMessage(err);
+        if (status === 403) {
+            warning("Job lookup was denied (HTTP 403). Grant `actions: read` to the " +
+                "workflow (or the specific job) so the PR comment can link directly " +
+                "to the job run and tell parallel matrix legs apart. " +
+                "Falling back to the workflow-run URL.");
+        }
+        else {
+            warning(`Job lookup failed (${status ?? "no status"}): ${msg}. ` +
+                "Falling back to the workflow-run URL.");
+        }
+        return null;
+    }
+}
+
+;// CONCATENATED MODULE: ./node_modules/.pnpm/valibot@1.4.2_typescript@6.0.3/node_modules/valibot/dist/index.mjs
 //#region src/storages/globalConfig/globalConfig.ts
 let store$4;
+const DEFAULT_CONFIG = {
+	lang: void 0,
+	message: void 0,
+	abortEarly: void 0,
+	abortPipeEarly: void 0
+};
 /**
 * Sets the global configuration.
 *
@@ -43056,6 +44031,7 @@ function setGlobalConfig(config$1) {
 */
 /* @__NO_SIDE_EFFECTS__ */
 function getGlobalConfig(config$1) {
+	if (!config$1 && !store$4) return DEFAULT_CONFIG;
 	return {
 		lang: config$1?.lang ?? store$4?.lang,
 		message: config$1?.message,
@@ -43256,6 +44232,82 @@ function _cloneDataset(dataset) {
 }
 
 //#endregion
+//#region src/utils/_formatCase/_formatCase.ts
+/**
+* Splits a string into lowercase words and rejoins them with the given
+* separator and capitalization rules.
+*
+* Words are separated by `_`, `-` and ASCII whitespace, as well as by case
+* and acronym boundaries. Whether the first or subsequent words are
+* capitalized is controlled by `capFirst` and `capRest`.
+*
+* Hint: Implemented in a single pass that emits directly to the result
+* string to avoid an intermediate `string[]` allocation. ASCII chars are
+* classified via char codes to skip `.toLowerCase()` and `.toUpperCase()`
+* method calls in the common case.
+*
+* Hint: Digits are treated as a separate character class, so `item2Name`
+* yields `item2` and `name` rather than `item`, `2` and `name`.
+*
+* @param input The input string.
+* @param separator The string inserted between words.
+* @param capFirst Whether to capitalize the first word.
+* @param capRest Whether to capitalize subsequent words.
+*
+* @returns The formatted string.
+*
+* @internal
+*/
+/* @__NO_SIDE_EFFECTS__ */
+function _formatCase(input, separator, capFirst, capRest) {
+	let result = "";
+	let firstWord = true;
+	let start = 0;
+	let prev = 0;
+	let prevPrev = 0;
+	const flush = (end) => {
+		if (end > start) {
+			let word = input.slice(start, end).toLowerCase();
+			if (firstWord ? capFirst : capRest) {
+				const firstCode = word.charCodeAt(0);
+				if (firstCode >= 97 && firstCode <= 122) word = String.fromCharCode(firstCode - 32) + word.slice(1);
+				else {
+					const charLen = firstCode >= 55296 && firstCode <= 56319 ? 2 : 1;
+					word = word.slice(0, charLen).toUpperCase() + word.slice(charLen);
+				}
+			}
+			result += firstWord ? word : separator + word;
+			firstWord = false;
+		}
+	};
+	for (let index = 0; index < input.length; index++) {
+		const code = input.charCodeAt(index);
+		let type;
+		if (code === 32 || code === 9 || code === 10 || code === 11 || code === 12 || code === 13 || code === 45 || code === 95) {
+			flush(index);
+			start = index + 1;
+			type = 0;
+		} else if (code < 128) type = code >= 65 && code <= 90 ? 1 : code >= 97 && code <= 122 ? 2 : 3;
+		else {
+			const char = input[index];
+			const charLower = char.toLowerCase();
+			type = charLower === char.toUpperCase() ? 3 : char === charLower ? 2 : 1;
+		}
+		if (type === 1 && (prev === 2 || prev === 3) && index > start) {
+			flush(index);
+			start = index;
+		} else if (type === 2 && prev === 1 && prevPrev === 1 && index - 1 > start) {
+			flush(index - 1);
+			start = index - 1;
+		}
+		prevPrev = prev;
+		prev = type;
+	}
+	flush(input.length);
+	return result;
+}
+
+//#endregion
 //#region src/utils/_getByteCount/_getByteCount.ts
 let textEncoder;
 /**
@@ -43325,6 +44377,7 @@ function _getLastMetadata(schema, type) {
 
 //#endregion
 //#region src/utils/_getStandardProps/_getStandardProps.ts
+const _standardCache = /* @__PURE__ */ new WeakMap();
 /**
 * Returns the Standard Schema properties.
 *
@@ -43334,13 +44387,18 @@ function _getLastMetadata(schema, type) {
 */
 /* @__NO_SIDE_EFFECTS__ */
 function _getStandardProps(context) {
-	return {
-		version: 1,
-		vendor: "valibot",
-		validate(value$1) {
-			return context["~run"]({ value: value$1 }, /* @__PURE__ */ getGlobalConfig());
-		}
-	};
+	let cached = _standardCache.get(context);
+	if (!cached) {
+		cached = {
+			version: 1,
+			vendor: "valibot",
+			validate(value$1) {
+				return context["~run"]({ value: value$1 }, /* @__PURE__ */ getGlobalConfig());
+			}
+		};
+		_standardCache.set(context, cached);
+	}
+	return cached;
 }
 
 //#endregion
@@ -43359,8 +44417,13 @@ let store;
 /* @__NO_SIDE_EFFECTS__ */
 function _getWordCount(locales, input) {
 	if (!store) store = /* @__PURE__ */ new Map();
-	if (!store.get(locales)) store.set(locales, new Intl.Segmenter(locales, { granularity: "word" }));
-	const segments = store.get(locales).segment(input);
+	const key = String(locales);
+	let segmenter$1 = store.get(key);
+	if (!segmenter$1) {
+		segmenter$1 = new Intl.Segmenter(locales, { granularity: "word" });
+		store.set(key, segmenter$1);
+	}
+	const segments = segmenter$1.segment(input);
 	let count = 0;
 	for (const segment of segments) if (segment.isWordLike) count++;
 	return count;
@@ -43421,7 +44484,7 @@ function _isLuhnAlgo(input) {
 */
 /* @__NO_SIDE_EFFECTS__ */
 function _isValidObjectKey(object$1, key) {
-	return Object.hasOwn(object$1, key) && key !== "__proto__" && key !== "prototype" && key !== "constructor";
+	return Object.prototype.hasOwnProperty.call(object$1, key) && key !== "__proto__" && key !== "prototype" && key !== "constructor";
 }
 
 //#endregion
@@ -43687,6 +44750,10 @@ const ISO_DATE_REGEX = /^\d{4}-(?:0[1-9]|1[0-2])-(?:[12]\d|0[1-9]|3[01])$/u;
 * [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) date-time regex.
 */
 const ISO_DATE_TIME_REGEX = /^\d{4}-(?:0[1-9]|1[0-2])-(?:[12]\d|0[1-9]|3[01])[T ](?:0\d|1\d|2[0-3]):[0-5]\d$/u;
+/**
+* [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) date-time with seconds regex.
+*/
+const ISO_DATE_TIME_SECOND_REGEX = /^\d{4}-(?:0[1-9]|1[0-2])-(?:[12]\d|0[1-9]|3[01])[T ](?:0\d|1\d|2[0-3])(?::[0-5]\d){2}$/u;
 /**
 * [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) time regex.
 */
@@ -43968,7 +45035,7 @@ const PROVIDER_REGEX_LIST = (/* unused pure expression or super */ null && ([
 	/^3(?:0[0-5]|[68]\d)\d{11,13}$/u,
 	/^6(?:011|5\d{2})\d{12,15}$/u,
 	/^(?:2131|1800|35\d{3})\d{11}$/u,
-	/^5[1-5]\d{2}|(?:222\d|22[3-9]\d|2[3-6]\d{2}|27[01]\d|2720)\d{12}$/u,
+	/^(?:5[1-5]\d{2}|222\d|22[3-9]\d|2[3-6]\d{2}|27[01]\d|2720)\d{12}$/u,
 	/^(?:6[27]\d{14,17}|81\d{14,17})$/u,
 	/^4\d{12}(?:\d{3,6})?$/u
 ]));
@@ -44700,6 +45767,25 @@ function isoDateTime(message$1) {
 		message: message$1,
 		"~run"(dataset, config$1) {
 			if (dataset.typed && !this.requirement.test(dataset.value)) _addIssue(this, "date-time", dataset, config$1);
+			return dataset;
+		}
+	};
+}
+
+//#endregion
+//#region src/actions/isoDateTimeSecond/isoDateTimeSecond.ts
+/* @__NO_SIDE_EFFECTS__ */
+function isoDateTimeSecond(message$1) {
+	return {
+		kind: "validation",
+		type: "iso_date_time_second",
+		reference: isoDateTimeSecond,
+		async: false,
+		expects: null,
+		requirement: ISO_DATE_TIME_SECOND_REGEX,
+		message: message$1,
+		"~run"(dataset, config$1) {
+			if (dataset.typed && !this.requirement.test(dataset.value)) _addIssue(this, "date-time-second", dataset, config$1);
 			return dataset;
 		}
 	};
@@ -46075,6 +47161,36 @@ function toBoolean() {
 }
 
 //#endregion
+//#region src/actions/toCamelCase/toCamelCase.ts
+/**
+* Creates a to camel case transformation action.
+*
+* Words are separated by `_`, `-` and ASCII whitespace, as well as by case
+* and acronym boundaries.
+*
+* Hint: Acronym runs are normalized to lowercase (e.g. `parseURLValue` →
+* `parseUrlValue`) and digits stay attached to the preceding token (e.g.
+* `item2Name` → `item2Name`).
+*
+* @returns A to camel case action.
+*
+* @beta
+*/
+/* @__NO_SIDE_EFFECTS__ */
+function toCamelCase() {
+	return {
+		kind: "transformation",
+		type: "to_camel_case",
+		reference: toCamelCase,
+		async: false,
+		"~run"(dataset) {
+			dataset.value = /* @__PURE__ */ _formatCase(dataset.value, "", false, true);
+			return dataset;
+		}
+	};
+}
+
+//#endregion
 //#region src/actions/toDate/toDate.ts
 /* @__NO_SIDE_EFFECTS__ */
 function toDate(message$1) {
@@ -46095,6 +47211,36 @@ function toDate(message$1) {
 				_addIssue(this, "date", dataset, config$1);
 				dataset.typed = false;
 			}
+			return dataset;
+		}
+	};
+}
+
+//#endregion
+//#region src/actions/toKebabCase/toKebabCase.ts
+/**
+* Creates a to kebab case transformation action.
+*
+* Words are separated by `_`, `-` and ASCII whitespace, as well as by case
+* and acronym boundaries.
+*
+* Hint: Acronym runs are normalized to lowercase (e.g. `parseURLValue` →
+* `parse-url-value`) and digits stay attached to the preceding token (e.g.
+* `item2Name` → `item2-name`).
+*
+* @returns A to kebab case action.
+*
+* @beta
+*/
+/* @__NO_SIDE_EFFECTS__ */
+function toKebabCase() {
+	return {
+		kind: "transformation",
+		type: "to_kebab_case",
+		reference: toKebabCase,
+		async: false,
+		"~run"(dataset) {
+			dataset.value = /* @__PURE__ */ _formatCase(dataset.value, "-", false, false);
 			return dataset;
 		}
 	};
@@ -46190,6 +47336,66 @@ function toNumber(message$1) {
 				_addIssue(this, "number", dataset, config$1);
 				dataset.typed = false;
 			}
+			return dataset;
+		}
+	};
+}
+
+//#endregion
+//#region src/actions/toPascalCase/toPascalCase.ts
+/**
+* Creates a to pascal case transformation action.
+*
+* Words are separated by `_`, `-` and ASCII whitespace, as well as by case
+* and acronym boundaries.
+*
+* Hint: Acronym runs are normalized to lowercase (e.g. `parseURLValue` →
+* `ParseUrlValue`) and digits stay attached to the preceding token (e.g.
+* `item2Name` → `Item2Name`).
+*
+* @returns A to pascal case action.
+*
+* @beta
+*/
+/* @__NO_SIDE_EFFECTS__ */
+function toPascalCase() {
+	return {
+		kind: "transformation",
+		type: "to_pascal_case",
+		reference: toPascalCase,
+		async: false,
+		"~run"(dataset) {
+			dataset.value = /* @__PURE__ */ _formatCase(dataset.value, "", true, true);
+			return dataset;
+		}
+	};
+}
+
+//#endregion
+//#region src/actions/toSnakeCase/toSnakeCase.ts
+/**
+* Creates a to snake case transformation action.
+*
+* Words are separated by `_`, `-` and ASCII whitespace, as well as by case
+* and acronym boundaries.
+*
+* Hint: Acronym runs are normalized to lowercase (e.g. `parseURLValue` →
+* `parse_url_value`) and digits stay attached to the preceding token (e.g.
+* `item2Name` → `item2_name`).
+*
+* @returns A to snake case action.
+*
+* @beta
+*/
+/* @__NO_SIDE_EFFECTS__ */
+function dist_toSnakeCase() {
+	return {
+		kind: "transformation",
+		type: "to_snake_case",
+		reference: dist_toSnakeCase,
+		async: false,
+		"~run"(dataset) {
+			dataset.value = /* @__PURE__ */ _formatCase(dataset.value, "_", false, false);
 			return dataset;
 		}
 	};
@@ -46475,6 +47681,10 @@ function words(locales, requirement, message$1) {
 }
 
 //#endregion
+//#region src/const.ts
+const ABORT_EARLY_CONFIG = { abortEarly: true };
+
+//#endregion
 //#region src/methods/assert/assert.ts
 /**
 * Checks if the input matches the schema. As this is an assertion function, it
@@ -46484,7 +47694,7 @@ function words(locales, requirement, message$1) {
 * @param input The input to be tested.
 */
 function assert(schema, input) {
-	const issues = schema["~run"]({ value: input }, { abortEarly: true }).issues;
+	const issues = schema["~run"]({ value: input }, ABORT_EARLY_CONFIG).issues;
 	if (issues) throw new ValiError(issues);
 }
 
@@ -46507,14 +47717,14 @@ var _LruCache = class {
 	*
 	* @returns A cache key component.
 	*/
-	#stringify(input) {
+	stringify(input) {
 		const type = typeof input;
 		if (type === "string") return `"${input}"`;
 		if (type === "number" || type === "boolean") return `${input}`;
 		if (type === "bigint") return `${input}n`;
 		if (type === "object" || type === "function") {
 			if (input) {
-				this.refIds ??= /* @__PURE__ */ new WeakMap();
+				this.refIds ?? (this.refIds = /* @__PURE__ */ new WeakMap());
 				let id = this.refIds.get(input);
 				if (!id) {
 					id = ++this.refCount;
@@ -46535,7 +47745,7 @@ var _LruCache = class {
 	* @returns The cache key.
 	*/
 	key(input, config$1 = {}) {
-		return `${this.#stringify(input)}|${this.#stringify(config$1.lang)}|${this.#stringify(config$1.message)}|${this.#stringify(config$1.abortEarly)}|${this.#stringify(config$1.abortPipeEarly)}`;
+		return `${this.stringify(input)}|${this.stringify(config$1.lang)}|${this.stringify(config$1.message)}|${this.stringify(config$1.abortEarly)}|${this.stringify(config$1.abortPipeEarly)}`;
 	}
 	/**
 	* Gets a value from the cache by key.
@@ -46563,7 +47773,7 @@ var _LruCache = class {
 	* @param value The cached value.
 	*/
 	set(key, value$1) {
-		this.store ??= /* @__PURE__ */ new Map();
+		this.store ?? (this.store = /* @__PURE__ */ new Map());
 		this.store.delete(key);
 		const timestamp = this.hasMaxAge ? Date.now() : 0;
 		this.store.set(key, [value$1, timestamp]);
@@ -46616,7 +47826,7 @@ function cacheAsync(schema, config$1) {
 			if (cached) return /* @__PURE__ */ _cloneDataset(cached);
 			let promise$1 = activeRuns?.get(key);
 			if (!promise$1) {
-				activeRuns ??= /* @__PURE__ */ new Map();
+				activeRuns ?? (activeRuns = /* @__PURE__ */ new Map());
 				promise$1 = Promise.resolve(schema["~run"](dataset, runConfig));
 				activeRuns.set(key, promise$1);
 			}
@@ -46739,7 +47949,7 @@ function flatten(issues) {
 		const dotPath = /* @__PURE__ */ getDotPath(issue);
 		if (dotPath) {
 			if (!flatErrors.nested) flatErrors.nested = {};
-			if (flatErrors.nested[dotPath]) flatErrors.nested[dotPath].push(issue.message);
+			if (Object.prototype.hasOwnProperty.call(flatErrors.nested, dotPath)) flatErrors.nested[dotPath].push(issue.message);
 			else flatErrors.nested[dotPath] = [issue.message];
 		} else if (flatErrors.other) flatErrors.other.push(issue.message);
 		else flatErrors.other = [issue.message];
@@ -46930,7 +48140,7 @@ function getExamples(schema) {
 	function depthFirstCollect(schema$1) {
 		if ("pipe" in schema$1) {
 			for (const item of schema$1.pipe) if (item.kind === "schema" && "pipe" in item) depthFirstCollect(item);
-			else if (item.kind === "metadata" && item.type === "examples") examples$1.push(...item.examples);
+			else if (item.kind === "metadata" && item.type === "examples") for (const example of item.examples) examples$1.push(example);
 		}
 	}
 	depthFirstCollect(schema);
@@ -47040,7 +48250,7 @@ function getTitle(schema) {
 */
 /* @__NO_SIDE_EFFECTS__ */
 function is(schema, input) {
-	return !schema["~run"]({ value: input }, { abortEarly: true }).issues;
+	return !schema["~run"]({ value: input }, ABORT_EARLY_CONFIG).issues;
 }
 
 //#endregion
@@ -47461,21 +48671,23 @@ function _merge(value1, value2) {
 	if (typeof value1 === typeof value2) {
 		if (value1 === value2 || value1 instanceof Date && value2 instanceof Date && +value1 === +value2) return { value: value1 };
 		if (value1 && value2 && value1.constructor === Object && value2.constructor === Object) {
-			for (const key in value2) if (key in value1) {
+			const nextValue = { ...value1 };
+			for (const key in value2) if (Object.prototype.hasOwnProperty.call(value1, key)) {
 				const dataset = /* @__PURE__ */ _merge(value1[key], value2[key]);
 				if (dataset.issue) return dataset;
-				value1[key] = dataset.value;
-			} else value1[key] = value2[key];
-			return { value: value1 };
+				nextValue[key] = dataset.value;
+			} else nextValue[key] = value2[key];
+			return { value: nextValue };
 		}
 		if (Array.isArray(value1) && Array.isArray(value2)) {
 			if (value1.length === value2.length) {
+				const nextValue = [...value1];
 				for (let index = 0; index < value1.length; index++) {
 					const dataset = /* @__PURE__ */ _merge(value1[index], value2[index]);
 					if (dataset.issue) return dataset;
-					value1[index] = dataset.value;
+					nextValue[index] = dataset.value;
 				}
-				return { value: value1 };
+				return { value: nextValue };
 			}
 		}
 	}
@@ -47505,7 +48717,7 @@ function intersect(options, message$1) {
 				for (const schema of this.options) {
 					const optionDataset = schema["~run"]({ value: input }, config$1);
 					if (optionDataset.issues) {
-						if (dataset.issues) dataset.issues.push(...optionDataset.issues);
+						if (dataset.issues) for (const issue of optionDataset.issues) dataset.issues.push(issue);
 						else dataset.issues = optionDataset.issues;
 						if (config$1.abortEarly) {
 							dataset.typed = false;
@@ -47556,7 +48768,7 @@ function intersectAsync(options, message$1) {
 				const optionDatasets = await Promise.all(this.options.map((schema) => schema["~run"]({ value: input }, config$1)));
 				for (const optionDataset of optionDatasets) {
 					if (optionDataset.issues) {
-						if (dataset.issues) dataset.issues.push(...optionDataset.issues);
+						if (dataset.issues) for (const issue of optionDataset.issues) dataset.issues.push(issue);
 						else dataset.issues = optionDataset.issues;
 						if (config$1.abortEarly) {
 							dataset.typed = false;
@@ -49823,7 +51035,7 @@ function undefinedableAsync(wrapped, default_) {
 /* @__NO_SIDE_EFFECTS__ */
 function _subIssues(datasets) {
 	let issues;
-	if (datasets) for (const dataset of datasets) if (issues) issues.push(...dataset.issues);
+	if (datasets) for (const dataset of datasets) if (issues) for (const issue of dataset.issues) issues.push(issue);
 	else issues = dataset.issues;
 	return issues;
 }
@@ -49971,7 +51183,7 @@ function variant(key, options, message$1) {
 								if (currentKey in input ? discriminatorSchema["~run"]({
 									typed: false,
 									value: input[currentKey]
-								}, { abortEarly: true }).issues : discriminatorSchema.type !== "exact_optional" && discriminatorSchema.type !== "optional" && discriminatorSchema.type !== "nullish") {
+								}, ABORT_EARLY_CONFIG).issues : discriminatorSchema.type !== "exact_optional" && discriminatorSchema.type !== "optional" && discriminatorSchema.type !== "nullish") {
 									keysAreValid = false;
 									if (invalidDiscriminatorKey !== currentKey && (maxDiscriminatorPriority < currentPriority || maxDiscriminatorPriority === currentPriority && currentKey in input && !(invalidDiscriminatorKey in input))) {
 										maxDiscriminatorPriority = currentPriority;
@@ -50044,7 +51256,7 @@ function variantAsync(key, options, message$1) {
 								if (currentKey in input ? (await discriminatorSchema["~run"]({
 									typed: false,
 									value: input[currentKey]
-								}, { abortEarly: true })).issues : discriminatorSchema.type !== "exact_optional" && discriminatorSchema.type !== "optional" && discriminatorSchema.type !== "nullish") {
+								}, ABORT_EARLY_CONFIG)).issues : discriminatorSchema.type !== "exact_optional" && discriminatorSchema.type !== "optional" && discriminatorSchema.type !== "nullish") {
 									keysAreValid = false;
 									if (invalidDiscriminatorKey !== currentKey && (maxDiscriminatorPriority < currentPriority || maxDiscriminatorPriority === currentPriority && currentKey in input && !(invalidDiscriminatorKey in input))) {
 										maxDiscriminatorPriority = currentPriority;
@@ -50713,6 +51925,7 @@ function setOutputs(opts) {
 
 
 
+
 async function run() {
     const inputs = resolveInputs();
     core_debug(`Resolved inputs: experimentPath=${inputs.experimentPath} ` +
@@ -50730,8 +51943,18 @@ async function run() {
         jsSdkVersion: inputs.jsSdkVersion,
         shouldSkipSdkInstallation: inputs.shouldSkipSdkInstallation,
     });
+    // Resolved once and reused by both the metadata bag (job URL) and the PR
+    // comment (job display name — the per-leg identity for matrix jobs).
+    const jobInfo = inputs.githubToken
+        ? await resolveJobInfo({
+            token: inputs.githubToken,
+            runId: process.env.GITHUB_RUN_ID ?? "",
+            runAttempt: process.env.GITHUB_RUN_ATTEMPT ?? "1",
+            runnerName: process.env.RUNNER_NAME,
+        })
+        : null;
     const metadata = await resolveDefaultMetadata({
-        token: inputs.githubToken,
+        jobUrl: jobInfo?.htmlUrl,
         custom: inputs.customMetadata,
     });
     const langfuseProjectId = (await resolveProjectId({
@@ -50781,7 +52004,7 @@ async function run() {
         actionMetadata: metadata,
     });
     if (inputs.shouldCommentOnPr) {
-        await publishExperimentComment({ inputs, results, metadata });
+        await publishExperimentComment({ inputs, results, jobInfo });
     }
     const shouldFailJob = (regressions > 0 && inputs.shouldFailOnRegression) ||
         (scriptErrors > 0 && inputs.shouldFailOnScriptError);
